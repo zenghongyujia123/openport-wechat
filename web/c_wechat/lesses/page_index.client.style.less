@@ -3,6 +3,7 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
+  font-size: 16px;
   .o-page {
     width: 100%;
     height: 100%;
@@ -16,13 +17,56 @@ body {
       background-color: #ff4330;
       display: flex;
       flex-direction: row;
-      font-size: 18px;
+      font-size: 20px;
       color: white;
       padding: 0px 10px;
       align-items: center;
       justify-content: space-between;
+      .o-page-header-left {
+        width: 20%;
+      }
+      .o-page-header-center {
+        text-align: center;
+        width: 60%;
+        flex-grow: 1;
+      }
+      .o-page-header-right {
+        width: 20%;
+        display: flex;
+        flex-direction: row-reverse;
+        .right-item {
+          margin-left: 10px;
+        }
+      }
+    }
+    .o-page-tab {
+      font-size: 18px;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 50px;
+      background-color: #ff4330;
+      height: 50px;
+      display: flex;
+      color: white;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .tab-item {
+        padding: 10px;
+        height: 50px;
+        flex-grow: 1;
+        color: #bd3328;
+        text-align: center;
+        border-bottom: 3px solid #bababa;
+        &.select {
+          border-bottom: 3px solid white;
+          color: white;
+        }
+      }
     }
     .o-page-body {
+      background-color: #e6e6e6;
       position: absolute;
       top: 50px;
       left: 0px;
@@ -31,6 +75,9 @@ body {
       overflow-y: auto;
       background-color: white;
       -webkit-overflow-scrolling: touch;
+      &.has-tab {
+        top: 100px;
+      }
     }
     .o-page-footer {
       border-top: 1px solid #ebebeb;
