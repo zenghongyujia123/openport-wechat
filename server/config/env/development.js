@@ -2,6 +2,6 @@
 
 module.exports = {
   env: 'development',
-  appDb: 'mongodb://localhost/c-dev',
+  appDb: 'mongodb://localhost/o-dev',
   port: process.env.PORT || 5002
 };

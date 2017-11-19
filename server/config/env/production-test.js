@@ -1,5 +1,6 @@
 'use strict';
 
 module.exports = {
-  env: 'production-test'
+  env: 'production-test',
+  appDb: 'mongodb://localhost/o-pro-test'
 };
