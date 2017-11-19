@@ -5,5 +5,6 @@
 var index = require('../controllers/page_wechat');
 
 module.exports = function (app) {
-  app.route('/page_wechat/home').get(index.home);
+  app.route('/page_wechat/page_home').get(index.page_home);
+  app.route('/page_wechat/page_signin').get(index.page_signin);
 };

@@ -22,16 +22,22 @@ function getUserAccessToken(code, callback) {
 }
 
 
-exports.home = function (req, res, next) {
+exports.page_home = function (req, res, next) {
   getUserAccessToken(req.query.code, function (err, result) {
     if (result.openid) {
       cookieLib.setCookie(res, 'openid', result.openid);
       cookieLib.setCookie(res, 'user_access_token', result.access_token);
       // getWechatUserInfo(result.openid, result.access_token);
     }
-    var filepath = path.join(__dirname, '../../web/c_wechat/views/home.client.view.html');
-    req.cookies.city = req.params.city || req.cookies.city || '';
-    cookieLib.setCookie(res, 'city', req.cookies.city);
-    return res.render(filepath, { city: req.cookies.city });
+    var filepath = path.join(__dirname, '../../web/c_wechat/views/page_home.client.view.html');
+    return res.render(filepath, {});
   })
 };
+
+
+exports.page_signin = function (req, res, next) {
+
+  var filepath = path.join(__dirname, '../../web/c_wechat/views/page_signin.client.view.html');
+  return res.render(filepath, {});
+};
+
