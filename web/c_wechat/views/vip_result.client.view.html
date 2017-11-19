@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no,width=device-width" />
+
+  <title>推荐结果</title>
+  <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../c_wechat/css/index.client.style.css" />
+  <link rel="stylesheet" href="../c_wechat/css/result.client.style.css" />
+  <script src="../libs/jquery/dist/jquery.js"></script>
+  <meta name="baidu-site-verification" content="4hPH3hudxx" />
+</head>
+
+<body>
+  <div class="page-result-header">
+    <div class="header-left">
+      <div class="title">信用初值</div>
+      <div class="value">
+        <%= user.vip_credit_starter %>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="title">信用估值（元）</div>
+      <div class="value">
+        <%= user.vip_credit_assessment %>
+      </div>
+    </div>
+  </div>
+  <a class="page-result-banner" style="color:#ffd481" href="/page_wechat/vip_auth_report">
+    <%= user.vip_report_url_text %>
+  </a>
+  <div class="page-result-center">
+    <div class="title">
+      强烈推荐您以下借款平台
+    </div>
+    <div class="center-list">
+      <% for(var i=0; i<products.length; i++) {%>
+        <a class="center-list-item" href="/page_wechat/product_detail?product_id=<%= products[i]._id %>">
+          <img src="<%= products[i].logo %>" class="icon"></img>
+          <div class="name">
+            <%= products[i].name %>
+          </div>
+        </a>
+        <% } %>
+    </div>
+  </div>
+  <div class="page-result-panel">
+    <div class="panel-title">
+      根据您的资质，强烈推荐您申请以下信用卡：
+    </div>
+    <div class="panel-content">
+      <div class="icon"></div>
+      <div class="text">官方绿色通道加权</div>
+    </div>
+    <div class="panel-content">
+      <div class="icon"></div>
+      <div class="text">精准推荐，下卡率大于90%</div>
+    </div>
+    <div class="panel-content">
+      <div class="icon"></div>
+      <div class="text">现在申请，附智能收款机，线上二维码随意刷，线下实体卡不限刷，5秒钟到账户，微乎其微的手续费，从此刷卡不求人</div>
+    </div>
+  </div>
+  <div class="page-result-list">
+
+    <% for(var i=0; i<cards.length; i++) {%>
+      <div class="result-list-item">
+        <img src="<%= cards[i].logo %>" class="card-item"></img>
+        <div class="item-title">
+          <%= cards[i].name %>
+        </div>
+        <div class="item-content">
+          <%= cards[i].description %>
+        </div>
+      </div>
+      <% } %>
+
+
+
+        <!-- <div class="result-list-item">
+      <img src="" class="card-item"></img>
+      <div class="item-title">建设银行</div>
+      <div class="item-content">积分兑换辛巴克</div>
+    </div>
+    <div class="result-list-item">
+      <img src="" class="card-item"></img>
+      <div class="item-title">建设银行</div>
+      <div class="item-content">积分兑换辛巴克</div>
+    </div>
+    <div class="result-list-item">
+      <img src="" class="card-item"></img>
+      <div class="item-title">建设银行</div>
+      <div class="item-content">积分兑换辛巴克</div>
+    </div> -->
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+.page-home {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 50px;
+  font-size: 16px;
+  background: url('/c_wechat/images/home/home_back.jpg') no-repeat;
+  .swiper-container {
+    width: 100%;
+    height: 214px;
+  }
+  .home-apply-btn {
+    width: 280px;
+    margin: 30px auto;
+    line-height: 40px;
+    background-color: #f24659;
+    display: block;
+    color: white;
+    text-align: center;
+    border-radius: 90px;
+  }
+  .home-bottom {
+    overflow: hidden;
+    .item {
+      width: 50%;
+      border-top: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
+      text-align: center;
+      float: left;
+      height: 168px;
+      &.left {
+        border-right: 1px solid #cccccc;
+      }
+      &.right {}
+      .icon {
+        margin: 20px auto;
+        width: 46px;
+      }
+      .title {}
+      .description {
+        font-size: 14px;
+        width: 150px;
+        margin: 10px auto;
+        color: #979797;
+      }
+    }
+  }
+}

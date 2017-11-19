@@ -1,0 +1,69 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: auto;
+  a {
+    color: #333;
+  }
+  a:link {
+    color: #333;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #333;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  input {
+     ::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: #ccc;
+    }
+     :-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #ccc;
+    }
+     ::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #ccc;
+    }
+     :-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: #ccc;
+    }
+  }
+  .page-footer {
+    border-top: 1px solid #cccccc;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    .footer-item {
+      display: block;
+      width: 20%;
+      text-align: center;
+      float: left;
+      font-size: 12px;
+      .icon {
+        margin: 5px;
+        width: 24px;
+      }
+      .title {
+        font-size: 10px;
+        color: #979797;
+      }
+      &.select {
+        .title {
+          color: #f24659;
+        }
+      }
+    }
+  }
+}

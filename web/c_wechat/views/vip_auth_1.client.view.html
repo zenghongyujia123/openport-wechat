@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no,width=device-width" />
+  <title>确认支付</title>
+  <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../libs/Swiper/dist/css/swiper.min.css" />
+  <link rel="stylesheet" href="../c_wechat/css/index.client.style.css" />
+  <link rel="stylesheet" href="../c_wechat/css/vip_auth_1.client.style.css" />
+  <script src="../libs/jquery/dist/jquery.js"></script>
+  <script src="../libs/Swiper/dist/js/swiper.jquery.min.js"></script>
+  <script src="../c_wechat/controllers/vip_auth_1.client.controller.js"></script>
+  <meta name="baidu-site-verification" content="4hPH3hudxx" />
+</head>
+
+<body>
+  <div class="page-vip-auth">
+    <div class="auth-progress">
+      <div class="progress-border"></div>
+      <div class="progress-item">
+        <img src="../c_wechat/images/vip/ensure_pay.png" class="icon select"></img>
+        <div class="text">确认支付</div>
+      </div>
+      <div class="progress-item">
+        <img src="../c_wechat/images/vip/un_input.png" class="icon"></img>
+        <div class="text">资料录入</div>
+      </div>
+      <div class="progress-item">
+        <img src="../c_wechat/images/vip/un_verified.png" class="icon"></img>
+        <div class="text">报告结果</div>
+      </div>
+    </div>
+    <div class="input-list">
+      <div class="list-item">
+        <div class="title">真实姓名</div>
+        <input class="text real_name" placeholder="请输入真实姓名"></input>
+      </div>
+      <div class="list-item">
+        <div class="title">手机号码</div>
+        <input class="text real_phone" placeholder="请输入真实手机号"></input>
+      </div>
+      <div class="list-item">
+        <div class="title">身份证号</div>
+        <input class="text id_card" placeholder="请输入真实号码"></input>
+      </div>
+    </div>
+    <div class="descript-list">
+      <div class="list-item">
+        <div class="icon"></div>
+        <div class="text">若身份证号码含有“x”，请输入大写的“X”</div>
+      </div>
+    </div>
+    <div class="ensure">
+      <div class="submit-btn">微信支付并录入资料</div>
+    </div>
+  </div>
+</body>
+
+</html>

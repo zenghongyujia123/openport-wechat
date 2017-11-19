@@ -1,0 +1,67 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+}
+.page-me-info {
+  position: relative;
+}
+.page-me-info .info-header {
+  background-color: #1b1b1e;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2px;
+}
+.page-me-info .info-header .info-item {
+  display: block;
+  line-height: 50px;
+  color: #999;
+  text-align: center;
+  flex-grow: 1;
+}
+.page-me-info .info-header .info-item.select {
+  color: white;
+  border-bottom: 4px solid white;
+}
+.page-me-info .info-list {
+  margin-top: 20px;
+  background-color: white;
+}
+.page-me-info .info-list .info-item {
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+.page-me-info .info-list .info-item .item-text {
+  width: 120px;
+}
+.page-me-info .info-list .info-item .item-value {
+  border: 0px;
+  flex-grow: 1;
+  text-align: right;
+}
+.page-me-info .info-list .info-item .item-value::-webkit-input-placeholder {
+  text-align: right;
+}
+.page-me-info .info-list .info-item .item-value:-moz-placeholder {
+  text-align: right;
+}
+.page-me-info .info-list .info-item .item-value::-moz-placeholder {
+  text-align: right;
+}
+.page-me-info .info-list .info-item .item-value:-ms-input-placeholder {
+  text-align: right;
+}
+.page-me-info .submit-btn {
+  text-align: center;
+  color: white;
+  margin: 40px 20px;
+  background-color: #f24659;
+  line-height: 40px;
+  border-radius: 90px;
+}

@@ -1,0 +1,68 @@
+.c-tool-bar {
+  box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+.page-operation-view {
+  position: fixed;
+  top: 64px;
+  left: 0px;
+  background-color: white;
+  height: 90px;
+  line-height: 90px;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0px 23px;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  .title {
+    font-size: 18px;
+  }
+}
+
+.page-ui-view {
+  position: fixed;
+  top: 155px;
+  left: 0px;
+  width: 100%;
+  bottom: 30px;
+  overflow: auto;
+}
+
+.page-body-view {
+  font-size: 12px;
+  .list-header {
+    .list-item {
+      width: 100%;
+      padding: 0px 23px;
+      height: 40px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      .column-item {}
+    }
+  }
+  .list-body {
+    .list-item {
+      padding: 0px 23px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      .column-item {
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+.list-item {
+  min-height: 30px;
+}
+
+@import "../directive/dialog_loading_box/dialog_loading_box.client.style.less";
+@import "product_list.client.style.less";
+@import "product_detail.client.style.less";
+@import "user_detail.client.style.less";

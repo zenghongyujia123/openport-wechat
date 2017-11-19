@@ -1,0 +1,76 @@
+.c-tool-bar {
+  box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+.page-operation-view {
+  position: fixed;
+  top: 64px;
+  left: 0px;
+  background-color: white;
+  height: 90px;
+  line-height: 90px;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0px 23px;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+}
+.page-operation-view .title {
+  font-size: 18px;
+}
+.page-ui-view {
+  position: fixed;
+  top: 155px;
+  left: 0px;
+  width: 100%;
+  bottom: 30px;
+  overflow: auto;
+}
+.page-body-view {
+  font-size: 12px;
+}
+.page-body-view .list-header .list-item {
+  width: 100%;
+  padding: 0px 23px;
+  height: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.page-body-view .list-body .list-item {
+  padding: 0px 23px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.page-body-view .list-body .list-item .column-item img {
+  width: 40px;
+  height: 40px;
+}
+.list-item {
+  min-height: 30px;
+}
+.agilepops-dialog-loading {
+  height: 100%;
+  background: none;
+}
+.page-body-view .product-detail-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+.page-body-view .user-detail-product-item {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  background-color: white;
+  text-align: center;
+}
+.page-body-view .user-detail-product-item .product-photo {
+  width: 60px;
+  height: 60px;
+}
+.page-body-view .user-detail-product-item .product-name.select {
+  color: #f5091c;
+}

@@ -1,0 +1,50 @@
+body {
+  font-size: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+.page-signup {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 20px;
+  background-color: white;
+}
+.page-signup .signup-row {
+  line-height: 50px;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.page-signup .signup-row .row-title {
+  display: inline-block;
+  width: 100px;
+}
+.page-signup .signup-row .row-content {
+  flex-grow: 1;
+  border: 0px;
+  border-bottom: 1px solid #f24659;
+}
+.page-signup .signup-agreements {
+  line-height: 60px;
+}
+.page-signup .signup-agreements a {
+  color: #f24659;
+}
+.page-signup .signup-btn {
+  text-align: center;
+  color: white;
+  background-color: #f24659;
+  line-height: 40px;
+  border-radius: 90px;
+}
+.page-signup .signup-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 20px;
+}
+.page-signup .signup-bottom a {
+  color: #f24659;
+}

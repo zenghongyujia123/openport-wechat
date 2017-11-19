@@ -1,0 +1,79 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+}
+.page-me-account .header {
+  background-color: #1B1A1F;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.page-me-account .header .header-item {
+  flex-grow: 1;
+  text-align: center;
+}
+.page-me-account .header .header-item .title {
+  opacity: 0.8;
+  line-height: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+.page-me-account .header .header-item .value {
+  line-height: 33px;
+  color: #FFD591;
+  font-size: 24px;
+}
+.page-me-account .header .border {
+  width: 1px;
+  height: 20px;
+  background-color: #ffffff;
+  opacity: .3;
+}
+.page-me-account .body {
+  margin-bottom: 30px;
+  background-color: white;
+}
+.page-me-account .body .body-row {
+  display: flex;
+  flex-direction: row;
+}
+.page-me-account .body .body-row .row-item {
+  flex-grow: 1;
+  text-align: center;
+  padding: 15px;
+}
+.page-me-account .body .body-row .row-item .icon {
+  margin-bottom: 14px;
+  height: 40px;
+}
+.page-me-account .body .body-row .row-item .title {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+.page-me-account .body .body-row .row-item .content {
+  color: #999;
+  line-height: 17px;
+  font-size: 12px;
+}
+.page-me-account .body .body-row .row-item.left-border {
+  border-left: 1px solid #ccc;
+}
+.page-me-account .body .body-row .row-item.top-border {
+  border-top: 1px solid #ccc;
+}
+.page-me-account .buy-vip-btn {
+  width: 80%;
+  background-color: #F3455A;
+  text-align: center;
+  color: white;
+  border-radius: 90px;
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  margin: auto;
+  margin-bottom: 30px;
+}

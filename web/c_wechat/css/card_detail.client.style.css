@@ -1,0 +1,69 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+  font-size: 14px;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.page-card-detail {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.page-card-detail .header {
+  margin-top: 10px;
+  height: 160px;
+  background-color: white;
+  padding-top: 17px;
+}
+.page-card-detail .header .photo {
+  background-color: black;
+  height: 100px;
+  width: 200px;
+  margin: auto;
+}
+.page-card-detail .description {
+  font-size: 16px;
+  background-color: white;
+  padding: 23px 80px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 1px;
+}
+.page-card-detail .content {
+  background-color: white;
+  padding: 15px 15px 15px 35px;
+}
+.page-card-detail .content .content-item {
+  line-height: 24px;
+  color: #666;
+  position: relative;
+}
+.page-card-detail .content .content-item .dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: -15px;
+  top: 8px;
+  border-radius: 90px;
+  background-color: #FFD591;
+}
+.page-card-detail .footer {
+  position: absolute;
+  bottom: 10px;
+  padding: 0px 15px;
+  height: 50px;
+  left: 0px;
+  width: 100%;
+}
+.page-card-detail .footer .submit-btn {
+  background-color: #F3455A;
+  text-align: center;
+  color: white;
+  line-height: 50px;
+  border-radius: 90px;
+  display: block;
+}

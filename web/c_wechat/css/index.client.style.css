@@ -1,0 +1,78 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: auto;
+}
+html a,
+body a {
+  color: #333;
+}
+html a:link,
+body a:link {
+  color: #333;
+  text-decoration: none;
+}
+html a:visited,
+body a:visited {
+  color: #333;
+  text-decoration: none;
+}
+html a:hover,
+body a:hover {
+  color: #333;
+  text-decoration: none;
+}
+html input ::-webkit-input-placeholder,
+body input ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #ccc;
+}
+html input :-moz-placeholder,
+body input :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+html input ::-moz-placeholder,
+body input ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+html input :-ms-input-placeholder,
+body input :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #ccc;
+}
+html .page-footer,
+body .page-footer {
+  border-top: 1px solid #cccccc;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  overflow: hidden;
+}
+html .page-footer .footer-item,
+body .page-footer .footer-item {
+  display: block;
+  width: 20%;
+  text-align: center;
+  float: left;
+  font-size: 12px;
+}
+html .page-footer .footer-item .icon,
+body .page-footer .footer-item .icon {
+  margin: 5px;
+  width: 24px;
+}
+html .page-footer .footer-item .title,
+body .page-footer .footer-item .title {
+  font-size: 10px;
+  color: #979797;
+}
+html .page-footer .footer-item.select .title,
+body .page-footer .footer-item.select .title {
+  color: #f24659;
+}

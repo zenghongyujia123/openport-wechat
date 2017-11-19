@@ -1,0 +1,66 @@
+.question-header {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  background-color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 22px;
+}
+.question-page {
+  padding-top: 15px;
+  font-size: 16px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  background-color: #f2f2f2;
+  left: 0px;
+  top: 70px;
+  right: 0px;
+  bottom: 80px;
+}
+.question-page .question-list .question-item {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+.question-page .question-list .question-item .title {
+  padding: 10px;
+  overflow: hidden;
+  border-bottom: 1px solid #eeeeee;
+}
+.question-page .question-list .question-item .title .icon {
+  float: left;
+  width: 6px;
+  height: 20px;
+  background-color: #F3455A;
+  margin-right: 10px;
+}
+.question-page .question-list .question-item .title .text {
+  float: left;
+}
+.question-page .question-list .question-item .content .option {
+  padding: 0px 15px;
+  line-height: 30px;
+}
+.question-footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
+  background-color: #f2f2f2;
+  padding: 20px 0px;
+}
+.question-footer .footer-btn {
+  display: block;
+  margin: auto;
+  width: 80%;
+  line-height: 40px;
+  text-align: center;
+  background-color: #f24659;
+  color: white;
+  font-size: 18px;
+  border-radius: 90px;
+}

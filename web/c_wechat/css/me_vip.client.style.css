@@ -1,0 +1,49 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+}
+.page-me-list {
+  background-color: white;
+}
+.page-me-list .list-item {
+  line-height: 40px;
+  margin-left: 15px;
+  display: block;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+}
+.page-me-list .list-item .item-icon {
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+.page-me-list .list-item .item-arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  right: 15px;
+  top: 10px;
+}
+.me-current-rights {
+  overflow: hidden;
+  background-color: black;
+  color: #ffd481;
+  padding: 15px;
+  border-top: 1px solid #ffd481;
+}
+.me-current-rights .rights-title {
+  line-height: 20px;
+}
+.me-current-rights .rights-content {
+  font-size: 12px;
+  line-height: 20px;
+}
+.footer-me-btn {
+  text-align: center;
+  line-height: 40px;
+  margin-top: 40px;
+  background-color: white;
+  color: #f24659;
+}

@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no,width=device-width" />
+
+  <title>潮钱借钱</title>
+  <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../libs/Swiper/dist/css/swiper.min.css" />
+  <link rel="stylesheet" href="../c_wechat/css/index.client.style.css" />
+  <link rel="stylesheet" href="../c_wechat/css/credit_people_detail.client.style.css" />
+  <script src="../libs/jquery/dist/jquery.js"></script>
+  <script src="../libs/Swiper/dist/js/swiper.jquery.min.js"></script>
+  <script src="../c_wechat/controllers/credit_people_detail.client.controller.js"></script>
+  <meta name="baidu-site-verification" content="4hPH3hudxx" />
+</head>
+
+<body>
+  <div class="page-credit-people-detail">
+    <div class="header-content">
+      <img src="<%= credit_people.photo %>" class="photo" />
+
+      <div class="name">
+        <%= credit_people.name %>
+      </div>
+      <div class="tags">
+        <% for(var j=0; j<credit_people.tag_list.length; j++) {%>
+          <span class="tag-item">
+            <%= credit_people.tag_list[j] %>
+          </span>
+          <% } %>
+      </div>
+    </div>
+    <div class="body-content">
+      <div class="border"></div>
+      <div class="title">开始从事贷款行业时间</div>
+      <div class="value">
+        <%= credit_people.job_start_time %>
+      </div>
+    </div>
+    <div class="body-content">
+      <div class="border"></div>
+      <div class="title">个人描述</div>
+      <div class="value">
+        <%= credit_people.personal_description %>
+      </div>
+    </div>
+    <div class="body-content">
+      <div class="border"></div>
+      <div class="title">业务详情</div>
+      <div class="value">
+        <%= credit_people.business_description %>
+      </div>
+    </div>
+    <a class="footer-content">
+      <div class="submit-btn">立即联系</div>
+    </a>
+
+  </div>
+</body>
+
+</html>

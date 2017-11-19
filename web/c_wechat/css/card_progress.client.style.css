@@ -1,0 +1,48 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+  font-size: 14px;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.page-card-progress .card-header {
+  display: flex;
+  flex-direction: row;
+  background-color: #1B1A1F;
+  font-size: 18px;
+}
+.page-card-progress .card-header .header-item {
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  width: 50%;
+  opacity: 0.5;
+  color: white;
+  margin-bottom: 1px;
+}
+.page-card-progress .card-header .header-item.select {
+  opacity: 1;
+  border-bottom: 4px solid white;
+}
+.page-card-progress .list {
+  background-color: white;
+}
+.page-card-progress .list .list-item {
+  padding: 0px 15px 0px 60px;
+  border-bottom: 1px solid #ccc;
+  height: 70px;
+  line-height: 70px;
+  position: relative;
+}
+.page-card-progress .list .list-item .photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 90px;
+  background-color: #FF6259;
+  position: absolute;
+  left: 15px;
+  top: 19px;
+}

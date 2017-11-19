@@ -1,0 +1,97 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+  font-size: 14px;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.page-card .card-header {
+  display: flex;
+  flex-direction: row;
+  background-color: #1B1A1F;
+  font-size: 18px;
+}
+.page-card .card-header .header-item {
+  display: blockl;
+  text-align: center;
+  line-height: 50px;
+  width: 50%;
+  opacity: 0.5;
+  color: white;
+  margin-bottom: 1px;
+}
+.page-card .card-header .header-item.select {
+  opacity: 1;
+  border-bottom: 4px solid white;
+}
+.page-card .card-banner {
+  height: 90px;
+  background-color: blue;
+}
+.page-card .card-body {
+  background-color: white;
+}
+.page-card .card-body .body-row {
+  display: flex;
+  flex-direction: row;
+}
+.page-card .card-body .body-row .row-item {
+  display: block;
+  padding-top: 32px;
+  width: 50%;
+  border-bottom: 1px solid #ccc;
+  height: 110px;
+  padding-left: 85px;
+  position: relative;
+}
+.page-card .card-body .body-row .row-item:first-child {
+  border-right: 1px solid #ccc;
+}
+.page-card .card-body .body-row .row-item .photo {
+  width: 35px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  left: 25px;
+  top: 40px;
+}
+.page-card .card-body .body-row .row-item .title {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.page-card .card-body .body-row .row-item .content {
+  color: #999;
+}
+.page-card .card-list {
+  margin-top: 10px;
+  background-color: white;
+}
+.page-card .card-list .list-title {
+  padding: 13px 15px;
+  border-bottom: 1px solid #ccc;
+}
+.page-card .card-list .card-item {
+  display: block;
+  margin-left: 15px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  padding: 13px 15px 13px 185px;
+  height: 116px;
+}
+.page-card .card-list .card-item .photo {
+  width: 170px;
+  height: 90px;
+  position: absolute;
+  left: 0px;
+  top: 13px;
+  background-color: black;
+}
+.page-card .card-list .card-item .title {
+  margin-bottom: 5px;
+}
+.page-card .card-list .card-item .content {
+  color: #666;
+}

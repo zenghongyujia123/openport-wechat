@@ -1,0 +1,58 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+  font-size: 14px;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.page-card-list {
+  background-color: white;
+}
+.page-card-list .list-banner {
+  height: 140px;
+  background-color: blue;
+}
+.page-card-list .list-title {
+  padding: 13px 15px;
+  border-bottom: 1px solid #ccc;
+}
+.page-card-list .list .list-item {
+  display: block;
+  margin-left: 15px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  padding: 13px 15px 13px 185px;
+  height: 116px;
+}
+.page-card-list .list .list-item .photo {
+  width: 170px;
+  height: 90px;
+  position: absolute;
+  left: 0px;
+  top: 13px;
+  background-color: black;
+}
+.page-card-list .list .list-item .title {
+  margin-bottom: 10px;
+}
+.page-card-list .list .list-item .tag-row {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.page-card-list .list .list-item .tag-row .row-item {
+  color: #F25167;
+  border: 1px solid #F25167;
+  border-radius: 90px;
+  padding: 0px 5px;
+  margin-right: 10px;
+}
+.page-card-list .list .list-item .content {
+  color: #F25167;
+}
+.page-card-list .list .list-item .content span {
+  color: #2A2A2A;
+}

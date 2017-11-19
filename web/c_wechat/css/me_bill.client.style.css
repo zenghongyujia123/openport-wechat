@@ -1,0 +1,60 @@
+body {
+  background-color: white;
+  -webkit-overflow-scrolling: touch;
+  color: #333;
+}
+.page-me-bill .list {
+  padding-left: 15px;
+}
+.page-me-bill .list .list-item {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 15px 15px 0px;
+}
+.page-me-bill .list .list-item .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.page-me-bill .list .list-item .header .type {
+  height: 20px;
+  width: 60px;
+  line-height: 20px;
+  font-size: 12px;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 13px;
+}
+.page-me-bill .list .list-item .header .type.yellow {
+  background-color: #FED953;
+}
+.page-me-bill .list .list-item .header .type.green {
+  background-color: #8BD738;
+}
+.page-me-bill .list .list-item .header .text {
+  font-size: 16px;
+}
+.page-me-bill .list .list-item .body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.page-me-bill .list .list-item .body .body-item {
+  width: 50%;
+  flex-grow: 1;
+  text-align: center;
+}
+.page-me-bill .list .list-item .body .body-item .title {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+}
+.page-me-bill .list .list-item .body .body-item .text {
+  line-height: 20px;
+  font-size: 14px;
+}
+.page-me-bill .list .list-item .body .border {
+  border-left: 1px solid #D8D8D8;
+  height: 15px;
+}

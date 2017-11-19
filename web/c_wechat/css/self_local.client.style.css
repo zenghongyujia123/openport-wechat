@@ -1,0 +1,101 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+  font-size: 14px;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.page-self-local .card-header {
+  display: flex;
+  flex-direction: row;
+  background-color: #1B1A1F;
+  font-size: 18px;
+}
+.page-self-local .card-header .header-item {
+  display: blockl;
+  text-align: center;
+  line-height: 50px;
+  width: 50%;
+  opacity: 0.5;
+  color: white;
+  margin-bottom: 1px;
+}
+.page-self-local .card-header .header-item.select {
+  opacity: 1;
+  border-bottom: 4px solid white;
+}
+.page-self-local .filter-row {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: white;
+  flex-direction: row;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 40px;
+  height: 40px;
+}
+.page-self-local .filter-row .filter-select {
+  background-color: white;
+  line-height: 40px;
+  font-size: 13px;
+  width: auto;
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border: 0px;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-align: center;
+  padding: 0 0 0 20px;
+  /*将背景改为红色*/
+  /*加padding防止文字覆盖*/
+}
+.page-self-local .filter-row .filter-select:focus {
+  outline: none;
+}
+.page-self-local .list .list-item {
+  display: block;
+  background-color: white;
+  margin-bottom: 10px;
+  height: 100px;
+  padding: 10px 15px 10px 80px;
+  position: relative;
+}
+.page-self-local .list .list-item .photo {
+  background-color: rebeccapurple;
+  width: 50px;
+  height: 50px;
+  border-radius: 90px;
+  position: absolute;
+  left: 15px;
+  top: 25px;
+}
+.page-self-local .list .list-item .title {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+.page-self-local .list .list-item .title span {
+  margin-left: 20px;
+  color: #999;
+  font-size: 12px;
+}
+.page-self-local .list .list-item .content {
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.page-self-local .list .list-item .tags .tag-item {
+  color: #F25167;
+  padding: 0px 5px;
+  font-size: 12px;
+  margin-right: 7px;
+  border: 1px solid #F25167;
+  border-radius: 90px;
+}

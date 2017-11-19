@@ -1,0 +1,117 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+}
+.page-me-header {
+  background-color: #1b1b1e;
+  position: relative;
+  padding-top: 20px;
+  padding-left: 160px;
+  padding-bottom: 20px;
+  min-height: 120px;
+}
+.page-me-header .header-left {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 90px;
+  background-color: white;
+}
+.page-me-header .header-right .header-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 13px;
+}
+.page-me-header .header-right .header-name .nickname {
+  color: white;
+  font-size: 18px;
+}
+.page-me-header .header-right .header-name .vip-tag {
+  border: 1px solid#FFD081;
+  color: #FFD081;
+  font-size: 12px;
+  border-radius: 2px;
+  height: 20px;
+  margin-left: 10px;
+  padding: 0px 5px;
+}
+.page-me-header .header-right .header-name .vip-tag.no {
+  color: white;
+  border: 1px solid white;
+}
+.page-me-header .header-right .header-login {
+  color: white;
+  opacity: .6;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.page-me-header .header-right .header-rights {
+  display: block;
+  font-size: 12px;
+  opacity: .6;
+  color: white;
+  line-height: 24px;
+}
+.page-me-list {
+  background-color: white;
+}
+.page-me-list .list-item {
+  margin-left: 15px;
+  display: block;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  font-size: 16px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.page-me-list .list-item .item-icon {
+  width: 20px;
+  margin-right: 20px;
+}
+.page-me-list .list-item .item-arrow {
+  position: absolute;
+  height: 13px;
+  right: 15px;
+  top: 19px;
+}
+.me-current-rights {
+  overflow: hidden;
+  background-color: black;
+  color: #F3CD8C;
+  padding: 10px 15px;
+  border-top: 1px solid #F3CD8C;
+}
+.me-current-rights .rights-title {
+  font-size: 14px;
+  line-height: 24px;
+}
+.me-current-rights .rights-content {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.me-current-rights .rights-content .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 90px;
+  background-color: #F3CD8C;
+  margin-right: 6px;
+}
+.me-current-rights .rights-content .text {
+  font-size: 12px;
+  line-height: 20px;
+}
+.footer-me-btn {
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  margin-top: 50px;
+  background-color: white;
+  color: #f24659;
+}

@@ -1,0 +1,107 @@
+body {
+  background-color: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+  font-size: 14px;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.page-self-home .card-header {
+  display: flex;
+  flex-direction: row;
+  background-color: #1B1A1F;
+  font-size: 18px;
+}
+.page-self-home .card-header .header-item {
+  display: blockl;
+  text-align: center;
+  line-height: 50px;
+  width: 50%;
+  opacity: 0.5;
+  color: white;
+  margin-bottom: 1px;
+}
+.page-self-home .card-header .header-item.select {
+  opacity: 1;
+  border-bottom: 4px solid white;
+}
+.page-self-home .filter-row {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: white;
+  flex-direction: row;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 40px;
+  height: 40px;
+}
+.page-self-home .filter-row .filter-select {
+  background-color: white;
+  line-height: 40px;
+  font-size: 13px;
+  width: auto;
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border: 0px;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-align: center;
+  padding: 0 0 0 20px;
+  /*将背景改为红色*/
+  /*加padding防止文字覆盖*/
+}
+.page-self-home .filter-row .filter-select:focus {
+  outline: none;
+}
+.page-self-home .list .list-item {
+  display: block;
+  background-color: white;
+  margin-bottom: 10px;
+  height: 100px;
+  padding: 10px 15px 10px 80px;
+  position: relative;
+}
+.page-self-home .list .list-item .photo {
+  background-color: rebeccapurple;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  position: absolute;
+  left: 15px;
+  top: 25px;
+}
+.page-self-home .list .list-item .title {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.page-self-home .list .list-item .content {
+  display: flex;
+  flex-direction: row;
+}
+.page-self-home .list .list-item .content .content-border {
+  width: 1px;
+  height: 30px;
+  border-left: 1px solid #979797;
+}
+.page-self-home .list .list-item .content .content-item {
+  text-align: center;
+  flex-grow: 1;
+  width: 34%;
+}
+.page-self-home .list .list-item .content .content-item:last-child,
+.page-self-home .list .list-item .content .content-item:first-child {
+  width: 33%;
+}
+.page-self-home .list .list-item .content .content-item .title {
+  margin-bottom: 3px;
+  font-size: 16px;
+}
+.page-self-home .list .list-item .content .content-item .value {
+  font-size: 12px;
+  color: #999;
+}
