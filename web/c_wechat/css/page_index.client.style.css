@@ -5,6 +5,13 @@ body {
   position: relative;
   font-size: 16px;
 }
+html input,
+body input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
 html .o-page,
 body .o-page {
   width: 100%;
@@ -45,7 +52,7 @@ body .o-page .o-page-header .o-page-header-right {
 }
 html .o-page .o-page-header .o-page-header-right .right-item,
 body .o-page .o-page-header .o-page-header-right .right-item {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 html .o-page .o-page-tab,
 body .o-page .o-page-tab {
@@ -67,6 +74,7 @@ body .o-page .o-page-tab .tab-item {
   padding: 10px;
   height: 50px;
   flex-grow: 1;
+  width: 33%;
   color: #bd3328;
   text-align: center;
   border-bottom: 3px solid #bababa;
@@ -82,15 +90,18 @@ body .o-page .o-page-body {
   position: absolute;
   top: 50px;
   left: 0px;
-  bottom: 60px;
+  bottom: 0px;
   right: 0px;
   overflow-y: auto;
-  background-color: white;
   -webkit-overflow-scrolling: touch;
 }
 html .o-page .o-page-body.has-tab,
 body .o-page .o-page-body.has-tab {
   top: 100px;
+}
+html .o-page .o-page-body.has-footer,
+body .o-page .o-page-body.has-footer {
+  bottom: 60px;
 }
 html .o-page .o-page-footer,
 body .o-page .o-page-footer {

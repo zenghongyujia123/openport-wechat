@@ -7,7 +7,7 @@
 
   <title>Openport Wechat App</title>
   <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../libs/Swiper/dist/css/swiper.min.css" />
+  <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_index.client.style.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_signin.client.style.css" />
   <script src="../libs/jquery/dist/jquery.js"></script>
@@ -16,25 +16,28 @@
 </head>
 
 <body>
-  <div class="o-page">
+  <div class="o-page o-page-signin">
     <div class="o-page-header">
-      <div class="o-page-header-left">left</div>
-      <div class="o-page-header-center">center</div>
+      <div class="o-page-header-left"></div>
+      <div class="o-page-header-center">登录</div>
       <div class="o-page-header-right">
-        <div class="right-item">sdfad</div>
-        <div class="right-item">sdfad</div>
       </div>
     </div>
-    <div class="o-page-tab">
-      <div class="tab-item">left</div>
-      <div class="tab-item select">center</div>
-      <div class="tab-item">right</div>
+    <div class="o-page-body">
+      <div class="o-logo"></div>
+      <div class="o-input-row">
+        <i class="fa fa-user"></i>
+        <input class="input username" type="text" placeholder="请输入用户名">
+      </div>
+      <div class="o-input-row">
+        <i class="fa fa-lock"></i>
+        <input class="input password" type="password" placeholder="请输入密码">
+      </div>
+      <div class="o-submit">提交</div>
     </div>
-    <div class="o-page-body has-tab">
-    </div>
-    <div class="o-page-footer">
+    <!-- <div class="o-page-footer">
       <div class="o-page-footer-btn">test btn</div>
-    </div>
+    </div> -->
   </div>
 </body>
 
