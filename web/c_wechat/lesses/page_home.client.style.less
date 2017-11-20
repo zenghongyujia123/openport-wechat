@@ -1,1 +1,67 @@
-.o-page-home {}
+.o-page-home {
+  .o-page-body {
+    .o-body-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 10px;
+      background-color: white;
+      height: 30px;
+      -moz-box-shadow: 10px 10px 3px #cdcdcd;
+      /* 老的 Firefox */
+      box-shadow: 0px 5px 3px #cdcdcd;
+      .header-left {
+        color: #999;
+      }
+      .header-right {
+        color: #ff4330;
+      }
+    }
+    .o-body-sync-time {
+      padding: 0px 10px;
+      line-height: 30px;
+      color: #ff4330;
+      font-size: 14px;
+    }
+    .o-body-list {
+      .list-item {
+        margin: 0px 10px 10px 10px;
+        background-color: white;
+        .item-row {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          height: 40px;
+          .row-icon {
+            background-color: red;
+            width: 40px;
+            line-height: 40px;
+          }
+          .row-content {
+            height: 40px;
+            line-height: 40px;
+            flex-grow: 1;
+            border-bottom: 1px solid #cdcdcd;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 10px;
+            .content-left {}
+            .content-right {
+              display: flex;
+              flex-direction: row-reverse;
+              .right-icon {
+                width: 40px;
+                height: 40px;
+                background-color: green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

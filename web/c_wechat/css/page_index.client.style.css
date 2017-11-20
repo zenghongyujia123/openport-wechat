@@ -60,7 +60,7 @@ body .o-page .o-page-tab {
   position: absolute;
   left: 0px;
   right: 0px;
-  top: 50px;
+  top: 40px;
   background-color: #ff4330;
   height: 50px;
   display: flex;
@@ -68,6 +68,9 @@ body .o-page .o-page-tab {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  -moz-box-shadow: 10px 10px 3px #cdcdcd;
+  /* 老的 Firefox */
+  box-shadow: 0px 5px 3px #cdcdcd;
 }
 html .o-page .o-page-tab .tab-item,
 body .o-page .o-page-tab .tab-item {
@@ -77,7 +80,6 @@ body .o-page .o-page-tab .tab-item {
   width: 33%;
   color: #bd3328;
   text-align: center;
-  border-bottom: 3px solid #bababa;
 }
 html .o-page .o-page-tab .tab-item.select,
 body .o-page .o-page-tab .tab-item.select {
