@@ -34,6 +34,11 @@ exports.page_home = function (req, res, next) {
   })
 };
 
+exports.page_detail = function (req, res, next) {
+  var filepath = path.join(__dirname, '../../web/c_wechat/views/page_detail.client.view.html');
+  return res.render(filepath, {});
+};
+
 
 exports.page_signin = function (req, res, next) {
 

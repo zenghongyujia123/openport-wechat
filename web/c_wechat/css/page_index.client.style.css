@@ -38,6 +38,10 @@ html .o-page .o-page-header .o-page-header-left,
 body .o-page .o-page-header .o-page-header-left {
   width: 20%;
 }
+html .o-page .o-page-header .o-page-header-left .fa,
+body .o-page .o-page-header .o-page-header-left .fa {
+  font-size: 36px;
+}
 html .o-page .o-page-header .o-page-header-center,
 body .o-page .o-page-header .o-page-header-center {
   text-align: center;
