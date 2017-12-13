@@ -11,6 +11,29 @@ body input {
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
+  border: 0px;
+  background-color: inherit;
+  border-radius: 0px;
+}
+html a,
+body a {
+  text-decoration: none;
+}
+html a:visited,
+body a:visited {
+  text-decoration: none;
+}
+html a:link,
+body a:link {
+  text-decoration: none;
+}
+html a:hover,
+body a:hover {
+  text-decoration: none;
+}
+html a:active,
+body a:active {
+  text-decoration: none;
 }
 html .o-page,
 body .o-page {
@@ -25,7 +48,7 @@ body .o-page .o-page-header {
   left: 0px;
   right: 0px;
   top: 0px;
-  background-color: #ff4330;
+  background-color: #3c8edb;
   display: flex;
   flex-direction: row;
   font-size: 20px;
@@ -40,7 +63,7 @@ body .o-page .o-page-header .o-page-header-left {
 }
 html .o-page .o-page-header .o-page-header-left .fa,
 body .o-page .o-page-header .o-page-header-left .fa {
-  font-size: 36px;
+  font-size: 20px;
 }
 html .o-page .o-page-header .o-page-header-center,
 body .o-page .o-page-header .o-page-header-center {
@@ -56,7 +79,12 @@ body .o-page .o-page-header .o-page-header-right {
 }
 html .o-page .o-page-header .o-page-header-right .right-item,
 body .o-page .o-page-header .o-page-header-right .right-item {
+  padding-right: 10px;
   margin-left: 20px;
+}
+html .o-page .o-page-header .o-page-header-right .right-item a,
+body .o-page .o-page-header .o-page-header-right .right-item a {
+  color: white;
 }
 html .o-page .o-page-tab,
 body .o-page .o-page-tab {
@@ -65,16 +93,14 @@ body .o-page .o-page-tab {
   left: 0px;
   right: 0px;
   top: 40px;
-  background-color: #ff4330;
+  background-color: #3c8edb;
   height: 50px;
   display: flex;
   color: white;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  -moz-box-shadow: 10px 10px 3px #cdcdcd;
   /* 老的 Firefox */
-  box-shadow: 0px 5px 3px #cdcdcd;
 }
 html .o-page .o-page-tab .tab-item,
 body .o-page .o-page-tab .tab-item {
@@ -82,7 +108,7 @@ body .o-page .o-page-tab .tab-item {
   height: 50px;
   flex-grow: 1;
   width: 33%;
-  color: #bd3328;
+  color: #0068d1;
   text-align: center;
 }
 html .o-page .o-page-tab .tab-item.select,
@@ -103,7 +129,7 @@ body .o-page .o-page-body {
 }
 html .o-page .o-page-body.has-tab,
 body .o-page .o-page-body.has-tab {
-  top: 100px;
+  top: 90px;
 }
 html .o-page .o-page-body.has-footer,
 body .o-page .o-page-body.has-footer {
@@ -128,4 +154,16 @@ body .o-page .o-page-footer .o-page-footer-btn {
   line-height: 40px;
   background-color: green;
   border-radius: 4px;
+}
+html .o-page .o-page-footer .o-page-footer-btn.valid,
+body .o-page .o-page-footer .o-page-footer-btn.valid {
+  background-color: green;
+}
+html .o-page .o-page-footer .o-page-footer-btn.invalid,
+body .o-page .o-page-footer .o-page-footer-btn.invalid {
+  background-color: #cdcdcd;
+}
+html .o-page .o-page-footer .o-page-footer-btn.undo,
+body .o-page .o-page-footer .o-page-footer-btn.undo {
+  background-color: #ff4330;
 }

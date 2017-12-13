@@ -1,0 +1,108 @@
+.o-page-home .o-page-body .o-body-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: white;
+  height: 50px;
+  /* 老的 Firefox */
+}
+.o-page-home .o-page-body .o-body-header .header-left {
+  color: #999;
+}
+.o-page-home .o-page-body .o-body-header .header-right {
+  color: #3c8edb;
+}
+.o-page-home .o-page-body .o-body-sync-time {
+  padding: 0px 10px;
+  line-height: 40px;
+  color: #3c8edb;
+  font-size: 14px;
+}
+.o-page-home .o-page-body .o-body-list .list-item {
+  display: block;
+  border-radius: 5px;
+  margin: 10px 10px 0px 10px;
+  padding: 10px;
+  background-color: white;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-header .header-left {
+  color: #666;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-header .header-center {
+  flex-grow: 1;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-header .header-center .month {
+  font-size: 18px;
+  color: #666;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-header .header-center .week {
+  color: #888;
+  font-size: 12px;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-header .header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-header .header-right .price {
+  margin-right: 10px;
+  font-size: 18px;
+  background-color: #dadada;
+  color: #6f6f6f;
+  padding: 0px 5px;
+  border: 1px solid;
+  border-radius: 60px;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-header .header-right .arrow {
+  font-size: 28px;
+  color: #888;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  border-top: 1px solid #cdcdcd;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  border-top: 1px solid #cdcdcd;
+}
+.o-page-home .o-page-body .o-body-list .list-item-footer {
+  border-radius: 5px;
+  margin: 10px;
+  background-color: white;
+  color: #3c8edb;
+  text-align: center;
+  line-height: 40px;
+}
+.o-page-home .o-page-body .o-body-add-btn {
+  background-color: #3c8edb;
+  color: white;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 10px;
+  border-radius: 90px;
+  font-size: 30px;
+  line-height: 44px;
+  bottom: 10px;
+}

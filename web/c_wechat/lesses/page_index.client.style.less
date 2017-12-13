@@ -9,6 +9,24 @@ body {
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
+    border: 0px;
+    background-color: inherit;
+    border-radius: 0px;
+  }
+  a {
+    text-decoration: none;
+    &:visited {
+      text-decoration: none;
+    }
+    &:link {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+    }
   }
   .o-page {
     width: 100%;
@@ -20,7 +38,7 @@ body {
       left: 0px;
       right: 0px;
       top: 0px;
-      background-color: #ff4330;
+      background-color: #3c8edb;
       display: flex;
       flex-direction: row;
       font-size: 20px;
@@ -31,7 +49,7 @@ body {
       .o-page-header-left {
         width: 20%;
         .fa {
-          font-size: 36px;
+          font-size: 20px;
         }
       }
       .o-page-header-center {
@@ -44,7 +62,11 @@ body {
         display: flex;
         flex-direction: row-reverse;
         .right-item {
+          padding-right: 10px;
           margin-left: 20px;
+          a {
+            color: white;
+          }
         }
       }
     }
@@ -54,22 +76,20 @@ body {
       left: 0px;
       right: 0px;
       top: 40px;
-      background-color: #ff4330;
+      background-color: #3c8edb;
       height: 50px;
       display: flex;
       color: white;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      -moz-box-shadow: 10px 10px 3px #cdcdcd;
       /* 老的 Firefox */
-      box-shadow: 0px 5px 3px #cdcdcd;
       .tab-item {
         padding: 10px;
         height: 50px;
         flex-grow: 1;
         width: 33%;
-        color: #bd3328;
+        color: #0068d1;
         text-align: center;
         &.select {
           border-bottom: 3px solid white;
@@ -87,7 +107,7 @@ body {
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       &.has-tab {
-        top: 100px;
+        top: 90px;
       }
       &.has-footer {
         bottom: 60px;
@@ -109,6 +129,15 @@ body {
         line-height: 40px;
         background-color: green;
         border-radius: 4px;
+        &.valid {
+          background-color: green;
+        }
+        &.invalid {
+          background-color: #cdcdcd;
+        }
+        &.undo {
+          background-color: #ff4330;
+        }
       }
     }
   }

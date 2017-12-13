@@ -1,0 +1,51 @@
+.o-page-home .o-page-body .body-header {
+  text-align: center;
+  font-size: 20px;
+  color: #666;
+  line-height: 60px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.o-page-home .o-page-body .body-row {
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  margin-top: 20px;
+  color: #999;
+}
+.o-page-home .o-page-body .body-row input {
+  border-bottom: 1px solid #999;
+}
+.o-page-home .o-page-body .body-row .row-left {
+  width: 49%;
+  margin-right: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.o-page-home .o-page-body .body-row .row-left .title {
+  margin-right: 10px;
+}
+.o-page-home .o-page-body .body-row .row-left .input {
+  grid-row: 1;
+}
+.o-page-home .o-page-body .body-row .row-right {
+  width: 49%;
+  flex-grow: 1;
+}
+.o-page-home .o-page-body .body-photo {
+  border-top: 1px solid #cdcdcd;
+  position: absolute;
+  top: 255px;
+  width: 100%;
+  bottom: 0px;
+}
+.o-page-home .o-page-body .body-photo .photo-tip {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+}

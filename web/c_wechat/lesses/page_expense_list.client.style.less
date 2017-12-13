@@ -11,10 +11,6 @@
       /* 老的 Firefox */
       .header-left {
         color: #999;
-        .fa {
-          margin-right: 10px;
-          color: #3c8edb;
-        }
       }
       .header-right {
         color: #3c8edb;
@@ -30,60 +26,66 @@
       .list-item {
         display: block;
         border-radius: 5px;
-        margin: 0px 10px 10px 10px;
+        margin: 10px 10px 0px 10px;
+        padding: 10px;
         background-color: white;
-        .item-row {
+        .item-header {
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: space-between;
-          &:last-child {
-            .row-content {
-              border: 0px;
-            }
-          }
-          .row-icon {
-            width: 40px;
-            line-height: 40px;
-            display: flex;
-            flex-direction: row;
-            .fa {
-              color: #3c8edb;
-              margin-left: 10px;
-              font-size: 20px;
-            }
-          }
-          .row-content {
-            color: #999;
+          .header-left {
+            color: #666;
+            width: 50px;
             height: 50px;
+            font-size: 30px;
+            line-height: 50px;
+            text-align: center;
+          }
+          .header-center {
             flex-grow: 1;
-            border-bottom: 1px solid #cdcdcd;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding-right: 10px;
-            .content-left {}
-            .content-right {
-              display: flex;
-              flex-direction: row-reverse;
-              align-items: center;
-              .fa {
-                font-size: 20px;
-                color: #999;
-                margin-left: 10px;
-                &.fa-info-circle {
-                  color: #3c8edb;
-                }
-              }
-              .right-icon {
-                margin-left: 10px;
-                width: 40px;
-                height: 40px;
-                background-color: green;
-              }
+            .month {
+              font-size: 18px;
+              color: #666;
+            }
+            .week {
+              color: #888;
+              font-size: 12px;
             }
           }
+          .header-right {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .price {
+              margin-right: 10px;
+              font-size: 18px;
+              background-color: #dadada;
+              color: #6f6f6f;
+              padding: 0px 5px;
+              border: 1px solid;
+              border-radius: 60px;
+            }
+            .arrow {
+              font-size: 28px;
+              color: #888;
+            }
+          }
+        }
+        .item-body {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          height: 40px;
+          border-top: 1px solid #cdcdcd;
+        }
+        .item-footer {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          height: 40px;
+          border-top: 1px solid #cdcdcd;
         }
       }
       .list-item-footer {

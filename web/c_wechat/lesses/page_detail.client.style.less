@@ -1,1 +1,95 @@
-.o-page-detail {}
+.o-page-detail {
+  .o-page-body {
+    .body-row-container {
+      margin-bottom: 10px;
+      .body-row {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .row-icon {
+          margin: 10px;
+          width: 20px;
+          height: 20px;
+          background-color: rebeccapurple;
+        }
+        .row-right {
+          padding: 10px 10px;
+          flex-grow: 1;
+          border-bottom: 1px solid #ebebeb;
+          .content-title {
+            color: #999;
+          }
+          .content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .text {}
+            .input {}
+          }
+        }
+        .row-input {
+          flex-grow: 1;
+          padding: 10px;
+        }
+      }
+    }
+    .body-photo-container {
+      .photo-container-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .header-icon {
+          margin: 10px;
+          width: 20px;
+          height: 20px;
+          background-color: rebeccapurple;
+        }
+        .header-text {
+          margin-left: 10px;
+        }
+      }
+      .photo-container-body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 50px;
+        justify-content: space-between;
+        .body-item {
+          width: 100px;
+          text-align: center;
+          .item-title {
+            width: 100px;
+          }
+          .item-icon {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+      .photo-container-footer {
+        padding: 20px 50px;
+        display: flex;
+        flex-direction: row;
+        .footer-item {
+          display: flex;
+          flex-direction: row;
+          margin-right: 10px;
+          .item-photo {
+            width: 60px;
+            height: 100px;
+            background-color: green;
+          }
+          .item-delete {
+            background-color: gray;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
