@@ -10,9 +10,12 @@
 }
 .o-page-detail .o-page-body .body-row-container .body-row .row-icon {
   margin: 10px;
+  text-align: center;
   width: 20px;
-  height: 20px;
-  background-color: rebeccapurple;
+}
+.o-page-detail .o-page-body .body-row-container .body-row .row-icon .fa {
+  font-size: 20px;
+  color: #3c8edb;
 }
 .o-page-detail .o-page-body .body-row-container .body-row .row-right {
   padding: 10px 10px;
@@ -23,10 +26,14 @@
   color: #999;
 }
 .o-page-detail .o-page-body .body-row-container .body-row .row-right .content {
+  color: #666;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.o-page-detail .o-page-body .body-row-container .body-row .row-right .content .input {
+  border: 1px solid #999;
 }
 .o-page-detail .o-page-body .body-row-container .body-row .row-input {
   flex-grow: 1;
