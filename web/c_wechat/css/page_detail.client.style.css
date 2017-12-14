@@ -17,6 +17,9 @@
   font-size: 20px;
   color: #3c8edb;
 }
+.o-page-detail .o-page-body .body-row-container .body-row .row-icon .fa.green {
+  color: #5c9010;
+}
 .o-page-detail .o-page-body .body-row-container .body-row .row-right {
   padding: 10px 10px;
   flex-grow: 1;
@@ -46,9 +49,12 @@
 }
 .o-page-detail .o-page-body .body-photo-container .photo-container-header .header-icon {
   margin: 10px;
-  width: 20px;
+  text-align: center;
   height: 20px;
-  background-color: rebeccapurple;
+}
+.o-page-detail .o-page-body .body-photo-container .photo-container-header .header-icon .fa {
+  font-size: 20px;
+  color: #5c9010;
 }
 .o-page-detail .o-page-body .body-photo-container .photo-container-header .header-text {
   margin-left: 10px;

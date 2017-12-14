@@ -1,75 +1,119 @@
-.o-page-home .o-page-body .o-body-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 10px;
-  background-color: white;
-  height: 30px;
-  -moz-box-shadow: 10px 10px 3px #cdcdcd;
-  /* 老的 Firefox */
-  box-shadow: 0px 5px 3px #cdcdcd;
+.o-page-profile {
+  background-color: #e6e6e6;
 }
-.o-page-home .o-page-body .o-body-header .header-left {
-  color: #999;
-}
-.o-page-home .o-page-body .o-body-header .header-right {
-  color: #ff4330;
-}
-.o-page-home .o-page-body .o-body-sync-time {
-  padding: 0px 10px;
-  line-height: 30px;
-  color: #ff4330;
-  font-size: 14px;
-}
-.o-page-home .o-page-body .o-body-list .list-item {
-  display: block;
-  -moz-box-shadow: 10px 10px 3px #cdcdcd;
-  /* 老的 Firefox */
-  box-shadow: 0px 5px 3px #cdcdcd;
-  border-radius: 5px;
-  margin: 0px 10px 10px 10px;
-  background-color: white;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 40px;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row:last-child .row-content {
-  border: 0px;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon {
-  background-color: red;
-  width: 40px;
-  line-height: 40px;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-content {
-  color: #999;
-  height: 40px;
-  line-height: 40px;
-  flex-grow: 1;
-  border-bottom: 1px solid #cdcdcd;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 10px;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-content .content-right {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-content .content-right .fa {
-  font-size: 28px;
-  color: #999;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-content .content-right .right-icon {
-  margin-left: 10px;
-  width: 40px;
-  height: 40px;
+.o-page-profile .profile-header {
+  padding: 20px;
+  text-align: center;
   background-color: green;
+  height: 200px;
+  width: 100%;
+  color: white;
+}
+.o-page-profile .profile-header .header-photo {
+  background-color: white;
+  height: 100px;
+  border-radius: 90px;
+  width: 100px;
+}
+.o-page-profile .profile-header .header-text {
+  font-size: 14px;
+  line-height: 30px;
+}
+.o-page-profile .profile-header .header-name {
+  font-size: 18px;
+}
+.o-page-profile .profile-driver {
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: white;
+  color: #666;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 10px;
+  align-items: center;
+}
+.o-page-profile .profile-driver .driver-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.o-page-profile .profile-driver .driver-item .fa {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #3c8edb;
+}
+.o-page-profile .profile-body {
+  position: absolute;
+  width: 100%;
+  top: 250px;
+  bottom: 0px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.o-page-profile .profile-body .profile-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+.o-page-profile .profile-body .profile-description .description-row {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 10px;
+  align-items: center;
+}
+.o-page-profile .profile-body .profile-description .description-content {
+  margin: 0px 10px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+}
+.o-page-profile .profile-body .profile-rank {
+  margin: 0px 10px;
+  color: #666;
+}
+.o-page-profile .profile-body .profile-rank .rank-title {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 10px;
+  align-items: center;
+}
+.o-page-profile .profile-body .profile-rank .rank-title .title-right {
+  color: #3c8edb;
+}
+.o-page-profile .profile-body .profile-rank .rank-list {
+  background-color: white;
+  border-radius: 5px;
+}
+.o-page-profile .profile-body .profile-rank .rank-list .list-header {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 10px;
+  align-items: center;
+}
+.o-page-profile .profile-body .profile-rank .rank-list .list-header .header-item {
+  flex-grow: 1;
+}
+.o-page-profile .profile-body .profile-rank .rank-list .list-header .header-item.right {
+  text-align: right;
+}
+.o-page-profile .profile-body .profile-rank .rank-list .list-row {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 10px;
+  align-items: center;
+}
+.o-page-profile .profile-body .profile-rank .rank-list .list-row .row-item {
+  flex-grow: 1;
+}
+.o-page-profile .profile-body .profile-rank .rank-list .list-row .row-item.right {
+  text-align: right;
 }

@@ -1,80 +1,121 @@
-.o-page-home {
-  .o-page-body {
-    .o-body-header {
+.o-page-profile {
+  background-color: #e6e6e6;
+  .profile-header {
+    padding: 20px;
+    text-align: center;
+    background-color: green;
+    height: 200px;
+    width: 100%;
+    color: white;
+    .header-photo {
+      background-color: white;
+      height: 100px;
+      border-radius: 90px;
+      width: 100px;
+    }
+    .header-text {
+      font-size: 14px;
+      line-height: 30px;
+    }
+    .header-name {
+      font-size: 18px;
+    }
+  }
+  .profile-driver {
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: white;
+    color: #666;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 10px;
+    align-items: center;
+    .driver-item {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       align-items: center;
-      padding: 0px 10px;
-      background-color: white;
-      height: 30px;
-      -moz-box-shadow: 10px 10px 3px #cdcdcd;
-      /* 老的 Firefox */
-      box-shadow: 0px 5px 3px #cdcdcd;
-      .header-left {
-        color: #999;
-      }
-      .header-right {
-        color: #ff4330;
+      .driver {}
+      .phone {}
+      .fa {
+        margin-right: 10px;
+        font-size: 20px;
+        color: #3c8edb;
       }
     }
-    .o-body-sync-time {
-      padding: 0px 10px;
-      line-height: 30px;
-      color: #ff4330;
-      font-size: 14px;
-    }
-    .o-body-list {
-      .list-item {
-        display: block;
-        -moz-box-shadow: 10px 10px 3px #cdcdcd;
-        /* 老的 Firefox */
-        box-shadow: 0px 5px 3px #cdcdcd;
+  }
+  .profile-body {
+    position: absolute;
+    width: 100%;
+    top: 250px;
+    bottom: 0px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+   
+    .profile-description {
+      color: #666;
+      margin-bottom: 20px;
+      .description-row {
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 10px;
+        align-items: center;
+        .row-left {}
+        .row-right {}
+      }
+      .description-content {
+        margin: 0px 10px;
         border-radius: 5px;
-        margin: 0px 10px 10px 10px;
+        text-align: center;
+        padding: 10px;
         background-color: white;
-        .item-row {
+      }
+    }
+    .profile-rank {
+      margin: 0px 10px;
+      color: #666;
+      .rank-title {
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 10px;
+        align-items: center;
+        .title-left {}
+        .title-right {
+          color: #3c8edb;
+        }
+      }
+      .rank-list {
+        background-color: white;
+        border-radius: 5px;
+        .list-header {
+          height: 40px;
           display: flex;
           flex-direction: row;
-          align-items: center;
           justify-content: space-between;
-          height: 40px;
-          &:last-child {
-            .row-content {
-              border: 0px;
+          padding: 0px 10px;
+          align-items: center;
+          .header-item {
+            flex-grow: 1;
+            &.right {
+              text-align: right;
             }
           }
-          .row-icon {
-            background-color: red;
-            width: 40px;
-            line-height: 40px;
-          }
-          .row-content {
-            color: #999;
-            height: 40px;
-            line-height: 40px;
+        }
+        .list-row {
+          height: 40px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0px 10px;
+          align-items: center;
+          .row-item {
             flex-grow: 1;
-            border-bottom: 1px solid #cdcdcd;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding-right: 10px;
-            .content-left {}
-            .content-right {
-              display: flex;
-              flex-direction: row-reverse;
-              align-items: center;
-              .fa {
-                font-size: 28px;
-                color: #999;
-              }
-              .right-icon {
-                margin-left: 10px;
-                width: 40px;
-                height: 40px;
-                background-color: green;
-              }
+            &.right {
+              text-align: right;
             }
           }
         }
