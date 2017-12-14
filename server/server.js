@@ -15,8 +15,8 @@ var app = require('./config/express')();
 
 var fs = require('fs'),
   https = require('https');
-  // key = fs.readFileSync(config.certification.privatekey),
-  // cert = fs.readFileSync(config.certification.certificate);
+// key = fs.readFileSync(config.certification.privatekey),
+// cert = fs.readFileSync(config.certification.certificate);
 
 
 process.on('uncaughtException', function (err) {
@@ -27,6 +27,8 @@ process.on('uncaughtException', function (err) {
 if (process.env.NODE_ENV === 'development') {
   app.listen(config.port);
 }
+
+app.listen(config.port);
 // Sta
 // rt the app by listening on <port>
 
