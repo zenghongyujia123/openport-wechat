@@ -3,5 +3,5 @@
 module.exports = {
   env: 'production',
   appDb: 'mongodb://localhost/o-pro',
-  port: process.env.PORT || 80
+  port: 80
 };
