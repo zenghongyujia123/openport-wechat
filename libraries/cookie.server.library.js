@@ -1,7 +1,5 @@
 'use strict';
 exports.setCookie = function (res, key, value, opts) {
-  // res.setHeader('Set-Cookie', [key + '=' + value]);
-  // return res;
   res.cookie(key, value, opts);
   return res;
 };
