@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no,width=device-width" />
+
+  <title>OPENPORT</title>
+  <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../c_wechat/css/page_index.client.style.css" />
+  <link rel="stylesheet" href="../c_wechat/css/page_detail_pickup.client.style.css" />
+  <script src="../libs/jquery/dist/jquery.js"></script>
+  <script src="../c_wechat/controllers/page_detail_pickup.client.controller.js"></script>
+</head>
+
+<body>
+  <div class="o-page o-page-detail">
+    <div class="o-page-header">
+      <div class="o-page-header-left">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+      </div>
+      <div class="o-page-header-center shipment-number">
+        <%= shippment.shipmentNumber %>
+      </div>
+      <div class="o-page-header-right">
+        <div class="right-item">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="o-page-body has-footer">
+      <div class="body-row-container">
+        <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+          <div class="row-right">
+            <div class="content-title"></div>
+            <div class="content">
+              <div class="text">
+                <%= shippment.from.name %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+          </div>
+          <div class="row-right">
+            <div class="content-title">提货地址</div>
+            <div class="content">
+              <div class="text">
+                <%= shippment.from.line1 %>,
+                  <%= shippment.from.province %>,
+                    <%= shippment.from.cityLocality %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-truck" aria-hidden="true"></i>
+          </div>
+          <div class="row-right">
+            <div class="content-title">预计提货</div>
+            <div class="content">
+              <div class="text">
+                <%= shippment.etdDate %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-truck" aria-hidden="true"></i>
+          </div>
+          <div class="row-right">
+            <div class="content-title">预计交付</div>
+            <div class="content">
+              <div class="text">
+                <%= shippment.etaDate %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+          </div>
+          <div class="row-right">
+            <div class="content">
+              <div class="text">单位数量:
+                <%= shippment.cartonCount %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+          </div>
+          <div class="row-right">
+            <div class="content">
+              <div class="text"> 多点装运: 5</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <% if(shippment.statusId===13) {%>
+        <div class="body-row-container">
+          <div class="body-row">
+            <div class="row-icon">
+              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+            </div>
+            <div class="row-right">
+              <div class="content">
+                <div class="text">实际提货时间</div>
+                <input class="input" readonly="readonly" value="<%= (new Date()) %>"></input>
+              </div>
+            </div>
+          </div>
+          <div class="body-row">
+            <div class="row-icon">
+              <i class="fa fa-list-alt green" aria-hidden="true"></i>
+            </div>
+            <div class="row-right">
+              <div class="content">
+                <div class="text">实际单位数量</div>
+                <input class="input pickedUpQty"></input>
+              </div>
+            </div>
+          </div>
+          <div class="body-row">
+            <div class="row-icon">
+              <i class="fa fa-paper-plane green" aria-hidden="true"></i>
+            </div>
+            <div class="row-right">
+              <div class="content">
+                <div class="text">发件人</div>
+                <input class="input pickupLoaderName"></input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body-photo-container">
+          <div class="photo-container-header">
+            <div class="header-icon">
+              <i class="fa fa-camera" aria-hidden="true"></i>
+            </div>
+            <div class="header-text">交付凭证图片编号 : 1/
+              <%= shippment.maxPictures %>
+            </div>
+          </div>
+          <div class="photo-container-body">
+            <div class="body-item">
+              <div class="item-title">相册</div>
+              <img src="" class="item-icon"></img>
+            </div>
+            <div class="body-item">
+              <div class="item-title">新增照片</div>
+              <img src="" class="item-icon"></img>
+            </div>
+          </div>
+          <div class="photo-container-footer">
+            <div class="footer-item">
+              <div class="item-photo"></div>
+              <div class="item-delete"></div>
+            </div>
+            <div class="footer-item">
+              <div class="item-photo"></div>
+              <div class="item-delete"></div>
+            </div>
+            <div class="footer-item">
+              <div class="item-photo"></div>
+              <div class="item-delete"></div>
+            </div>
+          </div>
+        </div>
+
+        <% } %>
+
+
+
+    </div>
+    <div class="o-page-footer">
+      <% if(shippment.statusId===3) {%>
+        <div class="o-page-footer-btn undo start-loading" id="<%= shippment.id %>">开始装货</div>
+        <% } %>
+          <% if(shippment.statusId===13) {%>
+            <div class="o-page-footer-btn undo submit-pickup" id="<%= shippment.id %>">提交交货凭证</div>
+            <% } %>
+    </div>
+  </div>
+</body>
+
+</html>

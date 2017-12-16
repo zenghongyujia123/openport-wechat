@@ -2,7 +2,7 @@
  * Created by zenghong on 2017/8/8.
  */
 var path = require('path');
-// var productLogic = require('../logics/product');
+var shippmentLogic = require('../logics/shippment');
 
 var cookieLib = require('../../libraries/cookie');
 var agent = require('superagent').agent();
@@ -40,5 +40,12 @@ exports.signin = function (req, res, next) {
       console.log(result);
       return res.send(result);
     });
+}
+
+exports.uploadEvent = function (req, res, next) {
+  var cookie = cookieLib.getCookie(req);
+  shippmentLogic.uploadEvent(cookie.accessToken, req.body, function (err, result) {
+    return res.send(result);
+  });
 }
 

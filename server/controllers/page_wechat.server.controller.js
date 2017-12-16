@@ -2,7 +2,7 @@
  * Created by zenghong on 2017/8/8.
  */
 var path = require('path');
-// var productLogic = require('../logics/product');
+var shippmentLogic = require('../logics/shippment');
 
 var cookieLib = require('../../libraries/cookie');
 var agent = require('superagent').agent();
@@ -23,20 +23,35 @@ function getUserAccessToken(code, callback) {
 
 
 exports.page_home = function (req, res, next) {
-  getUserAccessToken(req.query.code, function (err, result) {
-    if (result.openid) {
-      cookieLib.setCookie(res, 'openid', result.openid);
-      cookieLib.setCookie(res, 'user_access_token', result.access_token);
-      // getWechatUserInfo(result.openid, result.access_token);
-    }
+  // getUserAccessToken(req.query.code, function (err, result) {
+  //   if (result.openid) {
+  //     cookieLib.setCookie(res, 'openid', result.openid);
+  //     cookieLib.setCookie(res, 'user_access_token', result.access_token);
+  //     // getWechatUserInfo(result.openid, result.access_token);
+  //   }
+
+  // })
+  var cookie = cookieLib.getCookie(req);
+  shippmentLogic.shippments(cookie.accessToken, 'ETA', function (err, shippments) {
     var filepath = path.join(__dirname, '../../web/c_wechat/views/page_home.client.view.html');
-    return res.render(filepath, {});
-  })
+    console.log(shippments.length)
+    return res.render(filepath, { status: req.query.status || 'ETA', shippments: shippments });
+  });
 };
 
 exports.page_detail = function (req, res, next) {
-  var filepath = path.join(__dirname, '../../web/c_wechat/views/page_detail.client.view.html');
-  return res.render(filepath, {});
+  var cookie = cookieLib.getCookie(req);
+  shippmentLogic.shippment(cookie.accessToken, req.query.id, function (err, shippment) {
+    var filepath = '';
+    if (shippment.statusId === 3 || shippment.statusId === 13) {
+      filepath = path.join(__dirname, '../../web/c_wechat/views/page_detail_pickup.client.view.html');
+    }
+    else {
+      filepath = path.join(__dirname, '../../web/c_wechat/views/page_detail_delivery.client.view.html');
+    }
+    console.log(shippment)
+    return res.render(filepath, { status: req.query.status || 'ETD', shippment: shippment });
+  });
 };
 
 exports.page_expense_list = function (req, res, next) {

@@ -25,6 +25,5 @@ $(function () {
         window.location = '/page_wechat/page_home';
       }
     });
-
   });
 });
