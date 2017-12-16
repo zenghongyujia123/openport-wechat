@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../c_wechat/css/page_index.client.style.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_expense_add.client.style.css" />
   <script src="../libs/jquery/dist/jquery.js"></script>
-  <script src="../c_wechat/controllers/page_home.client.controller.js"></script>
+  <script src="../c_wechat/controllers/page_expense_add.client.controller.js"></script>
 </head>
 
 <body>
@@ -29,26 +29,109 @@
         添加您的费用明细
       </div>
       <div class="body-row">
-        <input class="row-left" readonly="readonly" placeholder="请选择货运"></input>
-        <input class="row-right" readonly="readonly" placeholder="请选择类型"></input>
+        <input class="row-left shippment-input" readonly="readonly" placeholder="请选择货运"></input>
+        <input class="row-right type-input" readonly="readonly" placeholder="请选择类型"></input>
       </div>
       <div class="body-row">
-        <div class="row-left">
-          <div class="title">RMB </div>
-          <input class="input" placeholder="请输入金额"></input>
-        </div>
-        <input class="row-right" placeholder="请选择日期"></input>
+        <input class="row-left amount" type="number" placeholder="请输入金额"></input>
+        <input class="row-right date" type="date" placeholder="请选择日期"></input>
       </div>
       <div class="body-row">
-        <input class="row-right" placeholder="描述"></input>
+        <input class="row-right description" placeholder="描述"></input>
       </div>
       <div class="body-photo">
         <div class="photo-tip">点击添加费用照片</div>
       </div>
     </div>
     <div class="o-page-footer">
-      <div class="o-page-footer-btn undo">test btn</div>
+      <div class="o-page-footer-btn undo submit">提交</div>
     </div>
+
+  </div>
+  <div class="o-mask shippment-panel">
+    <div class="o-select-panel">
+      <div class="select-header">选择运单</div>
+      <div class="select-title">选择所有运单</div>
+      <div class="select-list">
+        <% for(var i=0; i<shippments.length; i++) {%>
+          <% if(shippments[i].shipmentStatus==='DELIVERED') {%>
+
+            <div class="select-item">
+              <div id="<%= shippments[i].id %>">
+                <%= shippments[i].shipmentNumber %>
+              </div>
+              <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            </div>
+            <% } %>
+              <% } %>
+      </div>
+      <div class="select-btn">选择</div>
+    </div>
+  </div>
+  <div class="o-mask type-panel">
+    <div class="o-select-panel">
+      <div class="select-header">选择费用类型</div>
+      <div class="select-title">请选择您的费用类型</div>
+      <div class="select-list">
+        <div class="select-item">
+          <div>
+            Additional Stop
+          </div>
+        </div>
+        <div class="select-item">
+
+          <div>
+            Border Fee
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Congestion Fee
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Detention Charge
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Document Fee
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Handling Fees
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Non-Dock Delivery
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Stop Charge Fee
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Toll Fee
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Truck Ordered Not Used
+          </div>
+        </div>
+        <div class="select-item">
+          <div>
+            Wait Time Fee
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </body>
 

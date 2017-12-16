@@ -1,16 +1,15 @@
 $(function () {
-  // $.ajax({
-  //   url: '/api_wechat/shippments',
-  //   method: 'post',
-  //   data: {
-  //   },
-  //   success: function (data) {
-  //     // if (data.status !== 200) {
-  //     //   return alert(data.message);
-  //     // }
-  //     console.log(data);
-  //   }
-  // });
+  $('.o-body-add-btn').click(function () {
+    showMask();
+  });
+
+  $('.o-mask ').click(function () {
+    hideMask();
+  });
+  function showMask() {
+    $('.o-mask').show();
+  }
+  function hideMask() {
+    $('.o-mask').hide();
+  }
 });
-
-

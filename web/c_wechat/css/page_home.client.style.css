@@ -101,3 +101,11 @@
   line-height: 44px;
   bottom: 10px;
 }
+.o-page-home .o-page-body .o-body-add-btn .select {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+  position: absolute;
+}

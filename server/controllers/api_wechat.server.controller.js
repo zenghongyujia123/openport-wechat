@@ -36,6 +36,7 @@ exports.signin = function (req, res, next) {
       result = JSON.parse(result.text)
       if (result.status === 200) {
         cookieLib.setCookie(res, 'accessToken', result.token.accessToken);
+        cookieLib.setCookie(res, 'userName', result.user.userName);
       }
       console.log(result);
       return res.send(result);
@@ -48,4 +49,16 @@ exports.uploadEvent = function (req, res, next) {
     return res.send(result);
   });
 }
+
+exports.createExpense = function (req, res, next) {
+  var cookie = cookieLib.getCookie(req);
+  req.body.driver = cookie.userName;
+  shippmentLogic.createExpense(cookie.accessToken, req.body, function (err, result) {
+    return res.send(result);
+  });
+}
+
+
+
+
 

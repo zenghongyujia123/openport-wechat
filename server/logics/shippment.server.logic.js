@@ -64,3 +64,17 @@ exports.uploadEvent = function (accessToken, data, callback) {
       return callback(null, result);
     });
 }
+
+exports.createExpense = function (accessToken, data, callback) {
+  agent.put('https://cn-api.openport.com/delivery/expense/create')
+    .set({
+      'x-openport-token': accessToken,
+      'Content-Type': 'application/vnd.openport.delivery.v3+json'
+    })
+    .send(data)
+    .end(function (err, result) {
+      result = JSON.parse(result.text);
+      return callback(null, result);
+    });
+}
+
