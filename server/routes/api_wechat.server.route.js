@@ -5,5 +5,5 @@
 var ctr = require('../controllers/api_wechat');
 
 module.exports = function (app) {
-  app.route('/api_wechat/signin').get(ctr.signin);
+  app.route('/api_wechat/signin').post(ctr.signin);
 };

@@ -14,10 +14,31 @@ exports.signin = function (req, res, next) {
 
   agent.post('https://cn-api.openport.com/token/getMobiletoken')
     .send(
-    { "status": 200, "message": "OK", "ping": { "distance": 0.5, "movingTimeInterval": 300, "stuckTimeInterval": 1800 }, "refreshSeconds": 300, "token": { "accessToken": "ca64f428d342ef859d2a08d6514bdb57af014a45", "expires": "2017-12-15 11:12:06.0" }, "user": { "companyLogo": "theCompanyLogo.png", "emailAddress": "hardy@zhuzhu56.com", "isBackground": false, "phoneNumber": "13472423583", "pic": "", "role": "Driver", "userName": "Hardy Zeng" } }
+    {
+      "device": {
+        "identifyKey": "357990070920211",
+        "deviceName": "LG-K350",
+        "deviceType": "Android",
+        "version": "6.0"
+      },
+      "app": {
+        "appFrom": "",
+        "appVersion": "5.4.0",
+        "appId": "com.openport.delivery.uat"
+      }, "networkType": "2",
+      "language": "en",
+      "regId": "de00d5cbc73d94ddff9c4c",
+      "password": password,
+      "userId": username
+    }
     )
     .end(function (err, result) {
-      console.log(result.body);
+      result = JSON.parse(result.text)
+      if (result.status === 200) {
+        cookieLib.setCookie(res, 'accessToken', result.token.accessToken);
+      }
+      console.log(result);
       return res.send(result);
     });
 }
+

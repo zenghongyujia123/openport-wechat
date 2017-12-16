@@ -1,5 +1,5 @@
 $(function () {
-  $('.signup-btn').click(function () {
+  $('.o-submit').click(function () {
     var username = $('.username').val();
     var password = $('.password').val();
     if (!username) {
@@ -11,22 +11,18 @@ $(function () {
     }
 
     $.ajax({
-      url: '/user/signin',
+      url: '/api_wechat/signin',
       method: 'post',
       data: {
-        user_info: {
-          username: username,
-          password: password
-        }
+        username: username,
+        password: password
       },
       success: function (data) {
-        if (data.err) {
-          return alert(data.err.zh_message);
+        if (data.status !== 200) {
+          return alert(data.message);
         }
         console.log(data);
-        if (data.success) {
-          window.location = '/page_wechat/home';
-        }
+        window.location = '/page_wechat/page_home';
       }
     });
 
