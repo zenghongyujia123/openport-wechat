@@ -1,9 +1,9 @@
 $(function () {
 
-  $('.start-loading').click(function () {
+  $('.start-unloading').click(function () {
     uploadEvent({
       id: this.id,
-      "operation": "load",
+      "operation": "unload",
       "latitude": "6.1539704",
       "longitude": "106.7973283",
       "eventDate": new Date().toISOString()
@@ -12,22 +12,31 @@ $(function () {
     });
   });
 
-  $('.submit-pickup').click(function () {
+  $('.submit-delivery').click(function () {
+    var deliveredQty = $('.deliveredQty').val();
+    var recipientName = $('.recipientName').val();
+    if (!deliveredQty) {
+      return alert('请输入实际单位数量');
+    }
+    if (!recipientName) {
+      return alert('请输入发件人');
+    }
+
     uploadEvent({
       id: this.id,
-      "operation": "pickup",
-      "pickedUpQty": $('.pickedUpQty').val(),
+      "operation": "pod",
+      "deliveredQty": deliveredQty,
       "eventDate": new Date().toISOString(),
       "latitude": "6.1537999999999995",
       "longitude": "106.79708333333335",
-      "pickupLoaderName": $('.pickupLoaderName').val(),
-      "pickupCountReasonCode": '',
+      "recipientName": recipientName,
+      "reasonCode": '',
       "shipment": {
         "id": this.id,
         "shipmentNumber": $('.shipment-number').text()
       }
     }, function () {
-      window.location = '/page_wechat/page_home?status=ETA';
+      window.location = '/page_wechat/page_home?status=DELIVERED';
     });
   });
 

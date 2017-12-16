@@ -141,7 +141,7 @@
                 </div>
                 <div class="row-content">
                   <div class="content-left">
-                    <%= shippments[i].senderId %>
+                    <%= (status==='ETD'?shippments[i].from.name:shippments[i].to.name) %>
                   </div>
                   <div class="content-right">
                     <%= shippments[i].etaDate %>

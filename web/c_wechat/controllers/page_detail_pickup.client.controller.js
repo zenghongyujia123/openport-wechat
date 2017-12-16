@@ -13,14 +13,22 @@ $(function () {
   });
 
   $('.submit-pickup').click(function () {
+    var pickedUpQty = $('.pickedUpQty').val();
+    var pickupLoaderName = $('.pickupLoaderName').val();
+    if (!pickedUpQty) {
+      return alert('请输入实际单位数量');
+    }
+    if (!pickupLoaderName) {
+      return alert('请输入发件人');
+    }
     uploadEvent({
       id: this.id,
       "operation": "pickup",
-      "pickedUpQty": $('.pickedUpQty').val(),
+      "pickedUpQty": pickedUpQty,
       "eventDate": new Date().toISOString(),
       "latitude": "6.1537999999999995",
       "longitude": "106.79708333333335",
-      "pickupLoaderName": $('.pickupLoaderName').val(),
+      "pickupLoaderName": pickupLoaderName,
       "pickupCountReasonCode": '',
       "shipment": {
         "id": this.id,

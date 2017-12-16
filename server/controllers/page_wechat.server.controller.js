@@ -35,7 +35,7 @@ exports.page_home = function (req, res, next) {
   shippmentLogic.shippments(cookie.accessToken, 'ETA', function (err, shippments) {
     var filepath = path.join(__dirname, '../../web/c_wechat/views/page_home.client.view.html');
     console.log(shippments.length)
-    return res.render(filepath, { status: req.query.status || 'ETA', shippments: shippments });
+    return res.render(filepath, { status: req.query.status || 'ETD', shippments: shippments });
   });
 };
 
@@ -50,7 +50,7 @@ exports.page_detail = function (req, res, next) {
       filepath = path.join(__dirname, '../../web/c_wechat/views/page_detail_delivery.client.view.html');
     }
     console.log(shippment)
-    return res.render(filepath, { status: req.query.status || 'ETD', shippment: shippment });
+    return res.render(filepath, { shippment: shippment });
   });
 };
 

@@ -39,7 +39,7 @@
             <div class="content-title"></div>
             <div class="content">
               <div class="text">
-                <%= shippment.from.name %>
+                <%= shippment.to.name %>
               </div>
             </div>
           </div>
@@ -49,12 +49,12 @@
             <i class="fa fa-map-marker" aria-hidden="true"></i>
           </div>
           <div class="row-right">
-            <div class="content-title">提货地址</div>
+            <div class="content-title">交货地址</div>
             <div class="content">
               <div class="text">
-                <%= shippment.from.line1 %>,
-                  <%= shippment.from.province %>,
-                    <%= shippment.from.cityLocality %>
+                <%= shippment.to.line1 %>,
+                  <%= shippment.to.province %>,
+                    <%= shippment.to.cityLocality %>
               </div>
             </div>
           </div>
@@ -64,10 +64,10 @@
             <i class="fa fa-truck" aria-hidden="true"></i>
           </div>
           <div class="row-right">
-            <div class="content-title">预计提货</div>
+            <div class="content-title">实际提货时间</div>
             <div class="content">
               <div class="text">
-                <%= shippment.etdDate %>
+                <%= (new Date(shippment.pickupDate).toLocaleString())  %>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
             <div class="content-title">预计交付</div>
             <div class="content">
               <div class="text">
-                <%= shippment.etaDate %>
+                <%= (new Date(shippment.etaDate).toLocaleString()) %>
               </div>
             </div>
           </div>
@@ -97,18 +97,8 @@
             </div>
           </div>
         </div>
-        <!-- <div class="body-row">
-          <div class="row-icon">
-            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-          </div>
-          <div class="row-right">
-            <div class="content">
-              <div class="text"> 多点装运: 5</div>
-            </div>
-          </div>
-        </div> -->
       </div>
-      <% if(shippment.statusId===13) {%>
+      <% if(shippment.statusId===14) {%>
         <div class="body-row-container">
           <div class="body-row">
             <div class="row-icon">
@@ -117,7 +107,7 @@
             <div class="row-right">
               <div class="content">
                 <div class="text">实际提货时间</div>
-                <input class="input" readonly="readonly" value="<%= (new Date()) %>"></input>
+                <input class="input" readonly="readonly" value="<%= (new Date().toLocaleString()) %>"></input>
               </div>
             </div>
           </div>
@@ -128,7 +118,7 @@
             <div class="row-right">
               <div class="content">
                 <div class="text">实际单位数量</div>
-                <input class="input pickedUpQty"></input>
+                <input class="input deliveredQty"></input>
               </div>
             </div>
           </div>
@@ -139,7 +129,7 @@
             <div class="row-right">
               <div class="content">
                 <div class="text">发件人</div>
-                <input class="input pickupLoaderName"></input>
+                <input class="input recipientName"></input>
               </div>
             </div>
           </div>
@@ -178,18 +168,14 @@
             </div>
           </div>
         </div>
-
         <% } %>
-
-
-
     </div>
     <div class="o-page-footer">
-      <% if(shippment.statusId===3) {%>
-        <div class="o-page-footer-btn undo start-loading" id="<%= shippment.id %>">开始装货</div>
+      <% if(shippment.statusId===9) {%>
+        <div class="o-page-footer-btn undo start-unloading" id="<%= shippment.id %>">开始卸货</div>
         <% } %>
-          <% if(shippment.statusId===13) {%>
-            <div class="o-page-footer-btn undo submit-pickup" id="<%= shippment.id %>">提交交货凭证</div>
+          <% if(shippment.statusId===14) {%>
+            <div class="o-page-footer-btn undo submit-delivery" id="<%= shippment.id %>">提交交货凭证</div>
             <% } %>
     </div>
   </div>

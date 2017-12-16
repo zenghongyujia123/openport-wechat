@@ -7,23 +7,37 @@ var sysErr = require('./../errors/system');
 
 var that = exports;
 var status = ['ETA', 'ETD', 'DELIVERED'];
+var async = require('async');
 var agent = require('superagent').agent();
+var that = exports;
 
 exports.shippments = function (accessToken, status, callback) {
-  agent.post('https://cn-api.openport.com/delivery/shipments')
-    .set('x-latest-date', '2017-12-02T00:13:01')
-    .send({
+  agent.get('https://cn-api.openport.com/delivery/shipments')
+    .set({
+      'x-latest-date': '2017-12-16T00:13:01',
+      "x-openport-token": accessToken,
+      "Content-Type": 'application/vnd.openport.delivery.v3+json'
+    })
+    .query({
       "accessToken": accessToken,
-      "eta": "2017-12-14",
       "pageSize": "9999",
       "pageIndex": "1",
       "pastDeliveredShipmentDay": "1",
-      "viewBy": 'Status',
-      "sortBy": 'ETD'
+      "viewBy": 'ETD',
+      "sortBy": 'Status'
     })
     .end(function (err, result) {
       result = JSON.parse(result.text);
-      return callback(null, result);
+
+      var shipments = [];
+      async.each(result, function (idItem, eachCallback) {
+        that.shippment(accessToken, idItem.id, function (err, shippment) {
+          shipments.push(shippment);
+          return eachCallback();
+        })
+      }, function (err) {
+        return callback(null, shipments);
+      });
     });
 }
 
