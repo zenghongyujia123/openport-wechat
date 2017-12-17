@@ -47,7 +47,7 @@ exports.page_detail = function (req, res, next) {
     if (shippment.statusId === 3 || shippment.statusId === 13) {
       filepath = path.join(__dirname, '../../web/c_wechat/views/page_detail_pickup.client.view.html');
     }
-    else if (shippment.statusId === 5) {
+    else if (shippment.statusId === 5 || shippment.statusId === 15) {
       filepath = path.join(__dirname, '../../web/c_wechat/views/page_detail_complete.client.view.html');
     }
     else {
