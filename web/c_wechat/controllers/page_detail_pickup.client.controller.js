@@ -1,10 +1,14 @@
 $(function () {
   var photoContainer = $('.photo-container-footer');
   var wecahtServerIds = [];
+  var realPicCount = $('.real-pic-count');
+  var maxPicCount = parseInt($('.max-pic-count').text());
+  realPicCount.text(0);
 
   function appendImage(localId) {
     uploadImage(localId, function (res) {
       wecahtServerIds.push(res.serverId)
+      realPicCount.text(wechatServerIds.length);
 
       var imageItem = $(
         '<div class="footer-item">' +
@@ -17,13 +21,19 @@ $(function () {
         if (index >= 0) {
           wecahtServerIds.splice(index, 1);
           $(this).parent().remove();
+          realPicCount.text(wechatServerIds.length);
         }
       });
+
+      realPicCount.text(wechatServerIds.length);
       photoContainer.append(imageItem);
     })
   }
 
   $('.album').click(function () {
+    if (wecahtServerIds.length >= maxPicCount) {
+      return;
+    }
     chooseImage(function (localIds) {
       localIds.forEach(function (localId) {
         appendImage(localId);
@@ -32,6 +42,9 @@ $(function () {
   });
 
   $('.camera').click(function () {
+    if (wecahtServerIds.length >= maxPicCount) {
+      return;
+    }
     takeCamera(function (localIds) {
       localIds.forEach(function (localId) {
         appendImage(localId);

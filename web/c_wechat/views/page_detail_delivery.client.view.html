@@ -141,8 +141,9 @@
             <div class="header-icon">
               <i class="fa fa-camera" aria-hidden="true"></i>
             </div>
-            <div class="header-text">交付凭证图片编号 : 1/
-              <%= shippment.maxPictures %>
+            <div class="header-text">交付凭证图片编号 :
+              <span class="real-pic-count"></span>/
+              <span class="max-pic-count"><%= shippment.maxPictures %></span>
             </div>
           </div>
           <div class="photo-container-body">
