@@ -1,3 +1,5 @@
+import { timeout } from '../../../../Library/Caches/typescript/2.6/node_modules/@types/async';
+
 /**
  * Created by zenghong on 2017/8/8.
  */
@@ -12,6 +14,16 @@ var sk = '1500a633040b1c3e719dc5cd2d39b9b0';
 var xml2js = require('xml2js');
 var parseString = xml2js.parseString;
 var that = exports;
+
+timeout(function () {
+  that.getAccessToken(function () {
+    console.log(new Date(), 'get access token ,', access_token);
+  });
+}, 100000)
+
+that.getAccessToken(function () {
+  console.log(new Date(), 'get access token ,', access_token);
+});
 
 function getClientIp(req) {
   return req.headers['x-forwarded-for'] ||
@@ -48,36 +60,34 @@ exports.getUserAccessToken = function (code, callback) {
     });
 }
 
-exports.getUserJsApiTicket = function (callback) {
-  that.getAccessToken(function (err, token) {
-    agent.get('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + token + '&type=jsapi')
-      .end(function (err, result) {
-        var ticket = JSON.parse(result.text).ticket;
-        console.log('getUserJsApiTicket', ticket);
+exports.getUserJsApiTicket = function (callback, url) {
+  agent.get('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + access_token + '&type=jsapi')
+    .end(function (err, result) {
+      var ticket = JSON.parse(result.text).ticket;
+      console.log('getUserJsApiTicket', ticket);
 
-        var noncestr = new Date().getTime().toString();
-        var timestamp = new Date().getTime();
+      var noncestr = new Date().getTime().toString();
+      var timestamp = new Date().getTime();
 
-        var str = [
-          'jsapi_ticket=' + ticket,
-          'noncestr=' + noncestr,
-          'timestamp=' + timestamp,
-          'url=http://chaoqianwang.com/page_wechat/self_home'
-        ];
-        str = str.sort().join('&');
-        console.log(str);
-        var signature = cryptoLib.toSHA1(str);
+      var str = [
+        'jsapi_ticket=' + ticket,
+        'noncestr=' + noncestr,
+        'timestamp=' + timestamp,
+        'url=' + url
+      ];
+      str = str.sort().join('&');
+      console.log(str);
+      var signature = cryptoLib.toSHA1(str);
 
-        if (callback)
-          callback(err, {
-            ticket: ticket,
-            noncestr: noncestr,
-            timestamp: timestamp,
-            signature: signature,
-            appid: appid
-          });
-      });
-  })
+      if (callback)
+        callback(err, {
+          ticket: ticket,
+          noncestr: noncestr,
+          timestamp: timestamp,
+          signature: signature,
+          appid: appid
+        });
+    });
 }
 
 
