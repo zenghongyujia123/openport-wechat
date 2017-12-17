@@ -1,4 +1,40 @@
 $(function () {
+  var photoContainer = $('.photo-container-footer');
+  var wecahtServerIds = [];
+
+  function appendImage(localId) {
+    uploadImage(localId, function (res) {
+      wecahtServerIds.push(res)
+
+      var imageItem = $(
+        '<div class="footer-item" id="' + res.localId + '">' +
+        '<img class="item-photo" src="' + localId + '"></img>' +
+        '<div class="item-delete"></div>' +
+        '</div>');
+      // imageItem.find('.item-delete').click(function () {
+
+
+      // });
+      photoContainer.append(imageItem);
+    })
+  }
+
+  $('.album').click(function () {
+    chooseImage(function (localIds) {
+      localIds.forEach(function (localId) {
+        appendImage(localId);
+      });
+    })
+  });
+
+  $('.camera').click(function () {
+    takeCamera(function (localIds) {
+      localIds.forEach(function (localId) {
+        appendImage(localId);
+      });
+    })
+  });
+
   $('.start-unloading').click(function () {
     var id = this.id;
     getLocation(function (data) {

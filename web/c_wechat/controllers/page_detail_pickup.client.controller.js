@@ -40,10 +40,10 @@ $(function () {
     getLocation(function (data) {
       uploadEvent({
         id: id,
-        "operation": "load",
-        "latitude": data.latitude,
-        "longitude": data.longitude,
-        "eventDate": new Date().toISOString()
+        operation: 'load',
+        latitude: data.latitude,
+        longitude: data.longitude,
+        eventDate: new Date().toISOString()
       }, function () {
         window.location = window.location;
       });
