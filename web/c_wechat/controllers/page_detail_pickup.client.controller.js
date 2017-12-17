@@ -1,18 +1,21 @@
 $(function () {
   var photoContainer = $('.photo-container-footer');
-  var wechatLoacalIds = [];
   var wecahtServerIds = [];
 
   function appendImage(localId) {
-    uploadImage(localId, function (serverId) {
-      wecahtServerIds.push(serverId)
-      photoContainer.append(
-        $(
-          '<div class="footer-item">' +
-          '<img class="item-photo" src="' + localId + '"></img>' +
-          '<div class="item-delete"></div>' +
-          '</div>')
-      );
+    uploadImage(localId, function (res) {
+      wecahtServerIds.push(res)
+
+      var imageItem = $(
+        '<div class="footer-item" id="' + res.localId + '">' +
+        '<img class="item-photo" src="' + localId + '"></img>' +
+        '<div class="item-delete"></div>' +
+        '</div>');
+      // imageItem.find('.item-delete').click(function () {
+
+
+      // });
+      photoContainer.append(imageItem);
     })
   }
 
