@@ -69,13 +69,17 @@
 }
 .o-page-detail .o-page-body .body-photo-container .photo-container-body .body-item {
   width: 100px;
+  color: #3c8edb;
   text-align: center;
 }
 .o-page-detail .o-page-body .body-photo-container .photo-container-body .body-item .item-title {
   width: 100px;
 }
 .o-page-detail .o-page-body .body-photo-container .photo-container-body .body-item .item-icon {
-  background-color: green;
+  font-size: 40px;
+  line-height: 100px;
+  border-radius: 90px;
+  border: 3px solid #3c8edb;
   width: 100px;
   height: 100px;
 }
