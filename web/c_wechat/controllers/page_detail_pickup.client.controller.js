@@ -12,7 +12,7 @@ $(function () {
         '<div class="item-delete" id="' + localId + '"><i class="fa fa-times" aria-hidden="true"></i></div>' +
         '</div>');
       imageItem.find('.item-delete').click(function () {
-        var id = $(this).id;
+        var id = this.id;
         var index = wecahtServerIds.indexOf(id);
         if (index >= 0) {
           wecahtServerIds.splice(index, 1);
