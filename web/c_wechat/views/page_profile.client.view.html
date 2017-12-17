@@ -19,12 +19,16 @@
     <div class="profile-header">
       <img src="" class="header-photo"></img>
       <div class="header-text">更新照片</div>
-      <div class="header-name">Haryd Heng</div>
+      <div class="header-name">
+        <%= userName %>
+      </div>
     </div>
     <div class="profile-driver">
       <div class="driver-item">
         <i class="fa fa-phone" aria-hidden="true"></i>
-        <div class="phone">11122222222</div>
+        <div class="phone">
+          <%= phoneNumber %>
+        </div>
       </div>
       <div class="driver-item">
         <i class="fa fa-user" aria-hidden="true"></i>
@@ -51,69 +55,26 @@
           <div class="list-header">
             <div class="header-item">定位</div>
             <div class="header-item">名称</div>
-            <div class="header-item">徽章</div>
+            <div class="header-item right">徽章</div>
             <div class="header-item right">得分</div>
           </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
-          <div class="list-row">
-            <div class="row-item">1</div>
-            <div class="row-item">名称（12）</div>
-            <div class="row-item">会长</div>
-            <div class="row-item right">23234</div>
-          </div>
+          <% for(var i=0; i<topList.length; i++) {%>
+            <div class="list-row">
+              <div class="row-item">
+                <%= topList[i].rnk %>
+              </div>
+              <div class="row-item">
+                <%= topList[i].name %>
+              </div>
+              <div class="row-item right">
+                <img src="/c_wechat/images/profile/badge_level_<%= topList[i].lvl %>.png">
+                </img>
+              </div>
+              <div class="row-item right">
+                <%= topList[i].score %>
+              </div>
+            </div>
+            <% } %>
         </div>
       </div>
     </div>

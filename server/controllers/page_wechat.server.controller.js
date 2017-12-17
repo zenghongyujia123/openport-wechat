@@ -55,8 +55,11 @@ exports.page_detail = function (req, res, next) {
 };
 
 exports.page_expense_list = function (req, res, next) {
-  var filepath = path.join(__dirname, '../../web/c_wechat/views/page_expense_list.client.view.html');
-  return res.render(filepath, {});
+  var cookie = cookieLib.getCookie(req);
+  shippmentLogic.expenseList(cookie.accessToken, function (err, result) {
+    var filepath = path.join(__dirname, '../../web/c_wechat/views/page_expense_list.client.view.html');
+    return res.render(filepath, { expenseList: result.expenses });
+  });
 };
 
 exports.page_expense_detail = function (req, res, next) {
@@ -79,8 +82,19 @@ exports.page_expense_add = function (req, res, next) {
 };
 
 exports.page_profile = function (req, res, next) {
+  var cookie = cookieLib.getCookie(req);
   var filepath = path.join(__dirname, '../../web/c_wechat/views/page_profile.client.view.html');
-  return res.render(filepath, {});
+  shippmentLogic.rewards(cookie.accessToken, function (err, result) {
+    shippmentLogic.rewardsTop10(cookie.accessToken, function (err, top) {
+      return res.render(filepath, {
+        userName: decodeURI(cookie.userName),
+        pic: cookie.pic,
+        phoneNumber: cookie.phoneNumber,
+        rewards: result,
+        topList: top.top10
+      });
+    });
+  });
 };
 
 exports.page_search = function (req, res, next) {

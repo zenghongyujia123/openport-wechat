@@ -88,6 +88,8 @@
 .o-page-profile .profile-body .profile-rank .rank-list {
   background-color: white;
   border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 0px 10px;
 }
 .o-page-profile .profile-body .profile-rank .rank-list .list-header {
   height: 40px;
@@ -98,6 +100,7 @@
   align-items: center;
 }
 .o-page-profile .profile-body .profile-rank .rank-list .list-header .header-item {
+  width: 25%;
   flex-grow: 1;
 }
 .o-page-profile .profile-body .profile-rank .rank-list .list-header .header-item.right {
@@ -110,10 +113,16 @@
   justify-content: space-between;
   padding: 0px 10px;
   align-items: center;
+  border-bottom: 1px solid #cdcdcd;
 }
 .o-page-profile .profile-body .profile-rank .rank-list .list-row .row-item {
+  width: 25%;
   flex-grow: 1;
 }
 .o-page-profile .profile-body .profile-rank .rank-list .list-row .row-item.right {
   text-align: right;
+}
+.o-page-profile .profile-body .profile-rank .rank-list .list-row .row-item img {
+  height: 20px;
+  width: 20px;
 }

@@ -78,3 +78,42 @@ exports.createExpense = function (accessToken, data, callback) {
     });
 }
 
+exports.expenseList = function (accessToken, callback) {
+  agent.get('https://cn-api.openport.com/delivery/expense/list')
+    .set({
+      'x-openport-token': accessToken,
+      'Content-Type': 'application/vnd.openport.delivery.v3+json'
+    })
+    .end(function (err, result) {
+      result = JSON.parse(result.text);
+      return callback(null, result);
+    });
+}
+
+
+exports.rewards = function (accessToken, callback) {
+  agent.get('https://cn-api.openport.com/delivery/rewards')
+    .set({
+      'x-openport-token': accessToken,
+      'Content-Type': 'application/vnd.openport.delivery.v2+json'
+    })
+    .end(function (err, result) {
+      result = JSON.parse(result.text);
+      return callback(null, result);
+    });
+}
+
+
+exports.rewardsTop10 = function (accessToken, callback) {
+  agent.get('https://cn-api.openport.com/delivery/rewards/top10')
+    .set({
+      'x-openport-token': accessToken,
+      'Content-Type': 'application/vnd.openport.delivery.v2+json'
+    })
+    .end(function (err, result) {
+      result = JSON.parse(result.text);
+      return callback(null, result);
+    });
+}
+
+

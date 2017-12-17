@@ -37,6 +37,8 @@ exports.signin = function (req, res, next) {
       if (result.status === 200) {
         cookieLib.setCookie(res, 'accessToken', result.token.accessToken);
         cookieLib.setCookie(res, 'userName', result.user.userName);
+        cookieLib.setCookie(res, 'phoneNumber', result.user.phoneNumber);
+        cookieLib.setCookie(res, 'pic', result.user.pic);
       }
       console.log(result);
       return res.send(result);

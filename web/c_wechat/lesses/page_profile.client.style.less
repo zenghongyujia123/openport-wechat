@@ -51,7 +51,6 @@
     bottom: 0px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-   
     .profile-description {
       color: #666;
       margin-bottom: 20px;
@@ -91,6 +90,8 @@
       .rank-list {
         background-color: white;
         border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 0px 10px;
         .list-header {
           height: 40px;
           display: flex;
@@ -99,6 +100,7 @@
           padding: 0px 10px;
           align-items: center;
           .header-item {
+            width: 25%;
             flex-grow: 1;
             &.right {
               text-align: right;
@@ -112,10 +114,16 @@
           justify-content: space-between;
           padding: 0px 10px;
           align-items: center;
+          border-bottom: 1px solid #cdcdcd;
           .row-item {
+            width: 25%;
             flex-grow: 1;
             &.right {
               text-align: right;
+            }
+            img {
+              height: 20px;
+              width: 20px;
             }
           }
         }

@@ -85,6 +85,12 @@
   height: 40px;
   border-top: 1px solid #cdcdcd;
 }
+.o-page-home .o-page-body .o-body-list .list-item.fold .item-body {
+  display: none;
+}
+.o-page-home .o-page-body .o-body-list .list-item.fold .item-footer {
+  display: none;
+}
 .o-page-home .o-page-body .o-body-list .list-item-footer {
   border-radius: 5px;
   margin: 10px;
