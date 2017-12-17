@@ -83,7 +83,8 @@ exports.downloadImageFromWechat = function (serverId, callback) {
   var url = 'https://api.weixin.qq.com/cgi-bin/media/get?access_token=' + access_token + '&media_id=' + serverId;
   agent.get(url)
     .end(function (err, result) {
-      console.log(result.body);
+      console.log(result.body.name);
+      console.log(result.files.image);
     });
 }
 
