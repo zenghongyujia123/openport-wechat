@@ -59,7 +59,7 @@ $(function () {
     });
   }
 
-  getUserJsApiTicket('http://jltao.com/page_wechat/page_detail_delivery', function (data) {
+  getUserJsApiTicket('http://jltao.com/page_wechat/page_detail', function (data) {
 
   });
 });
