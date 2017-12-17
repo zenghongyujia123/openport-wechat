@@ -3,6 +3,7 @@
  */
 var path = require('path');
 var shippmentLogic = require('../logics/shippment');
+var wechatLogic = require('../logics/wechat');
 
 var cookieLib = require('../../libraries/cookie');
 var agent = require('superagent').agent();
