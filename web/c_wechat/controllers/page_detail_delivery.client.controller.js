@@ -1,6 +1,8 @@
 $(function () {
 
   $('.start-unloading').click(function () {
+    getLocation()
+    return;
     uploadEvent({
       id: this.id,
       "operation": "unload",
@@ -13,6 +15,8 @@ $(function () {
   });
 
   $('.submit-delivery').click(function () {
+    getLocation();
+    return;
     var deliveredQty = $('.deliveredQty').val();
     var recipientName = $('.recipientName').val();
     if (!deliveredQty) {
@@ -55,6 +59,9 @@ $(function () {
     });
   }
 
+  getUserJsApiTicket('http://jltao.com/page_wechat/page_detail_delivery', function (data) {
+
+  });
 });
 
 
