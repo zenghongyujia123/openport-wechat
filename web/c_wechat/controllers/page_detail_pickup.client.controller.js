@@ -1,4 +1,12 @@
 $(function () {
+  $('.album').click(function (localIds) {
+    alert(localIds)
+  });
+
+  $('.camera').click(function (localIds) {
+    alert(localIds)
+  });
+
   $('.start-loading').click(function () {
     var id = this.id;
 

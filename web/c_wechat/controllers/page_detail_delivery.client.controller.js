@@ -4,10 +4,10 @@ $(function () {
     getLocation(function (data) {
       uploadEvent({
         id: id,
-        "operation": "unload",
-        "latitude": data.latitude,
-        "longitude": data.longitude,
-        "eventDate": new Date().toISOString()
+        operation: 'unload',
+        latitude: data.latitude,
+        longitude: data.longitude,
+        eventDate: new Date().toISOString()
       }, function () {
         window.location = window.location;
       });
@@ -28,16 +28,16 @@ $(function () {
 
       uploadEvent({
         id: id,
-        "operation": "pod",
-        "deliveredQty": deliveredQty,
-        "eventDate": new Date().toISOString(),
-        "latitude": data.latitude,
-        "longitude": data.longitude,
-        "recipientName": recipientName,
-        "reasonCode": '',
-        "shipment": {
-          "id": this.id,
-          "shipmentNumber": $('.shipment-number').text().trim()
+        operation: 'pod',
+        deliveredQty: deliveredQty,
+        eventDate: new Date().toISOString(),
+        latitude: data.latitude,
+        longitude: data.longitude,
+        recipientName: recipientName,
+        reasonCode: '',
+        shipment: {
+          id: this.id,
+          shipmentNumber: $('.shipment-number').text().trim()
         }
       }, function () {
         window.location = '/page_wechat/page_home?status=DELIVERED';
