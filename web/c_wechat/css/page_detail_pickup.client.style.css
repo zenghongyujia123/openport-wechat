@@ -23,7 +23,7 @@
 .o-page-detail .o-page-body .body-row-container .body-row .row-right {
   padding: 10px 10px;
   flex-grow: 1;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #efefef;
 }
 .o-page-detail .o-page-body .body-row-container .body-row .row-right .content-title {
   color: #999;
@@ -36,7 +36,7 @@
   justify-content: space-between;
 }
 .o-page-detail .o-page-body .body-row-container .body-row .row-right .content .input {
-  border: 1px solid #999;
+  border: 1px solid #efefef;
 }
 .o-page-detail .o-page-body .body-row-container .body-row .row-input {
   flex-grow: 1;
