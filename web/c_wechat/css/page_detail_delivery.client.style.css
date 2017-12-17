@@ -99,7 +99,7 @@
   background-color: green;
 }
 .o-page-detail .o-page-body .body-photo-container .photo-container-footer .footer-item .item-delete {
-  background-color: gray;
+  color: gray;
   width: 20px;
   height: 20px;
 }

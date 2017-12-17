@@ -9,7 +9,7 @@ $(function () {
       var imageItem = $(
         '<div class="footer-item" id="' + res.localId + '">' +
         '<img class="item-photo" src="' + localId + '"></img>' +
-        '<div class="item-delete"></div>' +
+        '<div class="item-delete"><i class="fa fa-times" aria-hidden="true"></i></div>' +
         '</div>');
       // imageItem.find('.item-delete').click(function () {
 
