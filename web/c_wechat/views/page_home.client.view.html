@@ -144,7 +144,7 @@
                     <%= (status==='ETD'?shippments[i].from.name:shippments[i].to.name) %>
                   </div>
                   <div class="content-right">
-                    <%= shippments[i].etaDate %>
+                    <%= (new Date(shippments[i].etaDate).toLocaleString()) %>
                   </div>
                 </div>
               </div>
