@@ -13,6 +13,7 @@ $(function () {
         '</div>');
       imageItem.find('.item-delete').click(function () {
         var id = this.id;
+        alert(id);
         var index = wecahtServerIds.indexOf(id);
         if (index >= 0) {
           wecahtServerIds.splice(index, 1);
