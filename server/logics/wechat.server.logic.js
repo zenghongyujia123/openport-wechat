@@ -84,7 +84,17 @@ exports.downloadImageFromWechat = function (serverId, callback) {
   agent.get(url)
     .end(function (err, result) {
       console.log(result.body);
-      console.log(result.files);
+
+      agent.post('https://cn-api.openport.com/delivery/shipments/668160/upload/')
+        .set({
+          'x-openport-token': 'd3ea1f303a5fd686ea25339cc24a49a6c9b86250',
+          'x-openPort-operation': 'Pickup'
+        })
+        .attach('image', result.body, 'luna.jpeg')
+        .then(function (err, hahah) {
+          console.log(err)
+          console.log(hahah)
+        })
     });
 }
 
