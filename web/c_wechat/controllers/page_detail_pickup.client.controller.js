@@ -1,10 +1,10 @@
 $(function () {
   $('.album').click(function (localIds) {
-    alert(localIds)
+    alert(JSON.stringify(localIds))
   });
 
   $('.camera').click(function (localIds) {
-    alert(localIds)
+    alert(JSON.stringify(localIds))
   });
 
   $('.start-loading').click(function () {
