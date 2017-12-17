@@ -1,14 +1,19 @@
 $(function () {
   var photoContainer = $('.photo-container-footer');
+  var wechatLoacalIds = [];
+  var wecahtServerIds = [];
 
   function appendImage(localId) {
-    photoContainer.append(
-      $(
-      '<div class="footer-item">' +
-      '<img class="item-photo" src="' + localId + '"></img>' +
-      '<div class="item-delete"></div>' +
-      '</div>')
-    );
+    uploadImage(localId, function (serverId) {
+      wecahtServerIds.push(serverId)
+      photoContainer.append(
+        $(
+          '<div class="footer-item">' +
+          '<img class="item-photo" src="' + localId + '"></img>' +
+          '<div class="item-delete"></div>' +
+          '</div>')
+      );
+    })
   }
 
   $('.album').click(function () {
@@ -55,6 +60,7 @@ $(function () {
     }
     getLocation(function (data) {
       uploadEvent({
+        wechat_ids: wecahtServerIds,
         id: id,
         "operation": "pickup",
         "pickedUpQty": pickedUpQty,

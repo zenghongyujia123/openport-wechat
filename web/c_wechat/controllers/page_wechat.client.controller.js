@@ -32,6 +32,17 @@ function chooseImage(callback) {
   });
 }
 
+function uploadImage(localId, callback) {
+  wx.uploadImage({
+    localId: '', // 需要上传的图片的本地ID，由chooseImage接口获得
+    isShowProgressTips: 1, // 默认为1，显示进度提示
+    success: function (res) {
+      var serverId = res.serverId; // 返回图片的服务器端ID
+      return callback(serverId);
+    }
+  });
+}
+
 function takeCamera(callback) {
   wx.chooseImage({
     count: 1, // 默认9
