@@ -1,18 +1,18 @@
 $(function () {
-
-  $('.start-unloading').click(function () {
-    getLocation()
-    return;
-    uploadEvent({
-      id: this.id,
-      "operation": "unload",
-      "latitude": "6.1539704",
-      "longitude": "106.7973283",
-      "eventDate": new Date().toISOString()
-    }, function () {
-      window.location = window.location;
+  var id =
+    $('.start-unloading').click(function () {
+      getLocation()
+      return;
+      uploadEvent({
+        id: this.id,
+        "operation": "unload",
+        "latitude": "6.1539704",
+        "longitude": "106.7973283",
+        "eventDate": new Date().toISOString()
+      }, function () {
+        window.location = window.location;
+      });
     });
-  });
 
   $('.submit-delivery').click(function () {
     getLocation();
@@ -59,7 +59,7 @@ $(function () {
     });
   }
 
-  getUserJsApiTicket('http://jltao.com/page_wechat/page_detail', function (data) {
+  getUserJsApiTicket(window.location.href, function (data) {
 
   });
 });
