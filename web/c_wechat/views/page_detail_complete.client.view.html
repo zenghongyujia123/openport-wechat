@@ -100,73 +100,70 @@
           </div>
         </div>
       </div>
-      <% if(shippment.statusId===14) {%>
-        <div class="body-row-container">
-          <div class="body-row">
-            <div class="row-icon">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-            </div>
-            <div class="row-right">
-              <div class="content">
-                <div class="text">实际提货时间</div>
-                <input class="input" readonly="readonly" value="<%= (new Date().toLocaleString()) %>"></input>
-              </div>
-            </div>
+      <div class="body-row-container">
+        <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
           </div>
-          <div class="body-row">
-            <div class="row-icon">
-              <i class="fa fa-list-alt green" aria-hidden="true"></i>
-            </div>
-            <div class="row-right">
-              <div class="content">
-                <div class="text">实际单位数量</div>
-                <input class="input deliveredQty"></input>
-              </div>
-            </div>
-          </div>
-          <div class="body-row">
-            <div class="row-icon">
-              <i class="fa fa-paper-plane green" aria-hidden="true"></i>
-            </div>
-            <div class="row-right">
-              <div class="content">
-                <div class="text">发件人</div>
-                <input class="input recipientName"></input>
-              </div>
+          <div class="row-right">
+            <div class="content">
+              <div class="text">实际提货时间</div>
+              <input class="input" readonly="readonly" value="<%= (new Date().toLocaleString()) %>"></input>
             </div>
           </div>
         </div>
-        <div class="body-photo-container">
-          <div class="photo-container-header">
-            <div class="header-icon">
-              <i class="fa fa-camera" aria-hidden="true"></i>
-            </div>
-            <div class="header-text">交付凭证图片编号 : 1/
-              <%= shippment.maxPictures %>
-            </div>
+        <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-list-alt green" aria-hidden="true"></i>
           </div>
-          <div class="photo-container-body">
-            <div class="body-item">
-              <div class="item-title">相册</div>
-              <i class="fa fa-picture-o item-icon album" aria-hidden="true"></i>
+          <div class="row-right">
+            <div class="content">
+              <div class="text">实际单位数量</div>
+              <input class="input deliveredQty"></input>
             </div>
-            <div class="body-item">
-              <div class="item-title">新增照片</div>
-              <i class="fa fa-camera item-icon camera" aria-hidden="true"></i>
-            </div>
-          </div>
-          <div class="photo-container-footer">
           </div>
         </div>
-        <% } %>
+        <div class="body-row">
+          <div class="row-icon">
+            <i class="fa fa-paper-plane green" aria-hidden="true"></i>
+          </div>
+          <div class="row-right">
+            <div class="content">
+              <div class="text">发件人</div>
+              <input class="input recipientName"></input>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="body-photo-container">
+        <div class="photo-container-header">
+          <div class="header-icon">
+            <i class="fa fa-camera" aria-hidden="true"></i>
+          </div>
+          <div class="header-text">交付凭证图片编号 : 1/
+            <%= shippment.maxPictures %>
+          </div>
+        </div>
+        <div class="photo-container-body">
+        </div>
+        <div class="photo-container-footer">
+          <div class="footer-item">
+            <div class="item-photo"></div>
+            <div class="item-delete"></div>
+          </div>
+          <div class="footer-item">
+            <div class="item-photo"></div>
+            <div class="item-delete"></div>
+          </div>
+          <div class="footer-item">
+            <div class="item-photo"></div>
+            <div class="item-delete"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="o-page-footer">
-      <% if(shippment.statusId===9) {%>
-        <div class="o-page-footer-btn undo start-unloading" id="<%= shippment.id %>">开始卸货</div>
-        <% } %>
-          <% if(shippment.statusId===14) {%>
-            <div class="o-page-footer-btn undo submit-delivery" id="<%= shippment.id %>">提交交货凭证</div>
-            <% } %>
+      <div class="o-page-footer-btn undo start-unloading" id="<%= shippment.id %>">返回</div>
     </div>
   </div>
 </body>
