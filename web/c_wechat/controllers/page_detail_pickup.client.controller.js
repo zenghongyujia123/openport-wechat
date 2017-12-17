@@ -1,17 +1,16 @@
 $(function () {
   $('.start-loading').click(function () {
     getLocation(function (data) {
+      uploadEvent({
+        id: this.id,
+        "operation": "load",
+        "latitude": data.latitude,
+        "longitude": data.longitude,
+        "eventDate": new Date().toISOString()
+      }, function () {
+        window.location = window.location;
+      });
     })
-    return;
-    uploadEvent({
-      id: this.id,
-      "operation": "load",
-      "latitude": "6.1539704",
-      "longitude": "106.7973283",
-      "eventDate": new Date().toISOString()
-    }, function () {
-      window.location = window.location;
-    });
   });
 
   $('.submit-pickup').click(function () {
@@ -23,22 +22,26 @@ $(function () {
     if (!pickupLoaderName) {
       return alert('请输入发件人');
     }
-    uploadEvent({
-      id: this.id,
-      "operation": "pickup",
-      "pickedUpQty": pickedUpQty,
-      "eventDate": new Date().toISOString(),
-      "latitude": "6.1537999999999995",
-      "longitude": "106.79708333333335",
-      "pickupLoaderName": pickupLoaderName,
-      "pickupCountReasonCode": '',
-      "shipment": {
-        "id": this.id,
-        "shipmentNumber": $('.shipment-number').text()
-      }
-    }, function () {
-      window.location = '/page_wechat/page_home?status=ETA';
-    });
+    getLocation(function (data) {
+      uploadEvent({
+        id: this.id,
+        "operation": "pickup",
+        "pickedUpQty": pickedUpQty,
+        "eventDate": new Date().toISOString(),
+        "latitude": data.latitude,
+        "longitude": data.longitude,
+        "pickupLoaderName": pickupLoaderName,
+        "pickupCountReasonCode": '',
+        "shipment": {
+          "id": this.id,
+          "shipmentNumber": $('.shipment-number').text()
+        }
+      }, function () {
+        window.location = '/page_wechat/page_home?status=ETA';
+      });
+
+    })
+
   });
 
   function uploadEvent(data, callback) {
@@ -56,7 +59,7 @@ $(function () {
     });
   }
 
-  getUserJsApiTicket('http://jltao.com/page_wechat/page_detail_pickup', function (data) {
+  getUserJsApiTicket(window.location.href, function (data) {
 
   });
 });

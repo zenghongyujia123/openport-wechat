@@ -1,22 +1,20 @@
 $(function () {
   var id =
     $('.start-unloading').click(function () {
-      getLocation()
-      return;
-      uploadEvent({
-        id: this.id,
-        "operation": "unload",
-        "latitude": "6.1539704",
-        "longitude": "106.7973283",
-        "eventDate": new Date().toISOString()
-      }, function () {
-        window.location = window.location;
-      });
+      getLocation(function (data) {
+        uploadEvent({
+          id: this.id,
+          "operation": "unload",
+          "latitude": data.latitude,
+          "longitude": data.longitude,
+          "eventDate": new Date().toISOString()
+        }, function () {
+          window.location = window.location;
+        });
+      })
     });
 
   $('.submit-delivery').click(function () {
-    getLocation();
-    return;
     var deliveredQty = $('.deliveredQty').val();
     var recipientName = $('.recipientName').val();
     if (!deliveredQty) {
@@ -26,21 +24,23 @@ $(function () {
       return alert('请输入发件人');
     }
 
-    uploadEvent({
-      id: this.id,
-      "operation": "pod",
-      "deliveredQty": deliveredQty,
-      "eventDate": new Date().toISOString(),
-      "latitude": "6.1537999999999995",
-      "longitude": "106.79708333333335",
-      "recipientName": recipientName,
-      "reasonCode": '',
-      "shipment": {
-        "id": this.id,
-        "shipmentNumber": $('.shipment-number').text()
-      }
-    }, function () {
-      window.location = '/page_wechat/page_home?status=DELIVERED';
+    getLocation(function (data) {
+      uploadEvent({
+        id: this.id,
+        "operation": "pod",
+        "deliveredQty": deliveredQty,
+        "eventDate": new Date().toISOString(),
+        "latitude": data.latitude,
+        "longitude": data.longitude,
+        "recipientName": recipientName,
+        "reasonCode": '',
+        "shipment": {
+          "id": this.id,
+          "shipmentNumber": $('.shipment-number').text()
+        }
+      }, function () {
+        window.location = '/page_wechat/page_home?status=DELIVERED';
+      });
     });
   });
 
