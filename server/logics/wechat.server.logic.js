@@ -77,28 +77,32 @@ exports.getUserJsApiTicket = function (url, callback) {
       appid: appid
     });
 }
-
-exports.downloadImageFromWechat = function (serverId, callback) {
-  serverId = 'KHQuIPRFSU05jXkJF30l6bz1b1w_SxXiOMhMI_Clxd5U8fwhGn7ZNFfHitwGDbpe';
+exports.downloadImageFromWechat = function (serverId, accessToken, operation, id, callback) {
+  // access_token = '4_IIXrooJzi6z8VDgmlFnKDHGjpvnCdCbcNUlpYK9S9QFbDE4Jj0uqi-odXuwPbpAVJ-eIC9Fgmi6udWn4C2hm_OauSQin2KtVktiu2M9caJVSSB5IfRVXUxS3Q1IJYGjABAXMU'
+  // serverId = 'KHQuIPRFSU05jXkJF30l6bz1b1w_SxXiOMhMI_Clxd5U8fwhGn7ZNFfHitwGDbpe';
   var url = 'https://api.weixin.qq.com/cgi-bin/media/get?access_token=' + access_token + '&media_id=' + serverId;
-  agent.get(url)
+  agent
+    .get(url)
     .end(function (err, result) {
-      console.log(result.body);
-
-      // agent.post('https://cn-api.openport.com/delivery/shipments/668160/upload/')
-      //   .set({
-      //     'x-openport-token': 'd3ea1f303a5fd686ea25339cc24a49a6c9b86250',
-      //     'x-openPort-operation': 'Pickup'
-      //   })
-      //   .attach('image', result.body)
-      //   .then(function (hahahhahah) {
-      //     console.log(hahah)
-      //   }, function (err) {
-      //     console.log(err)
-      //   })
+      agent.post('https://cn-api.openport.com/delivery/shipments/' + id + '/upload/')
+        .set({
+          'x-openport-token': accessToken,
+          'x-openPort-operation': operation
+        })
+        .attach('file', result.body, new Date().getTime() + '.jpg')
+        .on('error', function (err) {
+          console.log(err);
+          return callback();
+        })
+        .end(function (err, result) {
+          console.log('err')
+          console.log(err)
+          console.log('result')
+          console.log(result.text)
+          return callback(JSON.parse(result.text));
+        })
     });
 }
-
 setTimeout(function () {
   that.getAccessToken(function () {
     console.log(new Date(), 'get access token ,', access_token);

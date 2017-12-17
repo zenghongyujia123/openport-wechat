@@ -4,6 +4,7 @@
 var mongoose = require('./../../libraries/mongoose');
 var appDb = mongoose.appDb;
 var sysErr = require('./../errors/system');
+var wechatLogic = require('./wechat.server.logic');
 
 var that = exports;
 var status = ['ETA', 'ETD', 'DELIVERED'];
@@ -53,16 +54,25 @@ exports.shippment = function (accessToken, id, callback) {
 }
 
 exports.uploadEvent = function (accessToken, data, callback) {
-  agent.put('https://cn-api.openport.com/delivery/shipments/' + data.id)
-    .set({
-      'x-openport-token': accessToken,
-      'Content-Type': 'application/vnd.openport.delivery.v2+json'
+  data.wechat_ids = data.wechat_ids || [];
+
+  async.each(data.wechat_ids, function (wechatItem, eachCallback) {
+    wechatLogic.downloadImageFromWechat(wechatItem.serverId, accessToken, data.operation,data.shipment.id, function () {
+      return eachCallback();
     })
-    .send(data)
-    .end(function (err, result) {
-      result = JSON.parse(result.text);
-      return callback(null, result);
-    });
+  }, function () {
+    agent.put('https://cn-api.openport.com/delivery/shipments/' + data.id)
+      .set({
+        'x-openport-token': accessToken,
+        'Content-Type': 'application/vnd.openport.delivery.v2+json'
+      })
+      .send(data)
+      .end(function (err, result) {
+        result = JSON.parse(result.text);
+        return callback(null, result);
+      });
+
+  })
 }
 
 exports.createExpense = function (accessToken, data, callback) {

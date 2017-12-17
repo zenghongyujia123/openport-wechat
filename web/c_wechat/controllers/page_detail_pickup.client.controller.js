@@ -37,7 +37,6 @@ $(function () {
 
   $('.start-loading').click(function () {
     var id = this.id;
-
     getLocation(function (data) {
       uploadEvent({
         id: id,
@@ -65,16 +64,16 @@ $(function () {
       uploadEvent({
         wechat_ids: wecahtServerIds,
         id: id,
-        "operation": "pickup",
-        "pickedUpQty": pickedUpQty,
-        "eventDate": new Date().toISOString(),
-        "latitude": data.latitude,
-        "longitude": data.longitude,
-        "pickupLoaderName": pickupLoaderName,
-        "pickupCountReasonCode": '',
-        "shipment": {
-          "id": this.id,
-          "shipmentNumber": $('.shipment-number').text()
+        operation: 'pickup',
+        pickedUpQty: pickedUpQty,
+        eventDate: new Date().toISOString(),
+        latitude: data.latitude,
+        longitude: data.longitude,
+        pickupLoaderName: pickupLoaderName,
+        pickupCountReasonCode: '',
+        shipment: {
+          id: this.id,
+          shipmentNumber: $('.shipment-number').text()
         }
       }, function () {
         window.location = '/page_wechat/page_home?status=ETA';
