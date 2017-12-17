@@ -63,6 +63,7 @@ $(function () {
     getLocation(function (data) {
 
       uploadEvent({
+        wechat_ids: wecahtServerIds,
         id: id,
         operation: 'pod',
         deliveredQty: deliveredQty,
