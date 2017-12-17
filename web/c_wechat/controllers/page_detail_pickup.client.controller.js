@@ -4,17 +4,21 @@ $(function () {
 
   function appendImage(localId) {
     uploadImage(localId, function (res) {
-      wecahtServerIds.push(res)
+      wecahtServerIds.push(res.serverId)
 
       var imageItem = $(
-        '<div class="footer-item" id="' + res.localId + '">' +
+        '<div class="footer-item">' +
         '<img class="item-photo" src="' + localId + '"></img>' +
-        '<div class="item-delete"><i class="fa fa-times" aria-hidden="true"></i></div>' +
+        '<div class="item-delete" id="' + localId + '"><i class="fa fa-times" aria-hidden="true"></i></div>' +
         '</div>');
-      // imageItem.find('.item-delete').click(function () {
-
-
-      // });
+      imageItem.find('.item-delete').click(function () {
+        var id = $(this).id;
+        var index = wecahtServerIds.indexOf(id);
+        if (index >= 0) {
+          wecahtServerIds.splice(index, 1);
+          $(this).remove();
+        }
+      });
       photoContainer.append(imageItem);
     })
   }

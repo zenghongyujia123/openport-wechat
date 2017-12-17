@@ -56,8 +56,8 @@ exports.shippment = function (accessToken, id, callback) {
 exports.uploadEvent = function (accessToken, data, callback) {
   data.wechat_ids = data.wechat_ids || [];
 
-  async.each(data.wechat_ids, function (wechatItem, eachCallback) {
-    wechatLogic.downloadImageFromWechat(wechatItem.serverId, accessToken, data.operation,data.shipment.id, function () {
+  async.each(data.wechat_ids, function (wechat_id, eachCallback) {
+    wechatLogic.downloadImageFromWechat(wechat_id, accessToken, data.operation, data.shipment.id, function () {
       return eachCallback();
     })
   }, function () {
