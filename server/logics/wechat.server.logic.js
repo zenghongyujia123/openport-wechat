@@ -15,16 +15,6 @@ var xml2js = require('xml2js');
 var parseString = xml2js.parseString;
 var that = exports;
 
-timeout(function () {
-  that.getAccessToken(function () {
-    console.log(new Date(), 'get access token ,', access_token);
-  });
-}, 100000)
-
-that.getAccessToken(function () {
-  console.log(new Date(), 'get access token ,', access_token);
-});
-
 function getClientIp(req) {
   return req.headers['x-forwarded-for'] ||
     req.connection.remoteAddress ||
@@ -90,4 +80,13 @@ exports.getUserJsApiTicket = function (callback, url) {
     });
 }
 
+timeout(function () {
+  that.getAccessToken(function () {
+    console.log(new Date(), 'get access token ,', access_token);
+  });
+}, 100000)
+
+that.getAccessToken(function () {
+  console.log(new Date(), 'get access token ,', access_token);
+});
 
