@@ -79,10 +79,10 @@
             <i class="fa fa-truck" aria-hidden="true"></i>
           </div>
           <div class="row-right">
-            <div class="content-title">预计交付</div>
+            <div class="content-title">实际交货时间</div>
             <div class="content">
               <div class="text">
-                <%= (new Date(shippment.etaDate).toLocaleString()) %>
+                <%= (new Date(shippment.deliveryDate).toLocaleString())  %>
               </div>
             </div>
           </div>
@@ -100,41 +100,7 @@
           </div>
         </div>
       </div>
-      <div class="body-row-container">
-        <div class="body-row">
-          <div class="row-icon">
-            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-          </div>
-          <div class="row-right">
-            <div class="content">
-              <div class="text">实际提货时间</div>
-              <input class="input" readonly="readonly" value="<%= (new Date().toLocaleString()) %>"></input>
-            </div>
-          </div>
-        </div>
-        <div class="body-row">
-          <div class="row-icon">
-            <i class="fa fa-list-alt green" aria-hidden="true"></i>
-          </div>
-          <div class="row-right">
-            <div class="content">
-              <div class="text">实际单位数量</div>
-              <input class="input deliveredQty"></input>
-            </div>
-          </div>
-        </div>
-        <div class="body-row">
-          <div class="row-icon">
-            <i class="fa fa-paper-plane green" aria-hidden="true"></i>
-          </div>
-          <div class="row-right">
-            <div class="content">
-              <div class="text">发件人</div>
-              <input class="input recipientName"></input>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="body-photo-container">
         <div class="photo-container-header">
           <div class="header-icon">
@@ -147,18 +113,6 @@
         <div class="photo-container-body">
         </div>
         <div class="photo-container-footer">
-          <div class="footer-item">
-            <div class="item-photo"></div>
-            <div class="item-delete"></div>
-          </div>
-          <div class="footer-item">
-            <div class="item-photo"></div>
-            <div class="item-delete"></div>
-          </div>
-          <div class="footer-item">
-            <div class="item-photo"></div>
-            <div class="item-delete"></div>
-          </div>
         </div>
       </div>
     </div>
