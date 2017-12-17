@@ -1,13 +1,13 @@
 $(function () {
   var photoContainer = $('.photo-container-footer');
-  var wecahtServerIds = [];
+  var wechatServerIds = [];
   var realPicCount = $('.real-pic-count');
   var maxPicCount = parseInt($('.max-pic-count').text());
   realPicCount.text(0);
 
   function appendImage(localId) {
     uploadImage(localId, function (res) {
-      wecahtServerIds.push(res.serverId)
+      wechatServerIds.push(res.serverId)
       realPicCount.text(wechatServerIds.length);
 
       var imageItem = $(
@@ -17,9 +17,9 @@ $(function () {
         '</div>');
       imageItem.find('.item-delete').click(function () {
         var id = this.id;
-        var index = wecahtServerIds.indexOf(id);
+        var index = wechatServerIds.indexOf(id);
         if (index >= 0) {
-          wecahtServerIds.splice(index, 1);
+          wechatServerIds.splice(index, 1);
           $(this).parent().remove();
           realPicCount.text(wechatServerIds.length);
         }
@@ -31,7 +31,7 @@ $(function () {
   }
 
   $('.album').click(function () {
-    if (wecahtServerIds.length >= maxPicCount) {
+    if (wechatServerIds.length >= maxPicCount) {
       return;
     }
     chooseImage(function (localIds) {
@@ -42,7 +42,7 @@ $(function () {
   });
 
   $('.camera').click(function () {
-    if (wecahtServerIds.length >= maxPicCount) {
+    if (wechatServerIds.length >= maxPicCount) {
       return;
     }
     takeCamera(function (localIds) {
@@ -79,7 +79,7 @@ $(function () {
     }
     getLocation(function (data) {
       uploadEvent({
-        wechat_ids: wecahtServerIds,
+        wechat_ids: wechatServerIds,
         id: id,
         operation: 'pickup',
         pickedUpQty: pickedUpQty,
