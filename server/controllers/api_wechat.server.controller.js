@@ -3,7 +3,7 @@
  */
 var path = require('path');
 var shippmentLogic = require('../logics/shippment');
-
+var wechatLogic = require('../logics/wechat');
 var cookieLib = require('../../libraries/cookie');
 var agent = require('superagent').agent();
 
@@ -57,6 +57,12 @@ exports.createExpense = function (req, res, next) {
   req.body.driver = cookie.userName;
   shippmentLogic.createExpense(cookie.accessToken, req.body, function (err, result) {
     return res.send(result);
+  });
+}
+
+exports.getUserJsApiTicket = function (req, res, next) {
+  wechatLogic.getUserJsApiTicket(req.body.url, function (err, data) {
+    return res.send(data);
   });
 }
 

@@ -55,7 +55,7 @@ exports.getUserJsApiTicketFromWechat = function () {
     })
 }
 
-exports.getUserJsApiTicket = function (callback, url) {
+exports.getUserJsApiTicket = function (url, callback) {
   var noncestr = new Date().getTime().toString();
   var timestamp = new Date().getTime();
   var str = [
