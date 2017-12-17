@@ -1,10 +1,14 @@
 $(function () {
-  $('.album').click(function (localIds) {
-    alert(JSON.stringify(localIds))
+  $('.album').click(function () {
+    chooseImage(function (localIds) {
+      alert(localIds);
+    })
   });
 
-  $('.camera').click(function (localIds) {
-    alert(JSON.stringify(localIds))
+  $('.camera').click(function () {
+    takeCamera(function (localIds) {
+      alert(localIds);
+    })
   });
 
   $('.start-loading').click(function () {
