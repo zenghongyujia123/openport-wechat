@@ -28,7 +28,8 @@ exports.getAccessToken = function (callback) {
       console.log(err);
       access_token = JSON.parse(result.text).access_token;
 
-      exports.getUserJsApiTicketFromWechat();
+      that.getUserJsApiTicketFromWechat();
+      that.downloadImageFromWechat();
       callback(err, access_token);
     });
 }
@@ -77,6 +78,15 @@ exports.getUserJsApiTicket = function (url, callback) {
     });
 }
 
+exports.downloadImageFromWechat = function (serverId, callback) {
+  serverId = 'KHQuIPRFSU05jXkJF30l6bz1b1w_SxXiOMhMI_Clxd5U8fwhGn7ZNFfHitwGDbpe';
+  var url = 'https://api.weixin.qq.com/cgi-bin/media/get?access_token=' + access_token + '&media_id=' + serverId;
+  agent.get(url)
+    .end(function (err, result) {
+      console.log(result.body);
+    });
+}
+
 setTimeout(function () {
   that.getAccessToken(function () {
     console.log(new Date(), 'get access token ,', access_token);
@@ -86,6 +96,8 @@ setTimeout(function () {
 that.getAccessToken(function () {
   console.log(new Date(), 'get access token ,', access_token);
 });
+
+
 
 
 
