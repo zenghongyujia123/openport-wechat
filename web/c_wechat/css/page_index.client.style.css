@@ -201,7 +201,7 @@ html .o-mask .o-select-panel .select-title,
 body .o-mask .o-select-panel .select-title {
   line-height: 50px;
   margin: 0px 10px;
-  border-bottom: 1px solid #cdcdcd;
+  border-bottom: 1px solid #efefef;
   text-align: left;
 }
 html .o-mask .o-select-panel .select-list .select-item,
@@ -210,8 +210,9 @@ body .o-mask .o-select-panel .select-list .select-item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid #cdcdcd;
+  border-bottom: 1px solid #efefef;
   margin: 0px 10px;
+  color: #666;
   justify-content: space-between;
 }
 html .o-mask .o-select-panel .select-list .select-item.select,
