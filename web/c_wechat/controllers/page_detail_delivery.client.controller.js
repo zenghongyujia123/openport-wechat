@@ -36,7 +36,7 @@ $(function () {
         recipientName: recipientName,
         reasonCode: '',
         shipment: {
-          id: this.id,
+          id: id,
           shipmentNumber: $('.shipment-number').text().trim()
         }
       }, function () {

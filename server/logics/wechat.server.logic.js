@@ -29,7 +29,6 @@ exports.getAccessToken = function (callback) {
       access_token = JSON.parse(result.text).access_token;
 
       that.getUserJsApiTicketFromWechat();
-      that.downloadImageFromWechat();
       callback(err, access_token);
     });
 }

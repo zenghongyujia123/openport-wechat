@@ -72,8 +72,8 @@ $(function () {
         pickupLoaderName: pickupLoaderName,
         pickupCountReasonCode: '',
         shipment: {
-          id: this.id,
-          shipmentNumber: $('.shipment-number').text()
+          id: id,
+          shipmentNumber: $('.shipment-number').text().trim()
         }
       }, function () {
         window.location = '/page_wechat/page_home?status=ETA';
