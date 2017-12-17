@@ -68,7 +68,7 @@ exports.getUserJsApiTicket = function (url, callback) {
   console.log(str);
   var signature = cryptoLib.toSHA1(str);
   if (callback)
-    callback(err, {
+    callback(null, {
       ticket: ticket,
       noncestr: noncestr,
       timestamp: timestamp,
