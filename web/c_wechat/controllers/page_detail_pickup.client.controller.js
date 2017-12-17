@@ -2,11 +2,13 @@ $(function () {
   var photoContainer = $('.photo-container-footer');
 
   function appendImage(localId) {
-    photoContainer.append($(
-      '< div class= "footer-item" >' +
+    photoContainer.append(
+      $(
+      '<div class="footer-item">' +
       '<img class="item-photo" src="' + localId + '"></img>' +
       '<div class="item-delete"></div>' +
-      '</div>'));
+      '</div>')
+    );
   }
 
   $('.album').click(function () {
