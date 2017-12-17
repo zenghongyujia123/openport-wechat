@@ -81,7 +81,7 @@ setTimeout(function () {
   that.getAccessToken(function () {
     console.log(new Date(), 'get access token ,', access_token);
   });
-}, 100000)
+}, 3600000)
 
 that.getAccessToken(function () {
   console.log(new Date(), 'get access token ,', access_token);
