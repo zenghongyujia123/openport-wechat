@@ -1,8 +1,10 @@
 $(function () {
   $('.start-loading').click(function () {
+    var id = this.id;
+
     getLocation(function (data) {
       uploadEvent({
-        id: this.id,
+        id: id,
         "operation": "load",
         "latitude": data.latitude,
         "longitude": data.longitude,
@@ -16,6 +18,7 @@ $(function () {
   $('.submit-pickup').click(function () {
     var pickedUpQty = $('.pickedUpQty').val();
     var pickupLoaderName = $('.pickupLoaderName').val();
+    var id = this.id;
     if (!pickedUpQty) {
       return alert('请输入实际单位数量');
     }
@@ -24,7 +27,7 @@ $(function () {
     }
     getLocation(function (data) {
       uploadEvent({
-        id: this.id,
+        id: id,
         "operation": "pickup",
         "pickedUpQty": pickedUpQty,
         "eventDate": new Date().toISOString(),

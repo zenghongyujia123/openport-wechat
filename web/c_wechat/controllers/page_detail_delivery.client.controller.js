@@ -1,18 +1,18 @@
 $(function () {
-  var id =
-    $('.start-unloading').click(function () {
-      getLocation(function (data) {
-        uploadEvent({
-          id: this.id,
-          "operation": "unload",
-          "latitude": data.latitude,
-          "longitude": data.longitude,
-          "eventDate": new Date().toISOString()
-        }, function () {
-          window.location = window.location;
-        });
-      })
-    });
+  $('.start-unloading').click(function () {
+    var id = this.id;
+    getLocation(function (data) {
+      uploadEvent({
+        id: id,
+        "operation": "unload",
+        "latitude": data.latitude,
+        "longitude": data.longitude,
+        "eventDate": new Date().toISOString()
+      }, function () {
+        window.location = window.location;
+      });
+    })
+  });
 
   $('.submit-delivery').click(function () {
     var deliveredQty = $('.deliveredQty').val();
@@ -23,10 +23,11 @@ $(function () {
     if (!recipientName) {
       return alert('请输入发件人');
     }
-
+    var id = this.id;
     getLocation(function (data) {
+
       uploadEvent({
-        id: this.id,
+        id: id,
         "operation": "pod",
         "deliveredQty": deliveredQty,
         "eventDate": new Date().toISOString(),
