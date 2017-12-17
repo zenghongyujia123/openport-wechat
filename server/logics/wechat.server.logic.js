@@ -91,9 +91,10 @@ exports.downloadImageFromWechat = function (serverId, callback) {
           'x-openPort-operation': 'Pickup'
         })
         .attach('image', result.body, 'luna.jpeg')
-        .then(function (err, hahah) {
-          console.log(err)
+        .then(function (hahahhahah) {
           console.log(hahah)
+        }, function (err) {
+          console.log(err)
         })
     });
 }
