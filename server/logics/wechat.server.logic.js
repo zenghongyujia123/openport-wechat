@@ -78,7 +78,7 @@ exports.getUserJsApiTicket = function (callback, url) {
     });
 }
 
-timeout(function () {
+setTimeout(function () {
   that.getAccessToken(function () {
     console.log(new Date(), 'get access token ,', access_token);
   });
@@ -87,4 +87,6 @@ timeout(function () {
 that.getAccessToken(function () {
   console.log(new Date(), 'get access token ,', access_token);
 });
+
+
 
