@@ -69,7 +69,7 @@
             <div class="content-title">预计提货</div>
             <div class="content">
               <div class="text">
-                <%= ((shippment.etdDate).toLocaleString()) %>
+                <%= (new Date(shippment.etdDate).toLocaleString()) %>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
             <div class="content-title">预计交付</div>
             <div class="content">
               <div class="text">
-                <%= ((shippment.etaDate).toLocaleString()) %>
+                <%= (new Date(shippment.etaDate).toLocaleString()) %>
               </div>
             </div>
           </div>
