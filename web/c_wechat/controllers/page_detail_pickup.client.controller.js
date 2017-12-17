@@ -1,13 +1,27 @@
 $(function () {
+  var photoContainer = $('.photo-container-footer');
+
+  function appendImage(localId) {
+    photoContainer.append($(
+      '< div class= "footer-item" >' +
+      '<img class="item-photo" src="' + localId + '"></img>' +
+      '<div class="item-delete"></div>' +
+      '</div>'));
+  }
+
   $('.album').click(function () {
     chooseImage(function (localIds) {
-      alert(localIds);
+      localIds.forEach(function (localId) {
+        appendImage(localIds);
+      });
     })
   });
 
   $('.camera').click(function () {
     takeCamera(function (localIds) {
-      alert(localIds);
+      localIds.forEach(function (localId) {
+        appendImage(localIds);
+      });
     })
   });
 
