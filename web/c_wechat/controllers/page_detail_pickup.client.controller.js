@@ -19,7 +19,7 @@ $(function () {
   $('.album').click(function () {
     chooseImage(function (localIds) {
       localIds.forEach(function (localId) {
-        appendImage(localIds);
+        appendImage(localId);
       });
     })
   });
@@ -27,7 +27,7 @@ $(function () {
   $('.camera').click(function () {
     takeCamera(function (localIds) {
       localIds.forEach(function (localId) {
-        appendImage(localIds);
+        appendImage(localId);
       });
     })
   });
