@@ -17,7 +17,7 @@ $(function () {
         var index = wecahtServerIds.indexOf(id);
         if (index >= 0) {
           wecahtServerIds.splice(index, 1);
-          $(this).remove();
+          $(this).parent().remove();
         }
       });
 
