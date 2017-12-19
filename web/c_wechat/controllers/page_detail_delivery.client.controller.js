@@ -5,7 +5,6 @@ $(function () {
   var maxPicCount = parseInt($('.max-pic-count').text());
   realPicCount.text(0);
 
-  realPicCount.text(0);
   function appendImage(localId) {
     uploadImage(localId, function (res) {
       wechatServerIds.push(res.serverId)
@@ -30,6 +29,10 @@ $(function () {
       photoContainer.append(imageItem);
     })
   }
+
+  $('.fa-angle-left').click(function () {
+    window.location = '/page_wechat/page_home?status=ETA';
+  });
 
   $('.album').click(function () {
     if (wechatServerIds.length >= maxPicCount) {

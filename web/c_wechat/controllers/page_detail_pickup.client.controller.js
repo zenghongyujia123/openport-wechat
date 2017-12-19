@@ -40,7 +40,9 @@ $(function () {
       });
     })
   });
-
+  $('.fa-angle-left').click(function () { 
+    window.location = '/page_wechat/page_home?status=ETD';
+  });
   $('.camera').click(function () {
     if (wechatServerIds.length >= maxPicCount) {
       return;
