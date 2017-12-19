@@ -39,7 +39,7 @@ exports.getUserAccessToken = function (code, callback) {
       console.log(' code err-----');
       console.log(err);
       console.log('code  result-----');
-      console.log(result.text);
+      console.error(result.text);
       result = JSON.parse(result.text);
       // access_token = result.access_token;
       console.log('user_access_token : ', result.access_token);
@@ -51,6 +51,7 @@ exports.getUserJsApiTicketFromWechat = function () {
   agent.get('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + access_token + '&type=jsapi')
     .end(function (err, result) {
       ticket = JSON.parse(result.text).ticket;
+      console.error(result.text);
       console.log('getUserJsApiTicket', ticket);
     })
 }
