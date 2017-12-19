@@ -88,7 +88,7 @@
   text-align: center;
   line-height: 40px;
 }
-.o-page-home .o-page-body .o-body-add-btn {
+.o-page-home .o-body-add-btn {
   background-color: #3c8edb;
   color: white;
   text-align: center;
@@ -101,7 +101,7 @@
   line-height: 44px;
   bottom: 10px;
 }
-.o-page-home .o-page-body .o-body-add-btn .select {
+.o-page-home .o-body-add-btn .select {
   width: 100%;
   height: 100%;
   left: 0px;
