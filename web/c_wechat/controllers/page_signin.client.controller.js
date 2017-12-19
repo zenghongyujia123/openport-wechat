@@ -10,6 +10,8 @@ $(function () {
       return alert('请输入密码');
     }
 
+    $.showLoading("正在加载...");
+
     $.ajax({
       url: '/api_wechat/signin',
       method: 'post',

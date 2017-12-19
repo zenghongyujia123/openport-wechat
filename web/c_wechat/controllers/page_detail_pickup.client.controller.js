@@ -55,6 +55,7 @@ $(function () {
   $('.start-loading').click(function () {
     var id = this.id;
     getLocation(function (data) {
+      $.showLoading("正在加载...");
       uploadEvent({
         id: id,
         operation: 'load',
@@ -78,6 +79,7 @@ $(function () {
       return alert('请输入发件人');
     }
     getLocation(function (data) {
+      $.showLoading("正在加载...");
       uploadEvent({
         wechat_ids: wechatServerIds,
         id: id,
