@@ -101,6 +101,7 @@ $(function () {
   });
 
   function uploadEvent(data, callback) {
+    $.showLoading("正在加载...");
     $.ajax({
       url: '/api_wechat/uploadEvent',
       method: 'post',
