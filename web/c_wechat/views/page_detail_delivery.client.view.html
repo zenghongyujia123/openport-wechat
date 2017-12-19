@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_index.client.style.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_detail_delivery.client.style.css" />
+  <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+
+  <script src="../libs/jquery/dist/jquery.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
   <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script src="../libs/jquery/dist/jquery.js"></script>
   <script src="../c_wechat/controllers/page_wechat.client.controller.js"></script>
@@ -143,7 +148,9 @@
             </div>
             <div class="header-text">交付凭证图片编号 :
               <span class="real-pic-count"></span>/
-              <span class="max-pic-count"><%= shippment.maxPictures %></span>
+              <span class="max-pic-count">
+                <%= shippment.maxPictures %>
+              </span>
             </div>
           </div>
           <div class="photo-container-body">
