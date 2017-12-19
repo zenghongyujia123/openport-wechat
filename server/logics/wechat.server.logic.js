@@ -41,8 +41,8 @@ exports.getUserAccessToken = function (code, callback) {
       console.log('code  result-----');
       console.log(result.text);
       result = JSON.parse(result.text);
-      access_token = result.access_token;
-      console.log('user_access_token : ', access_token);
+      // access_token = result.access_token;
+      console.log('user_access_token : ', result.access_token);
       callback(err, result);
     });
 }
