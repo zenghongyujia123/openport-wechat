@@ -100,9 +100,16 @@
       </div>
     </div>
     <div class="o-page-footer">
-      <div class="o-page-footer-btn valid start-unloading" id="<%= shippment.id %>">返回</div>
+      <div class="o-page-footer-btn valid" id="<%= shippment.id %>">返回</div>
     </div>
   </div>
 </body>
+<script>
+  $(function () {
+    $('.o-page-footer-btn').click(function () {
+      window.location = '/page_wechat/page_home?status=DELIVERED';
+    });
+  })
+</script>
 
 </html>

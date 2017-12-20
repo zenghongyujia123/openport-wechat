@@ -35,10 +35,10 @@ exports.shippments = function (accessToken, status, callback) {
       async.eachSeries(result, function (idItem, eachCallback) {
         that.shippment(accessToken, idItem.id, function (err, shippment) {
           shipments.push(shippment);
+          console.log('count', count++);
           return eachCallback();
         })
       }, function (err) {
-        console.log('count', count++);
         return callback(null, shipments);
       });
     });
