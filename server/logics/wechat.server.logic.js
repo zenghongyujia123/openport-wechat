@@ -89,7 +89,7 @@ exports.downloadImageFromWechat = function (serverId, accessToken, operation, id
       agent.post('https://cn-api.openport.com/delivery/shipments/' + id + '/upload/')
         .set({
           'x-openport-token': accessToken,
-          'x-openPort-operation': operation
+          'x-openPort-operation': operation === 'pod' ? 'delivery' : 'pickup'
         })
         .attach('file', result.body, new Date().getTime() + '.jpg')
         .on('error', function (err) {
