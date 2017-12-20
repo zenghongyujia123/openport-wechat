@@ -71,15 +71,55 @@ $(function () {
     })
   });
 
+  function clickReason(str) {
+    $('.reasonCode').val(this.text);
+  }
+
+  $('.reasonCode').click(function () {
+    $.actions({
+      actions: [{
+        text: "送货单证问题",
+        onClick: clickReason
+      },
+      {
+        text: "送货数量问题",
+        onClick: clickReason
+      },
+      {
+        text: "外包装破损",
+        onClick: clickReason
+      },
+      {
+        text: "订单错误",
+        onClick: clickReason
+      },
+      {
+        text: "客户拒收",
+        onClick: clickReason
+      },
+      {
+        text: "其它",
+        onClick: clickReason
+      },
+      ]
+    });
+
+  });
+
   $('.submit-delivery').click(function () {
     var deliveredQty = $('.deliveredQty').val();
     var recipientName = $('.recipientName').val();
+    var reasonCode = $('.reasonCode').val();
     if (!deliveredQty) {
       return alert('请输入实际单位数量');
     }
     if (!recipientName) {
       return alert('请输入发件人');
     }
+    if (parseInt(deliveredQty) != parseInt(cartonCount) && !reasonCode) {
+      return alert('请选择不匹配的原因');
+    }
+
     var id = this.id;
     getLocation(function (data) {
 
