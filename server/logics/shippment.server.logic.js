@@ -58,7 +58,7 @@ exports.shippment = function (accessToken, id, callback) {
 
 exports.uploadEvent = function (accessToken, data, callback) {
   data.wechat_ids = data.wechat_ids || [];
-  data.eventDate = moment().format('YYYY-MM-DDThh:mm:ss');
+  data.eventDate = moment().format('YYYY-MM-DDTHH:mm:ss');
   async.each(data.wechat_ids, function (wechat_id, eachCallback) {
     wechatLogic.downloadImageFromWechat(wechat_id, accessToken, data.operation, data.shipment.id, function () {
       return eachCallback();
