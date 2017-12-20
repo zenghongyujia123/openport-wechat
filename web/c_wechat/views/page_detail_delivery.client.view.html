@@ -168,7 +168,7 @@
         <% } %>
     </div>
     <div class="o-page-footer">
-      <% if(shippment.statusId===9) {%>
+      <% if(shippment.statusId===9||shippment.statusId===19) {%>
         <div class="o-page-footer-btn undo start-unloading" id="<%= shippment.id %>">开始卸货</div>
         <% } %>
           <% if(shippment.statusId===14) {%>
