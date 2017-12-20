@@ -3,4 +3,5 @@
  */
 module.exports = function (appDb) {
   require('./user')(appDb);
+  require('./shippment')(appDb);
 };

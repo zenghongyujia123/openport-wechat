@@ -113,7 +113,7 @@
             <div class="row-right">
               <div class="content">
                 <div class="text">实际提货时间</div>
-                <input class="input" readonly="readonly" value="<%= (new Date().toLocaleString()) %>"></input>
+                <input class="input" readonly="readonly" value="<%= (new Date(shippment.pickupDate).toLocaleString())  %>"></input>
               </div>
             </div>
           </div>
