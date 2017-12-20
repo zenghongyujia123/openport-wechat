@@ -67,7 +67,7 @@
             <div class="content-title">实际提货时间</div>
             <div class="content">
               <div class="text">
-                <%= (new Date(shippment.pickupDate).toLocaleString())  %>
+                <%= (shippment.pickupDate.replace('T',' '))  %>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
             <div class="content-title">实际交货时间</div>
             <div class="content">
               <div class="text">
-                <%= (new Date(shippment.deliveryDate).toLocaleString())  %>
+                <%= (shippment.deliveryDate.replace('T',' '))  %>
               </div>
             </div>
           </div>

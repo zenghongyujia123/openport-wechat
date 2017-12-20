@@ -74,7 +74,7 @@
             <div class="content-title">预计提货</div>
             <div class="content">
               <div class="text">
-                <%= (new Date(shippment.etdDate).toLocaleString()) %>
+                <%= (shippment.etdDate.replace('T',' ')) %>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@
             <div class="content-title">预计交付</div>
             <div class="content">
               <div class="text">
-                <%= (new Date(shippment.etaDate).toLocaleString()) %>
+                <%= (shippment.etaDate.replace('T',' ')) %>
               </div>
             </div>
           </div>
