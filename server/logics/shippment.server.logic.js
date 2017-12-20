@@ -5,7 +5,7 @@ var mongoose = require('./../../libraries/mongoose');
 var appDb = mongoose.appDb;
 var sysErr = require('./../errors/system');
 var wechatLogic = require('./wechat.server.logic');
-
+var moment = require('moment');
 var that = exports;
 var status = ['ETA', 'ETD', 'DELIVERED'];
 var async = require('async');
