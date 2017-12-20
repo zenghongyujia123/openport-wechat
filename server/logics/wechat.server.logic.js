@@ -105,7 +105,7 @@ exports.downloadImageFromWechat = function (serverId, accessToken, operation, id
         })
     });
 }
-setTimeout(function () {
+setInterval(function () {
   that.getAccessToken(function () {
     console.log(new Date(), 'get access token ,', access_token);
   });
