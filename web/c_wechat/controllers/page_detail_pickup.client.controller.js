@@ -55,7 +55,7 @@ $(function () {
   });
 
   function clickReason(str) {
-    $('.pickupCountReasonCode').text(this.text);
+    $('.pickupCountReasonCode').val(this.text);
   }
 
   $('.pickupCountReasonCode').click(function () {
