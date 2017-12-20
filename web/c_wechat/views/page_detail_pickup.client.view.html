@@ -98,7 +98,7 @@
           </div>
           <div class="row-right">
             <div class="content">
-              <div class="text">单位数量:
+              <div class="text cartonCount">单位数量:
                 <%= shippment.cartonCount %>
               </div>
             </div>
@@ -141,8 +141,19 @@
           </div>
           <div class="body-row">
             <div class="row-icon">
+            </div>
+            <div class="row-right">
+              <div class="content ">
+                <div class="text">请选择不匹配的原因</div>
+                <input readonly="readonly" placeholder="请选择不匹配的原因" class="input pickupCountReasonCode"></input>
+              </div>
+            </div>
+          </div>
+          <div class="body-row">
+            <div class="row-icon">
               <i class="fa fa-paper-plane green" aria-hidden="true"></i>
             </div>
+
             <div class="row-right">
               <div class="content">
                 <div class="text">发件人</div>

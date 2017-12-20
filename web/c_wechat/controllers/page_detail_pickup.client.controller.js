@@ -40,7 +40,7 @@ $(function () {
       });
     })
   });
-  $('.fa-angle-left').click(function () { 
+  $('.fa-angle-left').click(function () {
     window.location = '/page_wechat/page_home?status=ETD';
   });
   $('.camera').click(function () {
@@ -52,6 +52,41 @@ $(function () {
         appendImage(localId);
       });
     })
+  });
+
+  function clickReason(str) {
+    $('.pickupCountReasonCode').text(this.text);
+  }
+
+  $('.pickupCountReasonCode').click(function () {
+    $.actions({
+      actions: [{
+        text: "送货单证问题",
+        onClick: clickReason
+      },
+      {
+        text: "送货数量问题",
+        onClick: clickReason
+      },
+      {
+        text: "外包装破损",
+        onClick: clickReason
+      },
+      {
+        text: "订单错误",
+        onClick: clickReason
+      },
+      {
+        text: "客户拒收",
+        onClick: clickReason
+      },
+      {
+        text: "其它",
+        onClick: clickReason
+      },
+      ]
+    });
+
   });
 
   $('.start-loading').click(function () {
@@ -72,6 +107,8 @@ $(function () {
   $('.submit-pickup').click(function () {
     var pickedUpQty = $('.pickedUpQty').val();
     var pickupLoaderName = $('.pickupLoaderName').val();
+    var pickupCountReasonCode = $('.pickupCountReasonCode').val();
+    var cartonCount = $('.cartonCount').text();
     var id = this.id;
     if (!pickedUpQty) {
       return alert('请输入实际单位数量');
@@ -79,6 +116,10 @@ $(function () {
     if (!pickupLoaderName) {
       return alert('请输入发件人');
     }
+    if (parseInt(pickedUpQty) != parseInt(cartonCount) && !pickupCountReasonCode) {
+      return alert('请选择不匹配的原因');
+    }
+
     getLocation(function (data) {
       uploadEvent({
         wechat_ids: wechatServerIds,
@@ -89,7 +130,7 @@ $(function () {
         latitude: data.latitude,
         longitude: data.longitude,
         pickupLoaderName: pickupLoaderName,
-        pickupCountReasonCode: '',
+        pickupCountReasonCode: pickupCountReasonCode,
         shipment: {
           id: id,
           shipmentNumber: $('.shipment-number').text().trim()
