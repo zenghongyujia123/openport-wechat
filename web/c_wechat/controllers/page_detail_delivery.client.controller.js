@@ -110,6 +110,7 @@ $(function () {
     var deliveredQty = $('.deliveredQty').val();
     var recipientName = $('.recipientName').val();
     var reasonCode = $('.reasonCode').val();
+    var cartonCount = $('.cartonCount').text();
     if (!deliveredQty) {
       return alert('请输入实际单位数量');
     }
