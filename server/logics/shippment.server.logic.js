@@ -32,7 +32,7 @@ exports.shippments = function (accessToken, status, callback) {
       console.log(result.length);
       var shipments = [];
       var count = 0;
-      async.each(result, function (idItem, eachCallback) {
+      async.eachSeries(result, function (idItem, eachCallback) {
         that.shippment(accessToken, idItem.id, function (err, shippment) {
           shipments.push(shippment);
           return eachCallback();
