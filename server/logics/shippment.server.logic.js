@@ -47,6 +47,7 @@ exports.shippments = function (accessToken, status, callback) {
 exports.shippment = function (accessToken, id, callback) {
   agent.get('https://cn-api.openport.com/delivery/shipments/' + id)
     .set({
+      "Content-Type": "application/vnd.openport.delivery.v3+json",
       "x-openport-token": accessToken,
     })
     .end(function (err, result) {
