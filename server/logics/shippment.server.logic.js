@@ -29,14 +29,16 @@ exports.shippments = function (accessToken, status, callback) {
     })
     .end(function (err, result) {
       result = JSON.parse(result.text);
-
+      console.log(result.length);
       var shipments = [];
+      var count = 0;
       async.each(result, function (idItem, eachCallback) {
         that.shippment(accessToken, idItem.id, function (err, shippment) {
           shipments.push(shippment);
           return eachCallback();
         })
       }, function (err) {
+        console.log('count', count++);
         return callback(null, shipments);
       });
     });
