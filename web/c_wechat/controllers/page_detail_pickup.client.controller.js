@@ -5,6 +5,17 @@ $(function () {
   var maxPicCount = parseInt($('.max-pic-count').text());
   realPicCount.text(0);
 
+
+  var pickupCountReasonCodeObj = $('.pickupCountReasonCode')
+  var pickedUpQtyObj = $('.pickedUpQty');
+  var pickupLoaderNameObj = $('.pickupLoaderName');
+  var cartonCountObj = $('.cartonCount');
+  var submitObj = $('.submit-pickup');
+  var loadingObj = $('.start-loading');
+
+  var cartonCount = parseInt(cartonCountObj.text());
+
+
   function appendImage(localId) {
     uploadImage(localId, function (res) {
       wechatServerIds.push(res.serverId)
@@ -55,10 +66,10 @@ $(function () {
   });
 
   function clickReason(str) {
-    $('.pickupCountReasonCode').val(this.text);
+    pickupCountReasonCodeObj.val(this.text);
   }
 
-  $('.pickupCountReasonCode').click(function () {
+  pickupCountReasonCodeObj.click(function () {
     $.actions({
       actions: [{
         text: "送货单证问题",
@@ -89,7 +100,7 @@ $(function () {
 
   });
 
-  $('.start-loading').click(function () {
+  loadingObj.click(function () {
     var id = this.id;
     getLocation(function (data) {
       uploadEvent({
@@ -104,11 +115,11 @@ $(function () {
     })
   });
 
-  $('.submit-pickup').click(function () {
-    var pickedUpQty = $('.pickedUpQty').val();
-    var pickupLoaderName = $('.pickupLoaderName').val();
-    var pickupCountReasonCode = $('.pickupCountReasonCode').val();
-    var cartonCount = $('.cartonCount').text();
+  submitObj.click(function () {
+    var pickedUpQty = parseInt(pickedUpQtyObj.val());
+    var pickupLoaderName = pickupLoaderNameObj.val();
+    var pickupCountReasonCode = pickupCountReasonCodeObj.val();
+
     var id = this.id;
     if (!pickedUpQty) {
       return alert('请输入实际单位数量');
@@ -116,7 +127,7 @@ $(function () {
     if (!pickupLoaderName) {
       return alert('请输入发件人');
     }
-    if (parseInt(pickedUpQty) != parseInt(cartonCount) && !pickupCountReasonCode) {
+    if (pickedUpQty != cartonCount && !pickupCountReasonCode) {
       return alert('请选择不匹配的原因');
     }
 
