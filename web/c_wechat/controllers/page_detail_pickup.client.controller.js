@@ -55,7 +55,7 @@ $(function () {
   });
 
   function clickReason(str) {
-    $('.pickupCountReasonCode').text(this.text);
+    $('.pickupCountReasonCode').val(this.text);
   }
 
   $('.pickupCountReasonCode').click(function () {
@@ -107,7 +107,7 @@ $(function () {
   $('.submit-pickup').click(function () {
     var pickedUpQty = $('.pickedUpQty').val();
     var pickupLoaderName = $('.pickupLoaderName').val();
-    var pickupCountReasonCode = $('.pickupCountReasonCode').text();
+    var pickupCountReasonCode = $('.pickupCountReasonCode').val();
     var cartonCount = $('.cartonCount').text();
     var id = this.id;
     if (!pickedUpQty) {
