@@ -69,7 +69,7 @@ exports.getUserJsApiTicket = function (req, res, next) {
 exports.downloadPhoto = function (req, res, next) {
   var cookie = cookieLib.getCookie(req);
   shippmentLogic.downloadPhoto(cookie.accessToken, { id: req.query.id, fileId: req.query.fileId }, function (err, result) {
-    return res.send(result);
+    return res.sendFile(result);
   });
 }
 
