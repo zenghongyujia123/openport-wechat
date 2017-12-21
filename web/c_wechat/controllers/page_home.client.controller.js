@@ -1,15 +1,29 @@
 $(function () {
+  function clickReason() {
+    window.location = this.path;
+  }
   $('.o-body-add-btn').click(function () {
-    showMask();
+    $.actions({
+      actions: [{
+        text: "日志列表",
+        path: '/page_wechat/page_expense_list',
+        onClick: clickReason
+      },
+      {
+        text: "新建日志",
+        path: '/page_wechat/page_expense_add',
+        onClick: clickReason
+      },
+      {
+        text: "个人主页",
+        path: '/page_wechat/page_profile',
+        onClick: clickReason
+      }
+      ]
+    });
+
+
   });
 
-  $('.o-mask ').click(function () {
-    hideMask();
-  });
-  function showMask() {
-    $('.o-mask').show();
-  }
-  function hideMask() {
-    $('.o-mask').hide();
-  }
+
 });
