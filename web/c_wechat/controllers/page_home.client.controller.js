@@ -2,7 +2,7 @@ $(function () {
   function clickReason() {
     var path = this.path;
     setTimeout(function () {
-      window.location = this.path;
+      window.location = path;
     }, 500);
   }
   $('.o-body-add-btn').click(function () {
