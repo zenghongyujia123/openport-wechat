@@ -8,6 +8,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.o-page-detail .o-page-body .body-row-container .body-row:last-child .row-right {
+  border: 0px;
+}
 .o-page-detail .o-page-body .body-row-container .body-row .row-icon {
   margin: 10px;
   text-align: center;
