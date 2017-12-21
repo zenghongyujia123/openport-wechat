@@ -104,9 +104,6 @@
             <i class="fa fa-camera" aria-hidden="true"></i>
           </div>
           <div class="header-text">提货凭证图片 :
-            <span class="real-pic-count"></span>/
-            <span class="max-pic-count">
-            </span>
           </div>
         </div>
         <div class="photo-container-footer">
@@ -125,16 +122,13 @@
             <i class="fa fa-camera" aria-hidden="true"></i>
           </div>
           <div class="header-text">交付凭证图片 :
-            <span class="real-pic-count"></span>/
-            <span class="max-pic-count">
-            </span>
           </div>
         </div>
         <div class="photo-container-footer">
           <% if(shippment.deliveryPics) {%>
             <% for(var i=0; i<shippment.deliveryPics.length; i++) {%>
               <div class="footer-item">
-                <img class="item-photo" src="https://cn-api.openport.com/delivery/shipments/<%= shippment.id %>/pic/<%= shippment.deliveryPics[i].fileId %>"></img>
+                <img class="item-photo" src="/api_wechat/downloadPhoto?id=<%= shippment.id %>&fileId=<%= shippment.deliveryPics[i].fileId %>"></img>
               </div>
               <% } %>
                 <% } %>

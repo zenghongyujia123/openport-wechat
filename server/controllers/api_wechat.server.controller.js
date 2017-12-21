@@ -65,12 +65,19 @@ exports.getUserJsApiTicket = function (req, res, next) {
     return res.send(data);
   });
 }
+var request = require("request");
 
 exports.downloadPhoto = function (req, res, next) {
   var cookie = cookieLib.getCookie(req);
-  shippmentLogic.downloadPhoto(cookie.accessToken, { id: req.query.id, fileId: req.query.fileId }, function (err, result) {
-    return res.sendFile(result);
-  });
+  var options = {
+    method: 'GET',
+    url: 'https://cn-api.openport.com/delivery/shipments/' + req.query.id + '/pic/' + req.query.fileId,
+    headers:
+      {
+        'x-openport-token': cookie.accessToken
+      }
+  };
+  req.pipe(request(options)).pipe(res);
 }
 
 

@@ -13,9 +13,10 @@ var agent = require('superagent').agent();
 var that = exports;
 
 exports.shippments = function (accessToken, status, callback) {
+  var now = new Date();
   agent.get('https://cn-api.openport.com/delivery/shipments')
     .set({
-      'x-latest-date': '2017-12-16T00:13:01',
+      'x-latest-date': new Date(now.setDate(now.getDate() - 3)).toISOString(),
       "x-openport-token": accessToken,
       "Content-Type": 'application/vnd.openport.delivery.v3+json'
     })
@@ -132,11 +133,14 @@ exports.rewardsTop10 = function (accessToken, callback) {
 exports.downloadPhoto = function (accessToken, info, callback) {
   agent.get('https://cn-api.openport.com/delivery/shipments/' + info.id + '/pic/' + info.fileId)
     .set({
-      'x-openport-token': accessToken
+      'x-openport-token': accessToken,
+      'Content-Type': 'application/vnd.openport.delivery.v2+json'
     })
     .end(function (err, result) {
-      return callback(null, result.body);
+      return callback(null, result);
     });
 }
 
+
+// exports.downloadPhoto()
 
