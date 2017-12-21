@@ -3,6 +3,7 @@
  */
 var mongoose = require('./../../libraries/mongoose');
 var appDb = mongoose.appDb;
+Shippmeng = appDb.model('Shippmeng');
 var sysErr = require('./../errors/system');
 var wechatLogic = require('./wechat.server.logic');
 var moment = require('moment');
@@ -34,11 +35,25 @@ exports.shippments = function (accessToken, status, callback) {
       var shipments = [];
       var count = 0;
       async.eachSeries(result, function (idItem, eachCallback) {
-        that.shippment(accessToken, idItem.id, function (err, shippment) {
-          shipments.push(shippment);
-          console.log('count', count++);
-          return eachCallback();
-        })
+
+        that.getDeliveriedShippment(idItem.id, function (err, shippment) {
+          if (shippment) {
+            shipments.push(shippment);
+            return eachCallback();
+          }
+          that.shippment(accessToken, idItem.id, function (err, shippment) {
+            shipments.push(shippment);
+            console.log('count', count++);
+            if (shippment.shipmentStatus === 'DELIVERED') {
+              that.saveDeliveriedShippemnt(shippment, function () {
+                return eachCallback();
+              })
+            }
+            else {
+              return eachCallback();
+            }
+          });
+        });
       }, function (err) {
         return callback(null, shipments);
       });
@@ -139,6 +154,35 @@ exports.downloadPhoto = function (accessToken, info, callback) {
     .end(function (err, result) {
       return callback(null, result);
     });
+}
+
+exports.saveDeliveriedShippemnt = function (shipmentInfo, callback) {
+  Shippmeng.findOne({ shippment_id: shipmentInfo.id }, function (err, shippment) {
+    if (err) {
+      return callback('query shippment err');
+    }
+
+    if (shippment) {
+      return callback();
+    }
+
+    shippment = new Shippmeng({
+      shippment_id: shipmentInfo.id,
+      content: shipmentInfo
+    });
+    shippment.save(function (err, saved) {
+      return callback();
+    });
+  });
+}
+
+exports.getDeliveriedShippment = function (shippment_id, callback) {
+  Shippmeng.findOne({ shippment_id: shippment_id }, function (err, shipment) {
+    if (shipment) {
+      shipment = shipment.content;
+    }
+    return callback(err, shipment)
+  });
 }
 
 

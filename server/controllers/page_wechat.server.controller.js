@@ -33,6 +33,7 @@ exports.page_home = function (req, res, next) {
 
   // })
   var cookie = cookieLib.getCookie(req);
+  var username = cookie.userName;
   shippmentLogic.shippments(cookie.accessToken, 'ETA', function (err, shippments) {
     var filepath = path.join(__dirname, '../../web/c_wechat/views/page_home.client.view.html');
     console.log(shippments.length)
