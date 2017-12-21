@@ -98,6 +98,44 @@
           </div>
         </div>
       </div>
+      <div class="body-photo-container">
+        <div class="photo-container-header">
+          <div class="header-icon">
+            <i class="fa fa-camera" aria-hidden="true"></i>
+          </div>
+          <div class="header-text">提货凭证图片 :
+            <span class="real-pic-count"></span>/
+            <span class="max-pic-count">
+            </span>
+          </div>
+        </div>
+        <div class="photo-container-footer">
+          <% for(var i=0; i<shippment.pickupPics.length; i++) {%>
+            <div class="footer-item">
+              <img class="item-photo" src="https://cn-api.openport.com/delivery/shipments/<%= shippment.id %>/pic/<%= shippment.pickupPics[i].fileId %>"></img>
+            </div>
+            <% } %>
+        </div>
+      </div>
+      <div class="body-photo-container">
+        <div class="photo-container-header">
+          <div class="header-icon">
+            <i class="fa fa-camera" aria-hidden="true"></i>
+          </div>
+          <div class="header-text">交付凭证图片 :
+            <span class="real-pic-count"></span>/
+            <span class="max-pic-count">
+            </span>
+          </div>
+        </div>
+        <div class="photo-container-footer">
+          <% for(var i=0; i<shippment.deliveryPics.length; i++) {%>
+            <div class="footer-item">
+              <img class="item-photo" src="https://cn-api.openport.com/delivery/shipments/<%= shippment.id %>/pic/<%= shippment.deliveryPics[i].fileId %>"></img>
+            </div>
+            <% } %>
+        </div>
+      </div>
     </div>
     <div class="o-page-footer">
       <div class="o-page-footer-btn valid" id="<%= shippment.id %>">返回</div>
