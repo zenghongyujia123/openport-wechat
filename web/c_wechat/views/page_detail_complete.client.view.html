@@ -113,7 +113,7 @@
           <% if(shippment.pickupPics) {%>
             <% for(var i=0; i<shippment.pickupPics.length; i++) {%>
               <div class="footer-item">
-                <img class="item-photo" src="https://cn-api.openport.com/delivery/shipments/<%= shippment.id %>/pic/<%= shippment.pickupPics[i].fileId %>"></img>
+                <img class="item-photo" src="/downloadPhoto?id=<%= shippment.id %>&fileId=<%= shippment.pickupPics[i].fileId %>"></img>
               </div>
               <% } %>
                 <% } %>
