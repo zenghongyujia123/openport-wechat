@@ -1,6 +1,9 @@
 $(function () {
   function clickReason() {
-    window.location = this.path;
+    var path = this.path;
+    setTimeout(function () {
+      window.location = this.path;
+    }, 500);
   }
   $('.o-body-add-btn').click(function () {
     $.actions({
@@ -21,8 +24,6 @@ $(function () {
       }
       ]
     });
-
-
   });
 
 
