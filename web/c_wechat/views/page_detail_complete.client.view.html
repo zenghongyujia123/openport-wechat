@@ -110,11 +110,13 @@
           </div>
         </div>
         <div class="photo-container-footer">
-          <% for(var i=0; i<shippment.pickupPics.length; i++) {%>
-            <div class="footer-item">
-              <img class="item-photo" src="https://cn-api.openport.com/delivery/shipments/<%= shippment.id %>/pic/<%= shippment.pickupPics[i].fileId %>"></img>
-            </div>
-            <% } %>
+          <% if(shippment.pickupPics) {%>
+            <% for(var i=0; i<shippment.pickupPics.length; i++) {%>
+              <div class="footer-item">
+                <img class="item-photo" src="https://cn-api.openport.com/delivery/shipments/<%= shippment.id %>/pic/<%= shippment.pickupPics[i].fileId %>"></img>
+              </div>
+              <% } %>
+                <% } %>
         </div>
       </div>
       <div class="body-photo-container">
@@ -129,11 +131,13 @@
           </div>
         </div>
         <div class="photo-container-footer">
-          <% for(var i=0; i<shippment.deliveryPics.length; i++) {%>
-            <div class="footer-item">
-              <img class="item-photo" src="https://cn-api.openport.com/delivery/shipments/<%= shippment.id %>/pic/<%= shippment.deliveryPics[i].fileId %>"></img>
-            </div>
-            <% } %>
+          <% if(shippment.deliveryPics) {%>
+            <% for(var i=0; i<shippment.deliveryPics.length; i++) {%>
+              <div class="footer-item">
+                <img class="item-photo" src="https://cn-api.openport.com/delivery/shipments/<%= shippment.id %>/pic/<%= shippment.deliveryPics[i].fileId %>"></img>
+              </div>
+              <% } %>
+                <% } %>
         </div>
       </div>
     </div>
