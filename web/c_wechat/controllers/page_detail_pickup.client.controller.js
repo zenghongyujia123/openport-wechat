@@ -15,7 +15,6 @@ $(function () {
 
   var cartonCount = parseInt(cartonCountObj.text());
 
-
   function appendImage(localId) {
     uploadImage(localId, function (res) {
       wechatServerIds.push(res.serverId)
