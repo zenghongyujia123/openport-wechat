@@ -12,6 +12,7 @@ $(function () {
   var cartonCountObj = $('.cartonCount');
   var submitObj = $('.submit-pickup');
   var loadingObj = $('.start-loading');
+  var reasonContainer = $('.reason-container');
 
   var cartonCount = parseInt(cartonCountObj.text());
 
@@ -127,6 +128,7 @@ $(function () {
       return alert('请输入发件人');
     }
     if (pickedUpQty != cartonCount && !pickupCountReasonCode) {
+      reasonContainer.show();
       return alert('请选择不匹配的原因');
     }
 

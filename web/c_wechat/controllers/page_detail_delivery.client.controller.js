@@ -3,6 +3,7 @@ $(function () {
   var wechatServerIds = [];
   var realPicCount = $('.real-pic-count');
   var maxPicCount = parseInt($('.max-pic-count').text());
+  var reasonContainer = $('.reason-container ');
   realPicCount.text(0);
 
   function appendImage(localId) {
@@ -118,6 +119,7 @@ $(function () {
       return alert('请输入发件人');
     }
     if (parseInt(deliveredQty) != parseInt(cartonCount) && !reasonCode) {
+      reasonContainer.show();
       return alert('请选择不匹配的原因');
     }
 

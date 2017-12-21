@@ -16,7 +16,7 @@ exports.shippments = function (accessToken, status, callback) {
   var now = new Date();
   agent.get('https://cn-api.openport.com/delivery/shipments')
     .set({
-      'x-latest-date': new Date(now.setDate(now.getDate() - 3)).toISOString(),
+      'x-latest-date': new Date(now.setDate(now.getDate() - 2)).toISOString(),
       "x-openport-token": accessToken,
       "Content-Type": 'application/vnd.openport.delivery.v3+json'
     })
