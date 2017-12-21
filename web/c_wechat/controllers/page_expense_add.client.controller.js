@@ -23,54 +23,40 @@ $(function () {
   function clickTypeItem() {
     typeInput.val(this.text).trim();
   }
+  // $('#ship-select').select({
+  //   items: [
+  //     { title: "Additional Stop", value: 1 },
+  //     { title: "Border Fee", value: 2 },
+  //     { title: "Congestion Fee", value: 3 },
+  //     { title: "Detention Charge", value: 4 },
+  //     { title: "Document Fee", value: 5 },
+  //     { title: "Handling Fees", value: 6 },
+  //     { title: "Non-Dock Delivery", value: 7 },
+  //     { title: "Stop Charge Fee", value: 8 },
+  //     { title: "Toll Fee", value: 9 },
+  //     { title: "Truck Ordered Not Used", value: 10 },
+  //     { title: "Wait Time Fee", value: 11 },
+  //   ]
+  // })
+  $("#type-select").select({
+    title: "",
+    items: [
+      { title: "Additional Stop", value: 1 },
+      { title: "Border Fee", value: 2 },
+      { title: "Congestion Fee", value: 3 },
+      { title: "Detention Charge", value: 4 },
+      { title: "Document Fee", value: 5 },
+      { title: "Handling Fees", value: 6 },
+      { title: "Non-Dock Delivery", value: 7 },
+      { title: "Stop Charge Fee", value: 8 },
+      { title: "Toll Fee", value: 9 },
+      { title: "Truck Ordered Not Used", value: 10 },
+      { title: "Wait Time Fee", value: 11 },
+    ]
+  });
   typeInput.click(function () {
-    $.actions({
-      actions: [{
-        text: "Additional Stop",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Border Fee",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Congestion Fee",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Detention Charge",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Document Fee",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Handling Fees",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Non-Dock Delivery",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Stop Charge Fee",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Toll Fee",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Truck Ordered Not Used",
-        onClick: clickTypeItem
-      },
-      {
-        text: "Wait Time Fee",
-        onClick: clickTypeItem
-      }
-      ]
-    });
+
+
     // showTypePanel();
   });
   shippment.click(function () {
