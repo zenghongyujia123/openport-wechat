@@ -19,12 +19,64 @@ $(function () {
   typePanel.click(function () {
     hideTypePanel();
   })
+
+  function clickTypeItem() {
+    typeInput.val(this.text).trim();
+  }
   typeInput.click(function () {
-    showTypePanel();
+    $.actions({
+      actions: [{
+        text: "Additional Stop",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Border Fee",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Congestion Fee",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Detention Charge",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Document Fee",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Handling Fees",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Non-Dock Delivery",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Stop Charge Fee",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Toll Fee",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Truck Ordered Not Used",
+        onClick: clickTypeItem
+      },
+      {
+        text: "Wait Time Fee",
+        onClick: clickTypeItem
+      }
+      ]
+    });
+    // showTypePanel();
   });
   shippment.click(function () {
     showShipPanel();
   });
+
   shipPanel.find('.select-item').click(function (e) {
     if ($(this).hasClass('select')) {
       $(this).removeClass('select');
@@ -99,4 +151,8 @@ $(function () {
       }
     });
   }
+
+
+
+
 });
