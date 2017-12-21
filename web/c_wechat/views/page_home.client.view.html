@@ -144,7 +144,7 @@
                     <%= (status==='ETD'?shippments[i].from.name:shippments[i].to.name) %>
                   </div>
                   <div class="content-right">
-                    <%= (shippments[i].etaDate.replace('T',' ')) %>
+                    <%= (status==='ETD'?(shippments[i].etdDate.replace('T',' ')):(shippments[i].etaDate.replace('T',' '))) %>
                   </div>
                 </div>
               </div>
