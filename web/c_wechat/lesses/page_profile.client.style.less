@@ -3,7 +3,7 @@
   .profile-header {
     padding: 20px;
     text-align: center;
-    background-color: green;
+    background-color: #3c8edb;
     height: 200px;
     width: 100%;
     color: white;
@@ -67,9 +67,49 @@
       .description-content {
         margin: 0px 10px;
         border-radius: 5px;
-        text-align: center;
         padding: 10px;
         background-color: white;
+        flex-direction: row;
+        display: flex;
+        .content-left {
+          text-align: center;
+          width: 100px;
+          .left-icon {
+            width: 100px;
+            margin-bottom: 10px;
+          }
+          .left-text {}
+        }
+        .content-right {
+          flex-grow: 1;
+          font-size: 12px;
+          .right-title {
+            font-size: 16px;
+          }
+          .right-level {
+            line-height: 40px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e8e8e8;
+          }
+          .right-to-next-level-bar-text {}
+          .right-to-next-level-bar {
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .percent {}
+            .weui-progress {
+              margin-right: 5px;
+              width: 80%;
+              .weui-progress__bar {
+                height: 6px;
+                .js_progress {
+                  background-color: #3c8edb;
+                }
+              }
+            }
+          }
+        }
       }
     }
     .profile-rank {

@@ -21,6 +21,11 @@ $(function () {
         text: "个人主页",
         path: '/page_wechat/page_profile',
         onClick: clickReason
+      },
+      {
+        text: "设置",
+        path: '/page_wechat/page_setting',
+        onClick: clickReason
       }
       ]
     });

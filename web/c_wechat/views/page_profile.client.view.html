@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_index.client.style.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_profile.client.style.css" />
+  <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+
   <script src="../libs/jquery/dist/jquery.js"></script>
   <script src="../c_wechat/controllers/page_home.client.controller.js"></script>
 </head>
@@ -43,7 +46,23 @@
           <div class="row-right">查看详情</div>
         </div>
         <div class="description-content">
-          这里事说明
+          <div class="content-left">
+            <img src="/c_wechat/images/profile/badge_level_1.png" class="left-icon"></img>
+            <div class="left-text">等级:1</div>
+          </div>
+          <div class="content-right">
+            <div class="right-title">目前情况</div>
+            <div class="right-level">等级</div>
+            <div class="right-to-next-level-bar-text">进行至下一个等级</div>
+            <div class="right-to-next-level-bar">
+              <div class="weui-progress">
+                <div class="weui-progress__bar">
+                  <div class="weui-progress__inner-bar js_progress" style="width: 50%;"></div>
+                </div>
+              </div>
+              <div class="percent">0.00%</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="profile-rank">

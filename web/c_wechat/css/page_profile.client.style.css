@@ -4,7 +4,7 @@
 .o-page-profile .profile-header {
   padding: 20px;
   text-align: center;
-  background-color: green;
+  background-color: #3c8edb;
   height: 200px;
   width: 100%;
   color: white;
@@ -66,9 +66,46 @@
 .o-page-profile .profile-body .profile-description .description-content {
   margin: 0px 10px;
   border-radius: 5px;
-  text-align: center;
   padding: 10px;
   background-color: white;
+  flex-direction: row;
+  display: flex;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-left {
+  text-align: center;
+  width: 100px;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-left .left-icon {
+  width: 100px;
+  margin-bottom: 10px;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-right {
+  flex-grow: 1;
+  font-size: 12px;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-right .right-title {
+  font-size: 16px;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-right .right-level {
+  line-height: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-right .right-to-next-level-bar {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-right .right-to-next-level-bar .weui-progress {
+  margin-right: 5px;
+  width: 80%;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-right .right-to-next-level-bar .weui-progress .weui-progress__bar {
+  height: 6px;
+}
+.o-page-profile .profile-body .profile-description .description-content .content-right .right-to-next-level-bar .weui-progress .weui-progress__bar .js_progress {
+  background-color: #3c8edb;
 }
 .o-page-profile .profile-body .profile-rank {
   margin: 0px 10px;
