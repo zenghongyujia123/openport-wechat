@@ -42,6 +42,10 @@ exports.shippments = function (accessToken, status, callback) {
             return eachCallback();
           }
           that.shippment(accessToken, idItem.id, function (err, shippment) {
+            if (!shippment) {
+              return eachCallback();
+            }
+
             shipments.push(shippment);
             console.log('count', count++);
             if (shippment.shipmentStatus === 'DELIVERED') {
@@ -67,8 +71,13 @@ exports.shippment = function (accessToken, id, callback) {
       "x-openport-token": accessToken,
     })
     .end(function (err, result) {
-      result = JSON.parse(result.text);
-      return callback(null, result);
+      if (result.status !== 200) {
+        return callback(null, null);
+      }
+      else {
+        result = JSON.parse(result.text);
+        return callback(null, result);
+      }
     });
 }
 
