@@ -136,6 +136,10 @@ $(function () {
   $('.o-page-footer').click(function () {
     window.location = '/page_wechat/page_signin'
   });
+
+  $('.o-page-header-left').click(function () {
+    window.location = '/page_wechat/page_home';
+  });
 });
 
 
