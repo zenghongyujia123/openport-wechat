@@ -4,6 +4,9 @@ $(function () {
   var realPicCount = $('.real-pic-count');
   var maxPicCount = parseInt($('.max-pic-count').text());
   var reasonContainer = $('.reason-container ');
+  var deliveredQtyObj = $('.deliveredQty');
+  var cartonCount = parseInt($('.cartonCount').text());
+
   realPicCount.text(0);
 
   function appendImage(localId) {
@@ -111,14 +114,13 @@ $(function () {
     var deliveredQty = $('.deliveredQty').val();
     var recipientName = $('.recipientName').val();
     var reasonCode = $('.reasonCode').val();
-    var cartonCount = $('.cartonCount').text();
     if (!deliveredQty) {
       return alert('请输入实际单位数量');
     }
     if (!recipientName) {
       return alert('请输入发件人');
     }
-    if (parseInt(deliveredQty) != parseInt(cartonCount) && !reasonCode) {
+    if (parseInt(deliveredQty) != cartonCount && !reasonCode) {
       reasonContainer.show();
       return alert('请选择不匹配的原因');
     }
@@ -161,6 +163,17 @@ $(function () {
       }
     });
   }
+
+
+
+  deliveredQtyObj.blur(function () {
+    if (parseInt(deliveredQtyObj.val()) != cartonCount) {
+      reasonContainer.show();
+    }
+    else {
+      reasonContainer.hide();
+    }
+  });
 
   getUserJsApiTicket(window.location.href, function (data) {
 
