@@ -1,4 +1,33 @@
 $(function () {
+  var choose_country = $('#choose-country');
+  var choose_language = $('#choose-language');
+  var old_shippment_count = $('#old-shippment-count');
+  var old_deliveried_shippment_count = $('#old-deliveried-shippment-count');
+  var show_old_un_deliveried_shippment = $('#show-old-un-deliveried-shippment');
+  var show_grouping_by_truckloads = $('#show-grouping-by-truckloads');
+  var choose_list_view = $('#choose-list-view');
+  var choose_shippment_count = $('#choose-shippment-count');
+  var choose_icon_tab = $('#choose-icon-tab');
+
+  function getSetting() {
+    $.ajax({
+      url: '/api_wechat/getUserSetting',
+      method: 'post',
+      success: function (data) {
+        choose_country.val(data.choose_country);
+        choose_language.val(data.choose_language);
+        old_shippment_count.val(data.old_shippment_count);
+        old_deliveried_shippment_count.val(data.old_deliveried_shippment_count);
+        show_old_un_deliveried_shippment.val(data.show_old_un_deliveried_shippment);
+        show_grouping_by_truckloads.val(data.show_grouping_by_truckloads);
+        choose_list_view.val(data.choose_list_view);
+        choose_shippment_count.val(data.choose_shippment_count);
+        choose_icon_tab.val(data.choose_icon_tab);
+      }
+    });
+  }
+  getSetting();
+
   $("#old-shippment-count").picker({
     cols: [
       {
@@ -7,9 +36,6 @@ $(function () {
       }
     ]
   });
-
-
-
   function clickChooseCountry() {
     $("#choose-country").val(this.text)
   }
@@ -20,19 +46,16 @@ $(function () {
       ]
     });
   });
-
-
   function clickChangeLanguage() {
-    $("#change-language").val(this.text)
+    $("#choose-language").val(this.text)
   }
-  $(".change-language").click(function () {
+  $(".choose-language").click(function () {
     $.actions({
       actions: [
         { text: "简体中文", onClick: clickChangeLanguage },
       ]
     });
   });
-
   function clickOldShippmentCount() {
     $("#old-shippment-count").val(this.text)
   }
@@ -51,7 +74,6 @@ $(function () {
       ]
     });
   });
-
   function clickDeliveriedOldShippmentCount() {
     $("#old-deliveried-shippment-count").val(this.text)
   }
@@ -94,7 +116,6 @@ $(function () {
       ]
     });
   });
-
   function clickChooseListView() {
     $("#choose-list-view").val(this.text)
   }
@@ -106,7 +127,6 @@ $(function () {
       ]
     });
   });
-
   function clickChooseListCount() {
     $("#choose-shippment-count").val(this.text)
   }
@@ -120,7 +140,6 @@ $(function () {
       ]
     });
   });
-
   function clickChooseIconTab() {
     $("#choose-icon-tab").val(this.text)
   }
@@ -132,11 +151,9 @@ $(function () {
       ]
     });
   });
-
   $('.o-page-footer').click(function () {
     window.location = '/page_wechat/page_signin'
   });
-
   $('.o-page-header-left').click(function () {
     window.location = '/page_wechat/page_home';
   });

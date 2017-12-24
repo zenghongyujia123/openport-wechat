@@ -87,6 +87,24 @@ exports.getDeliveriedShippments = function (req, res, next) {
   });
 }
 
+exports.updateUserSetting = function (req, res, next) {
+  var username = cookie = cookieLib.getCookie(req).userName;
+  var userInfo = req.body.user_info;
+  userInfo.username = username;
+  shippmentLogic.updateUserSetting(userInfo, function (err, user) {
+    return res.send(err || user);
+  });
+}
+
+
+exports.getUserSetting = function (req, res, next) {
+  var username = cookie = cookieLib.getCookie(req).userName;
+  shippmentLogic.getUserSetting(username, function (err, user) {
+    return res.send(err || user);
+  });
+}
+
+
 
 
 

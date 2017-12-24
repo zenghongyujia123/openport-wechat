@@ -4,6 +4,7 @@
 var mongoose = require('./../../libraries/mongoose');
 var appDb = mongoose.appDb;
 Shippmeng = appDb.model('Shippmeng');
+User = appDb.model('User');
 var sysErr = require('./../errors/system');
 var wechatLogic = require('./wechat.server.logic');
 var moment = require('moment');
@@ -205,6 +206,50 @@ exports.getDeliveriedShippments = function (username, callback) {
   })
 }
 
+exports.updateUserSetting = function (userInfo, callback) {
+  User.findOne({ username: userInfo.username }, function (err, user) {
+    if (!user) {
+      user = new User();
+    }
 
+    user.choose_country = userInfo.choose_country;
+    user.choose_language = userInfo.choose_language;
+    user.old_shippment_count = userInfo.old_shippment_count;
+    user.old_deliveried_shippment_count = userInfo.old_deliveried_shippment_count;
+    user.show_old_un_deliveried_shippment = userInfo.show_old_un_deliveried_shippment;
+    user.show_grouping_by_truckloads = userInfo.show_grouping_by_truckloads;
+    user.choose_list_view = userInfo.choose_list_view;
+    user.choose_shippment_count = userInfo.choose_shippment_count;
+    user.choose_icon_tab = userInfo.choose_icon_tab;
+    user.save(function (err, saved) {
+      return callback(err, saved);
+    });
+  });
+}
+
+exports.getUserSetting = function (username, callback) {
+  User.findOne({ username: username }, function (err, user) {
+    if (!user) {
+      user = new User({
+        username: username,
+        choose_country: '中国',
+        choose_language: '简体中文',
+        old_shippment_count: '6',
+        old_deliveried_shippment_count: '6',
+        show_old_un_deliveried_shippment: '是',
+        show_grouping_by_truckloads: '是',
+        choose_list_view: '简单',
+        choose_shippment_count: '10',
+        choose_icon_tab: '是'
+      });
+      user.save(function (err, saved) {
+        return callback(err, saved);
+      });
+    }
+    else {
+      return callback(null, user);
+    }
+  });
+}
 // exports.downloadPhoto()
 
