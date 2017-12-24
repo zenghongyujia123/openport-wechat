@@ -21,6 +21,7 @@ $(function () {
       },
       success: function (data) {
         if (data.status !== 200) {
+          $.hideLoading();
           return alert(data.message);
         }
         console.log(data);
