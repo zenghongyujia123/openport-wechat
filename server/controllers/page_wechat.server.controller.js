@@ -110,8 +110,9 @@ exports.page_search = function (req, res, next) {
 };
 
 exports.page_setting = function (req, res, next) {
+  var userName = cookieLib.getCookie(req).userName;
   var filepath = path.join(__dirname, '../../web/c_wechat/views/page_setting.client.view.html');
-  return res.render(filepath, {});
+  return res.render(filepath, { userName: decodeURI(userName) });
 };
 
 // exports.page_signin = function (req, res, next) {
