@@ -37,6 +37,7 @@ $(function () {
 
   function appendImage(localId) {
     $('.photo-img').attr('src', localId);
+    $('.photo-tip').hide();
   }
 
   $("#type-select").select({
