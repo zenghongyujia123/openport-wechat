@@ -49,79 +49,6 @@
       </div>
       <div class="o-body-sync-time">上次同步2分23秒之前</div>
       <div class="o-body-list">
-        <!-- <a href="/page_wechat/page_detail" class="list-item">
-          <div class="item-row">
-            <div class="row-icon">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-            </div>
-            <div class="row-content">
-              <div class="content-left">Build121_test</div>
-              <div class="content-right">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                <i class="fa fa-folder-o" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-          <div class="item-row">
-            <div class="row-icon">
-              <i class="fa fa-user" aria-hidden="true"></i>
-            </div>
-            <div class="row-content">
-              <div class="content-left">CITP</div>
-              <div class="content-right">13 12月 2017</div>
-            </div>
-          </div>
-        </a>
-        <a href="/page_wechat/page_expense_list" class="list-item">
-          <div class="item-row">
-            <div class="row-icon">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-            </div>
-            <div class="row-content">
-              <div class="content-left">Build121_test</div>
-              <div class="content-right">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                <i class="fa fa-folder-o" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-          <div class="item-row">
-            <div class="row-icon">
-              <i class="fa fa-user" aria-hidden="true"></i>
-            </div>
-            <div class="row-content">
-              <div class="content-left">CITP</div>
-              <div class="content-right">13 12月 2017</div>
-            </div>
-          </div>
-        </a>
-        <a href="/page_wechat/page_expense_detail" class="list-item">
-          <div class="item-row">
-            <div class="row-icon">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-            </div>
-            <div class="row-content">
-              <div class="content-left">Build121_test</div>
-              <div class="content-right">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                <i class="fa fa-folder-o" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-          <div class="item-row">
-            <div class="row-icon">
-              <i class="fa fa-user" aria-hidden="true"></i>
-            </div>
-            <div class="row-content">
-              <div class="content-left">CITP</div>
-              <div class="content-right">13 12月 2017</div>
-            </div>
-          </div>
-        </a> -->
-
         <% for(var i=0; i<shippments.length; i++) {%>
           <% if(shippments[i].shipmentStatus===status) {%>
             <a href="/page_wechat/page_detail?id=<%= shippments[i].id %>" class="list-item">
@@ -165,27 +92,6 @@
     </div>
     <div class="o-body-add-btn">
       +
-    </div>
-  </div>
-  <div class="o-mask">
-    <div class="o-select-panel">
-      <div class="select-list">
-        <a href="/page_wechat/page_expense_list" class="select-item">
-          <div>
-            日志列表
-          </div>
-        </a>
-        <a href="/page_wechat/page_expense_add" class="select-item">
-          <div>
-            新建日志
-          </div>
-        </a>
-        <a href="/page_wechat/page_profile" class="select-item">
-          <div>
-            个人主页
-          </div>
-        </a>
-      </div>
     </div>
   </div>
 </body>
