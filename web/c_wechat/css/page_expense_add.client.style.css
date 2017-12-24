@@ -47,7 +47,8 @@
 .o-page-home .o-page-body .body-photo .photo-tip {
   width: 100%;
   text-align: center;
-  margin-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .o-page-home .o-page-body .body-photo .photo-img {
   width: 100%;
