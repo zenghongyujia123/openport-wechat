@@ -10,13 +10,85 @@
   <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_index.client.style.css" />
   <link rel="stylesheet" href="../c_wechat/css/page_setting.client.style.css" />
+
+  <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script src="../libs/jquery/dist/jquery.js"></script>
+
+  <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
   <script src="../c_wechat/controllers/page_setting.client.controller.js"></script>
 </head>
 
 <body>
   <div class="o-page o-page-setting">
-    
+    <div class="o-page-header">
+      <div class="o-page-header-left">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+      </div>
+      <div class="o-page-header-center">设置</div>
+      <div class="o-page-header-right">
+      </div>
+    </div>
+    <div class="o-page-body has-footer">
+      <div class="o-setting-wapper">
+        <div class="o-setting-title">
+          账户
+        </div>
+        <a href="/page_wechat/page_profile" class="o-setting-content">
+          <div class="content-left">
+
+          </div>
+          <div class="content-right">
+            <div class="name">Hardy</div>
+            <div class="phone">13333333333</div>
+            <div class="role">Driver</div>
+          </div>
+          <div class="content-arrow">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+      <div class="o-setting-wapper">
+        <div class="o-setting-title">
+          货物
+        </div>
+        <div class="o-setting-row">
+          <div class="row-item">
+            <div class="row-content">
+              <div class="row-left">显示旧的订单</div>
+              <input class="row-right" id="old-shippment-count">日</input>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="row-item">
+            <div class="row-content">
+              <div class="row-left">显示旧的已交付订单</div>
+              <input class="row-right" id="old-deliveried-shippment-count">日</input>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="row-item">
+            <div class="row-content">
+              <div class="row-left">显示未送达货物</div>
+              <input class="row-right" id="old-un-deliveried-shippment-count"></input>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="row-item">
+            <div class="row-content">
+              <div class="row-left">Show grouping by Truckloads</div>
+              <input class="row-right" id="show-grouping-by-truckloads"></input>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="o-page-footer">
+      <div class="o-page-footer-btn undo submit">提交</div>
+    </div>
   </div>
 </body>
 

@@ -1,75 +1,81 @@
-.o-page-home .o-page-body .o-body-header {
+.o-page-setting .o-page-body {
+  color: #666;
+}
+.o-page-setting .o-page-body .o-setting-wapper {
+  margin: 10px;
+}
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-title {
+  line-height: 30px;
+  color: #666;
+}
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-content {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 0px 10px;
-  background-color: white;
-  height: 30px;
-  -moz-box-shadow: 10px 10px 3px #cdcdcd;
-  /* 老的 Firefox */
-  box-shadow: 0px 5px 3px #cdcdcd;
+  justify-content: space-between;
 }
-.o-page-home .o-page-body .o-body-header .header-left {
-  color: #999;
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-content .content-left {
+  width: 80px;
+  height: 80px;
+  background-color: #3c8edb;
+  color: white;
+  border-radius: 90px;
 }
-.o-page-home .o-page-body .o-body-header .header-right {
-  color: #ff4330;
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-content .content-right {
+  padding-left: 10px;
+  flex-grow: 1;
 }
-.o-page-home .o-page-body .o-body-sync-time {
-  padding: 0px 10px;
-  line-height: 30px;
-  color: #ff4330;
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-content .content-right .name {
+  font-size: 16px;
+  color: #3c8edb;
+}
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-content .content-right .phone {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+}
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-content .content-right .role {
+  color: #666;
   font-size: 14px;
 }
-.o-page-home .o-page-body .o-body-list .list-item {
-  display: block;
-  -moz-box-shadow: 10px 10px 3px #cdcdcd;
-  /* 老的 Firefox */
-  box-shadow: 0px 5px 3px #cdcdcd;
-  border-radius: 5px;
-  margin: 0px 10px 10px 10px;
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-content .content-arrow .fa {
+  font-size: 20px;
+  color: #666;
+}
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-row {
+  padding: 0px 10px;
   background-color: white;
+  border-radius: 5px;
 }
-.o-page-home .o-page-body .o-body-list .list-item .item-row {
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-row .row-item {
+  height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 1px solid #e8e8e8;
   justify-content: space-between;
-  height: 40px;
 }
-.o-page-home .o-page-body .o-body-list .list-item .item-row:last-child .row-content {
-  border: 0px;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon {
-  background-color: red;
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-row .row-item .row-icon {
   width: 40px;
-  line-height: 40px;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-content {
-  color: #999;
   height: 40px;
-  line-height: 40px;
+}
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-row .row-item .row-content {
   flex-grow: 1;
-  border-bottom: 1px solid #cdcdcd;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding-right: 10px;
-}
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-content .content-right {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  align-content: center;
+  flex-direction: row;
 }
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-content .content-right .fa {
-  font-size: 28px;
-  color: #999;
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-row .row-item .row-content .row-left {
+  flex-grow: 1;
 }
-.o-page-home .o-page-body .o-body-list .list-item .item-row .row-content .content-right .right-icon {
-  margin-left: 10px;
-  width: 40px;
-  height: 40px;
-  background-color: green;
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-row .row-item .row-content .row-right {
+  text-align: right;
+}
+.o-page-setting .o-page-body .o-setting-wapper .o-setting-row .row-item .row-content .fa {
+  font-size: 20px;
+  margin-left: 20px;
 }
