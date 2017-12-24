@@ -112,7 +112,7 @@ $(function () {
     })
   }
 
-  $('.o-page-header-left"').click(function () {
+  $('.o-page-header-left').click(function () {
     window.location = '/page_wechat/page_home';
   });
   getDeliveriedShippments();
