@@ -9,7 +9,7 @@ $(function () {
   var choose_shippment_count = $('#choose-shippment-count');
   var choose_icon_tab = $('#choose-icon-tab');
 
-  function getSetting() {
+  function getUserSetting() {
     $.ajax({
       url: '/api_wechat/getUserSetting',
       method: 'post',
@@ -26,7 +26,29 @@ $(function () {
       }
     });
   }
-  getSetting();
+  function updateUserSetting() {
+    $.ajax({
+      url: '/api_wechat/updateUserSetting',
+      method: 'post',
+      data: {
+        user_info: {
+          choose_country: choose_country.val(),
+          choose_language: choose_language.val(),
+          old_shippment_count: old_shippment_count.val(),
+          old_deliveried_shippment_count: old_deliveried_shippment_count.val(),
+          show_old_un_deliveried_shippment: show_old_un_deliveried_shippment.val(),
+          show_grouping_by_truckloads: show_grouping_by_truckloads.val(),
+          choose_list_view: choose_list_view.val(),
+          choose_shippment_count: choose_shippment_count.val(),
+          choose_icon_tab: choose_icon_tab.val()
+        }
+      },
+      success: function (data) {
+        console.log(data);
+      }
+    });
+  }
+  getUserSetting();
 
   $("#old-shippment-count").picker({
     cols: [
@@ -37,7 +59,8 @@ $(function () {
     ]
   });
   function clickChooseCountry() {
-    $("#choose-country").val(this.text)
+    $("#choose-country").val(this.text);
+    updateUserSetting();
   }
   $(".choose-country").click(function () {
     $.actions({
@@ -47,7 +70,8 @@ $(function () {
     });
   });
   function clickChangeLanguage() {
-    $("#choose-language").val(this.text)
+    $("#choose-language").val(this.text);
+    updateUserSetting();
   }
   $(".choose-language").click(function () {
     $.actions({
@@ -57,7 +81,8 @@ $(function () {
     });
   });
   function clickOldShippmentCount() {
-    $("#old-shippment-count").val(this.text)
+    $("#old-shippment-count").val(this.text);
+    updateUserSetting();
   }
   $(".old-shippment-count").click(function () {
     $.actions({
@@ -75,7 +100,8 @@ $(function () {
     });
   });
   function clickDeliveriedOldShippmentCount() {
-    $("#old-deliveried-shippment-count").val(this.text)
+    $("#old-deliveried-shippment-count").val(this.text);
+    updateUserSetting();
   }
   $(".old-deliveried-shippment-count").click(function () {
     $.actions({
@@ -94,7 +120,8 @@ $(function () {
   });
 
   function clickShowOldUnDeliveriedShippment() {
-    $("#show-old-un-deliveried-shippment").val(this.text)
+    $("#show-old-un-deliveried-shippment").val(this.text);
+    updateUserSetting();
   }
   $(".show-old-un-deliveried-shippment").click(function () {
     $.actions({
@@ -106,7 +133,8 @@ $(function () {
   });
 
   function clickGroupingByTruckloads() {
-    $("#show-grouping-by-truckloads").val(this.text)
+    $("#show-grouping-by-truckloads").val(this.text);
+    updateUserSetting();
   }
   $(".show-grouping-by-truckloads").click(function () {
     $.actions({
@@ -117,7 +145,8 @@ $(function () {
     });
   });
   function clickChooseListView() {
-    $("#choose-list-view").val(this.text)
+    $("#choose-list-view").val(this.text);
+    updateUserSetting();
   }
   $(".choose-list-view").click(function () {
     $.actions({
@@ -128,7 +157,8 @@ $(function () {
     });
   });
   function clickChooseListCount() {
-    $("#choose-shippment-count").val(this.text)
+    $("#choose-shippment-count").val(this.text);
+    updateUserSetting();
   }
   $(".choose-shippment-count").click(function () {
     $.actions({
@@ -141,7 +171,8 @@ $(function () {
     });
   });
   function clickChooseIconTab() {
-    $("#choose-icon-tab").val(this.text)
+    $("#choose-icon-tab").val(this.text);
+    updateUserSetting();
   }
   $(".choose-icon-tab").click(function () {
     $.actions({
