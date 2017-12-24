@@ -34,7 +34,8 @@ exports.page_home = function (req, res, next) {
   // })
   var cookie = cookieLib.getCookie(req);
   var username = cookie.userName;
-  shippmentLogic.shippments(cookie.accessToken, 'ETA', username, function (err, shippments) {
+  var user = req.user;
+  shippmentLogic.shippments(cookie.accessToken, 'ETA', user, function (err, shippments) {
     var filepath = path.join(__dirname, '../../web/c_wechat/views/page_home.client.view.html');
     console.log(shippments.length)
     return res.render(filepath, { status: req.query.status || 'ETD', shippments: shippments });

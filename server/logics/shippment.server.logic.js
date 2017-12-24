@@ -14,11 +14,11 @@ var async = require('async');
 var agent = require('superagent').agent();
 var that = exports;
 
-exports.shippments = function (accessToken, status, username, callback) {
+exports.shippments = function (accessToken, status, user, callback) {
   var now = new Date();
   agent.get('https://cn-api.openport.com/delivery/shipments')
     .set({
-      'x-latest-date': new Date(now.setDate(now.getDate() - 7)).toISOString(),
+      'x-latest-date': new Date(now.setDate(now.getDate() - parseInt(user.old_shippment_count))).toISOString(),
       "x-openport-token": accessToken,
       "Content-Type": 'application/vnd.openport.delivery.v3+json'
     })
@@ -37,7 +37,7 @@ exports.shippments = function (accessToken, status, username, callback) {
       var count = 0;
       async.eachSeries(result, function (idItem, eachCallback) {
 
-        that.getDeliveriedShippment(idItem.id, username, function (err, shippment) {
+        that.getDeliveriedShippment(idItem.id, user.username, function (err, shippment) {
           if (shippment) {
             shipments.push(shippment);
             return eachCallback();
@@ -50,7 +50,7 @@ exports.shippments = function (accessToken, status, username, callback) {
             shipments.push(shippment);
             console.log('count', count++);
             if (shippment.shipmentStatus === 'DELIVERED') {
-              that.saveDeliveriedShippemnt(shippment, username, function () {
+              that.saveDeliveriedShippemnt(shippment, user.username, function () {
                 return eachCallback();
               })
             }

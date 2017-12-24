@@ -3,9 +3,10 @@
  */
 
 var index = require('../controllers/page_wechat');
+var userFilter = require('../filters/user');
 
 module.exports = function (app) {
-  app.route('/page_wechat/page_home').get(index.page_home);
+  app.route('/page_wechat/page_home').get(userFilter.requireUser, index.page_home);
   app.route('/page_wechat/page_detail').get(index.page_detail);
   app.route('/page_wechat/page_expense_list').get(index.page_expense_list);
   app.route('/page_wechat/page_expense_detail').get(index.page_expense_detail);
