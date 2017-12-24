@@ -115,6 +115,15 @@ $(function () {
     })
   });
 
+  pickedUpQtyObj.blur(function () {
+    if (parseInt(pickedUpQtyObj.val()) != cartonCount) {
+      reasonContainer.show();
+    }
+    else {
+      reasonContainer.hide();
+    }
+  });
+
   submitObj.click(function () {
     var pickedUpQty = parseInt(pickedUpQtyObj.val());
     var pickupLoaderName = pickupLoaderNameObj.val();
