@@ -136,13 +136,6 @@ $(function () {
   $('.o-page-footer').click(function () {
     window.location = '/page_wechat/page_signin'
   });
-
-
-
-
-
-
-
 });
 
 
