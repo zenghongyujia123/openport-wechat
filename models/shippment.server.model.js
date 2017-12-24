@@ -14,6 +14,10 @@ module.exports = function (appDb) {
       type: String,
       default: 'Shippent'
     },
+    username: {
+      type: String,
+      required: true
+    },
     shippment_id: {
       type: String,
       required: true

@@ -13,11 +13,11 @@ var async = require('async');
 var agent = require('superagent').agent();
 var that = exports;
 
-exports.shippments = function (accessToken, status, callback) {
+exports.shippments = function (accessToken, status, username, callback) {
   var now = new Date();
   agent.get('https://cn-api.openport.com/delivery/shipments')
     .set({
-      'x-latest-date': new Date(now.setDate(now.getDate() - 2)).toISOString(),
+      'x-latest-date': new Date(now.setDate(now.getDate() - 7)).toISOString(),
       "x-openport-token": accessToken,
       "Content-Type": 'application/vnd.openport.delivery.v3+json'
     })
@@ -36,7 +36,7 @@ exports.shippments = function (accessToken, status, callback) {
       var count = 0;
       async.eachSeries(result, function (idItem, eachCallback) {
 
-        that.getDeliveriedShippment(idItem.id, function (err, shippment) {
+        that.getDeliveriedShippment(idItem.id, username, function (err, shippment) {
           if (shippment) {
             shipments.push(shippment);
             return eachCallback();
@@ -49,7 +49,7 @@ exports.shippments = function (accessToken, status, callback) {
             shipments.push(shippment);
             console.log('count', count++);
             if (shippment.shipmentStatus === 'DELIVERED') {
-              that.saveDeliveriedShippemnt(shippment, function () {
+              that.saveDeliveriedShippemnt(shippment, username, function () {
                 return eachCallback();
               })
             }
@@ -165,8 +165,8 @@ exports.downloadPhoto = function (accessToken, info, callback) {
     });
 }
 
-exports.saveDeliveriedShippemnt = function (shipmentInfo, callback) {
-  Shippmeng.findOne({ shippment_id: shipmentInfo.id }, function (err, shippment) {
+exports.saveDeliveriedShippemnt = function (shipmentInfo, username, callback) {
+  Shippmeng.findOne({ shippment_id: shipmentInfo.id, username: username }, function (err, shippment) {
     if (err) {
       return callback('query shippment err');
     }
@@ -177,7 +177,8 @@ exports.saveDeliveriedShippemnt = function (shipmentInfo, callback) {
 
     shippment = new Shippmeng({
       shippment_id: shipmentInfo.id,
-      content: shipmentInfo
+      content: shipmentInfo,
+      username: username
     });
     shippment.save(function (err, saved) {
       return callback();
@@ -185,13 +186,23 @@ exports.saveDeliveriedShippemnt = function (shipmentInfo, callback) {
   });
 }
 
-exports.getDeliveriedShippment = function (shippment_id, callback) {
-  Shippmeng.findOne({ shippment_id: shippment_id }, function (err, shipment) {
+exports.getDeliveriedShippment = function (shippment_id, username, callback) {
+  Shippmeng.findOne({ shippment_id: shippment_id, username: username }, function (err, shipment) {
     if (shipment) {
       shipment = shipment.content;
     }
     return callback(err, shipment)
   });
+}
+
+exports.getDeliveriedShippments = function (username, callback) {
+  Shippmeng.find({ username: username }, function (err, shippments) {
+    if (err) {
+      console.error(err);
+      return callback(null, []);
+    }
+    return callback(null, shippments);
+  })
 }
 
 

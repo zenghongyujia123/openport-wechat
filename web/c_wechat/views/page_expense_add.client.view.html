@@ -16,6 +16,7 @@
   <script src="../libs/jquery/dist/jquery.js"></script>
   <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
   <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script src="../c_wechat/controllers/page_wechat.client.controller.js"></script>
   <script src="../c_wechat/controllers/page_expense_add.client.controller.js"></script>
 </head>
 
@@ -46,6 +47,7 @@
       </div>
       <div class="body-photo">
         <div class="photo-tip">点击添加费用照片</div>
+        <img class="photo-img"></img>
       </div>
     </div>
     <div class="o-page-footer">
@@ -59,11 +61,11 @@
       <div class="select-title">选择所有运单</div>
       <div class="select-list">
         <% for(var i=0; i<shippments.length; i++) {%>
-          <% if(shippments[i].shipmentStatus==='DELIVERED') {%>
+          <% if(shippments[i].content.shipmentStatus==='DELIVERED') {%>
 
             <div class="select-item">
-              <div id="<%= shippments[i].id %>">
-                <%= shippments[i].shipmentNumber %>
+              <div id="<%= shippments[i].content.id %>">
+                <%= shippments[i].content.shipmentNumber %>
               </div>
               <i class="fa fa-check-square-o" aria-hidden="true"></i>
             </div>

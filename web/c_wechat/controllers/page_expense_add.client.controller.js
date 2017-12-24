@@ -7,7 +7,8 @@ $(function () {
   var today = new Date();
   today = [today.getFullYear(), today.getMonth() + 1, today.getDate()]
   dateInput.val(today.join('-'));
-  var selectShippemnts = []
+  var selectShippemnts = [];
+  var photoId = '';
 
   $('.submit').click(function () {
     createExpense();
@@ -23,21 +24,21 @@ $(function () {
   function clickTypeItem() {
     typeInput.val(this.text).trim();
   }
-  // $('#ship-select').select({
-  //   items: [
-  //     { title: "Additional Stop", value: 1 },
-  //     { title: "Border Fee", value: 2 },
-  //     { title: "Congestion Fee", value: 3 },
-  //     { title: "Detention Charge", value: 4 },
-  //     { title: "Document Fee", value: 5 },
-  //     { title: "Handling Fees", value: 6 },
-  //     { title: "Non-Dock Delivery", value: 7 },
-  //     { title: "Stop Charge Fee", value: 8 },
-  //     { title: "Toll Fee", value: 9 },
-  //     { title: "Truck Ordered Not Used", value: 10 },
-  //     { title: "Wait Time Fee", value: 11 },
-  //   ]
-  // })
+
+  $('.camera').click(function () {
+
+    takeCamera(function (localIds) {
+      localIds.forEach(function (localId) {
+        photoId = localId;
+        appendImage(localId);
+      });
+    })
+  });
+
+  function appendImage(localId) {
+    $('.photo-img').attr('src', localId);
+  }
+
   $("#type-select").select({
     title: "",
     items: [
@@ -138,7 +139,9 @@ $(function () {
     });
   }
 
+  getUserJsApiTicket(window.location.href, function (data) {
 
+  });
 
 
 });
