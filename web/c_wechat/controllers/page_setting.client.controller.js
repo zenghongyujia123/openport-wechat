@@ -93,7 +93,56 @@ $(function () {
         { text: "否", onClick: clickGroupingByTruckloads },
       ]
     });
-  })
+  });
+
+  function clickChooseListView() {
+    $("#choose-list-view").val(this.text)
+  }
+  $(".choose-list-view").click(function () {
+    $.actions({
+      actions: [
+        { text: "简单", onClick: clickChooseListView },
+        { text: "详细", onClick: clickChooseListView },
+      ]
+    });
+  });
+
+  function clickChooseListCount() {
+    $("#choose-shippment-count").val(this.text)
+  }
+  $(".choose-shippment-count").click(function () {
+    $.actions({
+      actions: [
+        { text: "10", onClick: clickChooseListCount },
+        { text: "20", onClick: clickChooseListCount },
+        { text: "30", onClick: clickChooseListCount },
+        { text: "40", onClick: clickChooseListCount },
+      ]
+    });
+  });
+
+  function clickChooseIconTab() {
+    $("#choose-icon-tab").val(this.text)
+  }
+  $(".choose-icon-tab").click(function () {
+    $.actions({
+      actions: [
+        { text: "是", onClick: clickChooseIconTab },
+        { text: "否", onClick: clickChooseIconTab },
+      ]
+    });
+  });
+
+  $('.o-page-footer').click(function () {
+    window.location = '/page_wechat/page_signin'
+  });
+
+
+
+
+
+
+
 });
 
 
