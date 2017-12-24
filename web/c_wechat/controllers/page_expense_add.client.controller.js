@@ -53,7 +53,7 @@ $(function () {
 
   function createExpense() {
     var type = typeInput.val();
-    var shipmentId = $('#ship-select').attr('data-values').splite(',')[0] || '';
+    var shipmentId = $('#ship-select').attr('data-values').split(',')[0] || '';
     var amount = $('.amount').val();
     var date = dateInput.val();
     var timestamp = date;
