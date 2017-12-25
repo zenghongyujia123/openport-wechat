@@ -111,9 +111,9 @@ exports.page_search = function (req, res, next) {
 };
 
 exports.page_setting = function (req, res, next) {
-  var userName = cookieLib.getCookie(req).userName;
+  var cookie = cookieLib.getCookie(req);
   var filepath = path.join(__dirname, '../../web/c_wechat/views/page_setting.client.view.html');
-  return res.render(filepath, { userName: decodeURI(userName) });
+  return res.render(filepath, { userName: decodeURI(cookie.userName), phoneNumber: cookie.phoneNumber, });
 };
 
 // exports.page_signin = function (req, res, next) {
