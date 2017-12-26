@@ -60,9 +60,22 @@ exports.page_signin = function (req, res, next) {
     if (result.openid) {
       cookieLib.setCookie(res, 'openid', result.openid);
       cookieLib.setCookie(res, 'user_access_token', result.access_token);
+
+      shippmentLogic.getUserWechatInfo(result.openid, function (err, userWechat) {
+        if (userWechat) {
+          var filepath = path.join(__dirname, '../../web/c_wechat/views/page_signin.client.view.html');
+          return res.render(filepath, { username: userWechat.username, password: userWechat.password });
+        }
+        else {
+          var filepath = path.join(__dirname, '../../web/c_wechat/views/page_signin.client.view.html');
+          return res.render(filepath, { username: '', password: '' });
+        }
+      });
     }
-    var filepath = path.join(__dirname, '../../web/c_wechat/views/page_signin.client.view.html');
-    return res.render(filepath, {});
+    else {
+      var filepath = path.join(__dirname, '../../web/c_wechat/views/page_signin.client.view.html');
+      return res.render(filepath, { username: '', password: '' });
+    }
   });
 };
 

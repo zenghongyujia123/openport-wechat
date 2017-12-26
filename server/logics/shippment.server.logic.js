@@ -5,6 +5,7 @@ var mongoose = require('./../../libraries/mongoose');
 var appDb = mongoose.appDb;
 Shippmeng = appDb.model('Shippmeng');
 User = appDb.model('User');
+UserWechat = appDb.model('UserWechat');
 var sysErr = require('./../errors/system');
 var wechatLogic = require('./wechat.server.logic');
 var moment = require('moment');
@@ -276,5 +277,28 @@ exports.getUserSetting = function (username, callback) {
     }
   });
 }
+
+exports.updateUserWechatInfo = function (userInfo, callback) {
+  UserWechat.findOne({ openid: userInfo.openid }, function (err, userWechat) {
+    if (!userWechat) {
+      userWechat = new UserWechat({
+        openid: userInfo.openid
+      });
+    }
+    userWechat.passowrd = userInfo.passowrd;
+    userWechat.username = userInfo.username;
+    userWechat.save(function () {
+      return callback();
+    });
+  });
+}
+
+exports.getUserWechatInfo = function (openid, callback) {
+  UserWechat.findOne({ openid: openid }, function (err, userWechat) {
+    return callback(err, userWechat);
+  });
+}
+
+
 // exports.downloadPhoto()
 

@@ -9,6 +9,8 @@ var agent = require('superagent').agent();
 
 
 exports.signin = function (req, res, next) {
+  var cookie = cookieLib.getCookie(req);
+  var openid = cookie.openid || '';
   var username = req.body.username;
   var password = req.body.password;
 
@@ -39,6 +41,9 @@ exports.signin = function (req, res, next) {
         cookieLib.setCookie(res, 'userName', result.user.userName);
         cookieLib.setCookie(res, 'phoneNumber', result.user.phoneNumber);
         cookieLib.setCookie(res, 'pic', result.user.pic);
+        if (openid) {
+          shippmentLogic.updateUserWechatInfo({ username: username, password: password, openid: openid }, function () { });
+        }
       }
       console.log(result);
       return res.send(result);
@@ -103,7 +108,6 @@ exports.getUserSetting = function (req, res, next) {
     return res.send(err || user);
   });
 }
-
 
 
 

@@ -29,4 +29,8 @@ $(function () {
       }
     });
   });
+
+  if ($('.username').val()) {
+    $('.o-submit').click();
+  }
 });
