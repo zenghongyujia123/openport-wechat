@@ -285,7 +285,7 @@ exports.updateUserWechatInfo = function (userInfo, callback) {
         openid: userInfo.openid
       });
     }
-    userWechat.passowrd = userInfo.passowrd;
+    userWechat.pwssword = userInfo.pwssword;
     userWechat.username = userInfo.username;
     userWechat.save(function () {
       return callback();
