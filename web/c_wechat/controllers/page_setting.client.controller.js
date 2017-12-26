@@ -31,7 +31,7 @@ $(function () {
     var oldDeliveredCount = old_deliveried_shippment_count.val();
     if (parseInt(old_shippment_count) < parseInt(oldDeliveredCount)) {
       old_deliveried_shippment_count.val(oldCount);
-      return alert('已交付的旧运单天数必须小于旧运单天数');
+      alert('已交付的旧运单天数必须小于旧运单天数');
     }
     $.ajax({
       url: '/api_wechat/updateUserSetting',
