@@ -43,11 +43,34 @@
   width: 40px;
   line-height: 40px;
   display: flex;
+  justify-content: center;
   flex-direction: row;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon .icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 90px;
+  display: flex;
+  margin: auto;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon .icon.ready_for_pickup {
+  background-color: #7f82fa;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon .icon.delayed {
+  background-color: #e34737;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon .icon.to_be_delivered {
+  background-color: #01a44a;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon .icon.delivered {
+  background-color: #3c8edb;
+}
+.o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon .icon .img {
+  width: 20px;
+  height: 20px;
 }
 .o-page-home .o-page-body .o-body-list .list-item .item-row .row-icon .fa {
   color: #3c8edb;
-  margin-left: 10px;
   font-size: 20px;
 }
 .o-page-home .o-page-body .o-body-list .list-item .item-row .row-content {

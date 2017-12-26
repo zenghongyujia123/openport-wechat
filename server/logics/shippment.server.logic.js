@@ -39,7 +39,7 @@ exports.shippments = function (accessToken, status, user, callback) {
 
         that.getDeliveriedShippment(idItem.id, user.username, function (err, shippment) {
           if (shippment) {
-            shipments.push(shippment);
+            shipments.push(getShippmentStatusString(shippment));
             return eachCallback();
           }
           that.shippment(accessToken, idItem.id, function (err, shippment) {
@@ -47,7 +47,7 @@ exports.shippments = function (accessToken, status, user, callback) {
               return eachCallback();
             }
 
-            shipments.push(shippment);
+            shipments.push(getShippmentStatusString(shippment));
             console.log('count', count++);
             if (shippment.shipmentStatus === 'DELIVERED') {
               that.saveDeliveriedShippemnt(shippment, user.username, function () {
@@ -64,6 +64,31 @@ exports.shippments = function (accessToken, status, user, callback) {
       });
     });
 }
+
+
+function getShippmentStatusString(shippment) {
+  var str;
+  switch (shippment.shipmentStatus) {
+    case 'ETD':
+      str = 'ready_for_pickup';
+      if (new Date() > new Date(shippment.etdDate)) {
+        str = 'delayed';
+      }
+      break;
+    case 'ETA':
+      str = 'to_be_delivered';
+      if (new Date() > new Date(shippment.etaDate)) {
+        str = 'delayed';
+      }
+      break;
+    case 'DELIVERED':
+      str = 'delivered';
+      break;
+  }
+  shippment.statusStr = str;
+  return shippment;
+}
+
 
 exports.shippment = function (accessToken, id, callback) {
   agent.get('https://cn-api.openport.com/delivery/shipments/' + id)

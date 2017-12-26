@@ -46,10 +46,33 @@
             width: 40px;
             line-height: 40px;
             display: flex;
+            justify-content: center;
             flex-direction: row;
+            .icon {
+              width: 20px;
+              height: 20px;
+              border-radius: 90px;
+              display: flex;
+              margin: auto;
+              &.ready_for_pickup {
+                background-color: #7f82fa;
+              }
+              &.delayed {
+                background-color: #e34737;
+              }
+              &.to_be_delivered {
+                background-color: #01a44a;
+              }
+              &.delivered {
+                background-color: #3c8edb;
+              }
+              .img {
+                width: 20px;
+                height: 20px;
+              }
+            }
             .fa {
               color: #3c8edb;
-              margin-left: 10px;
               font-size: 20px;
             }
           }

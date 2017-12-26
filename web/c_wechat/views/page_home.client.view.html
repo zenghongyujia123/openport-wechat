@@ -23,17 +23,9 @@
   <div class="o-page o-page-home">
     <div class="o-page-header">
       <div class="o-page-header-left">
-        <!-- <i class="fa fa-share-square"></i> -->
       </div>
       <div class="o-page-header-center">OPENPORT</div>
       <div class="o-page-header-right">
-
-        <!-- <div class="right-item">
-          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-        </div>
-        <div class="right-item">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </div> -->
       </div>
     </div>
     <div class="o-page-tab">
@@ -54,7 +46,10 @@
             <a href="/page_wechat/page_detail?id=<%= shippments[i].id %>" class="list-item">
               <div class="item-row">
                 <div class="row-icon">
-                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  <div class="icon <%= shippments[i].statusStr %>">
+                    <img class="img" src="/c_wechat/images/shippment/<%= shippments[i].statusStr %>.png">
+                  </div>
+                  <!-- <i class="fa fa-check-circle" aria-hidden="true"></i> -->
                 </div>
                 <div class="row-content">
                   <div class="content-left">

@@ -26,6 +26,7 @@ module.exports = function (appDb) {
       type: Schema.Types.Mixed
     }
   });
+  ShippmengSchema.set('toJSON', { getters: true });
 
   ShippmengSchema.plugin(timestamps, {
     createdAt: 'create_time',
