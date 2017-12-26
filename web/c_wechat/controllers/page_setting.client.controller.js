@@ -27,6 +27,9 @@ $(function () {
     });
   }
   function updateUserSetting() {
+    if (parseInt(old_shippment_count.val()) < parseInt(old_deliveried_shippment_count.val())) {
+      return alert('已交付的旧运单天数必须小于旧运单天数');
+    }
     $.ajax({
       url: '/api_wechat/updateUserSetting',
       method: 'post',
@@ -34,8 +37,8 @@ $(function () {
         user_info: {
           choose_country: choose_country.val(),
           choose_language: choose_language.val(),
-          old_shippment_count: old_shippment_count.val(),
-          old_deliveried_shippment_count: old_deliveried_shippment_count.val(),
+          old_shippment_count: old_shippment_count,
+          old_deliveried_shippment_count: old_deliveried_shippment_count,
           show_old_un_deliveried_shippment: show_old_un_deliveried_shippment.val(),
           show_grouping_by_truckloads: show_grouping_by_truckloads.val(),
           choose_list_view: choose_list_view.val(),
