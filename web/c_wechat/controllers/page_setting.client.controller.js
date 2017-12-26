@@ -29,7 +29,7 @@ $(function () {
   function updateUserSetting() {
     var oldCount = old_shippment_count.val();
     var oldDeliveredCount = old_deliveried_shippment_count.val();
-    if (parseInt(old_shippment_count) < parseInt(oldDeliveredCount)) {
+    if (parseInt(oldCount) < parseInt(oldDeliveredCount)) {
       old_deliveried_shippment_count.val(oldCount);
       alert('已交付的旧运单天数必须小于旧运单天数');
     }
