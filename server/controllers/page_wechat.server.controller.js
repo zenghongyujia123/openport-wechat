@@ -15,13 +15,19 @@ exports.page_home = function (req, res, next) {
   var cookie = cookieLib.getCookie(req);
   var username = cookie.userName;
   var user = req.user;
+  var filepath = path.join(__dirname, '../../web/c_wechat/views/page_home.client.view.html');
 
-
-  shippmentLogic.shippments(cookie.accessToken, 'ETA', user, function (err, shippments) {
-    var filepath = path.join(__dirname, '../../web/c_wechat/views/page_home.client.view.html');
-    console.log(shippments.length)
-    return res.render(filepath, { status: req.query.status || 'ETD', shippments: shippments });
-  });
+  if (req.query.status === 'DELIVERED') {
+    shippmentLogic.getDeliveriedShippments(user, function (err, shippemnts) {
+      return res.render(filepath, { status: req.query.status, shippments: shippemnts });
+    });
+  }
+  else {
+    shippmentLogic.shippments(cookie.accessToken, req.query.status, user, function (err, shippments) {
+      console.log(shippments.length)
+      return res.render(filepath, { status: req.query.status || 'ETD', shippments: shippments });
+    });
+  }
 };
 
 exports.page_detail = function (req, res, next) {

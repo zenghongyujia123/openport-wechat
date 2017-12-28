@@ -96,7 +96,6 @@ $(function () {
       success: function (data) {
         shippmentItems = [];
         data.forEach(function (item) {
-          item = item.content;
           item.value = item.id;
           item.title = item.shipmentNumber;
           shippmentItems.push(item);

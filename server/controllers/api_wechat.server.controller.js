@@ -87,7 +87,7 @@ exports.downloadPhoto = function (req, res, next) {
 
 exports.getDeliveriedShippments = function (req, res, next) {
   var username = cookie = cookieLib.getCookie(req).userName;
-  shippmentLogic.getDeliveriedShippments(username, function (err, shippments) {
+  shippmentLogic.getDeliveriedShippments(req.user, function (err, shippments) {
     return res.send(shippments);
   });
 }

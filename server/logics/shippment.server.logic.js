@@ -66,7 +66,6 @@ exports.shippments = function (accessToken, status, user, callback) {
     });
 }
 
-
 function getShippmentStatusString(shippment) {
   var str;
   switch (shippment.shipmentStatus) {
@@ -221,15 +220,24 @@ exports.getDeliveriedShippment = function (shippment_id, username, callback) {
     return callback(err, shipment)
   });
 }
-
-exports.getDeliveriedShippments = function (username, callback) {
-  Shippmeng.find({ username: username }, function (err, shippments) {
-    if (err) {
-      console.error(err);
-      return callback(null, []);
-    }
-    return callback(null, shippments);
+exports.getDeliveriedShippments = function (user, callback) {
+  var date = new Date();
+  date = new Date(date.setDate(date.getDate() - parseInt(user.old_deliveried_shippment_count)));
+  Shippmeng.find({
+    username: user.username,
+    create_time: { $gte: date }
   })
+    .exec(function (err, shipments) {
+      if (err) {
+        console.error(err);
+      }
+
+      var results = [];
+      shipments.forEach(function (shippment) {
+        results.push(getShippmentStatusString(shippment.content));
+      });
+      return callback(err, results)
+    });
 }
 
 exports.updateUserSetting = function (userInfo, callback) {
