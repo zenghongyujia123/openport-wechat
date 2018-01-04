@@ -19,13 +19,13 @@ exports.page_home = function (req, res, next) {
 
   if (req.query.status === 'DELIVERED') {
     shippmentLogic.getDeliveriedShippments(user, function (err, shippemnts) {
-      return res.render(filepath, { status: req.query.status, shippments: shippemnts });
+      return res.render(filepath, { status: req.query.status, user: user, shippments: shippemnts });
     });
   }
   else {
     shippmentLogic.shippments(cookie.accessToken, req.query.status, user, function (err, shippments) {
       console.log(shippments.length)
-      return res.render(filepath, { status: req.query.status || 'ETD', shippments: shippments });
+      return res.render(filepath, { status: req.query.status || 'ETD', user: user, shippments: shippments });
     });
   }
 };

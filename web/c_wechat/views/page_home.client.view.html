@@ -62,28 +62,64 @@
                   </div>
                 </div>
               </div>
-              <div class="item-row">
-                <div class="row-icon">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                </div>
-                <div class="row-content">
-                  <div class="content-left">
-                    <%= (status==='ETD'?shippments[i].from.name:shippments[i].to.name) %>
+
+              <% if(user.choose_list_view==='简单') {%>
+                <div class="item-row">
+                  <div class="row-icon">
+                    <i class="fa fa-user" aria-hidden="true"></i>
                   </div>
-                  <div class="content-right">
-                    <%= (status==='ETD'?(shippments[i].etdDate.replace('T',' ')):(shippments[i].etaDate.replace('T',' '))) %>
+
+
+                  <div class="row-content">
+                    <div class="content-left">
+                      <%= (status==='ETD'?shippments[i].from.name:shippments[i].to.name) %>
+                    </div>
+                    <div class="content-right">
+                      <%= (status==='ETD'?(shippments[i].etdDate.replace('T',' ')):(shippments[i].etaDate.replace('T',' '))) %>
+                    </div>
                   </div>
                 </div>
-              </div>
+                <% }else{ %>
+                  <div class="item-content">
+                    <div class="content-title">
+                      <div class="left">提取</div>
+                      <div class="right">配送</div>
+                    </div>
+                    <div class="content-city">
+                      <div class="left">
+                        <%= (shippments[i].from.cityLocality) %>
+                      </div>
+                      <div class="right">
+                        <%= (shippments[i].to.cityLocality) %>
+                      </div>
+                    </div>
+
+                    <div class="content-address">
+                      <div class="left">
+                        <%= (shippments[i].from.line1) %>
+                      </div>
+                      <div class="right">
+                        <%= (shippments[i].to.line1) %>
+                      </div>
+                    </div>
+                    <div class="content-time">
+                      <div class="left">
+                        <%= (shippments[i].etdDate.replace('T',' ')) %>
+                      </div>
+                      <div class="right">
+                        <%= (shippments[i].etaDate?shippments[i].etaDate.replace('T',' '):'') %>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+
+
+
             </a>
             <% } %>
-
-
               <% } %>
-
                 <div class="list-item-footer">加载更多...</div>
       </div>
-
     </div>
     <div class="o-body-add-btn">
       +

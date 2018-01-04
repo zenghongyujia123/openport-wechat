@@ -40,8 +40,8 @@ $(function () {
         user_info: {
           choose_country: choose_country.val(),
           choose_language: choose_language.val(),
-          old_shippment_count: old_shippment_count,
-          old_deliveried_shippment_count: old_deliveried_shippment_count,
+          old_shippment_count: oldCount,
+          old_deliveried_shippment_count: oldDeliveredCount,
           show_old_un_deliveried_shippment: show_old_un_deliveried_shippment.val(),
           show_grouping_by_truckloads: show_grouping_by_truckloads.val(),
           choose_list_view: choose_list_view.val(),
