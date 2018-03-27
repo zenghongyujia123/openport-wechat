@@ -35,7 +35,7 @@ exports.page_detail = function (req, res, next) {
   shippmentLogic.shippment(cookie.accessToken, req.query.id, function (err, shippment) {
     var filepath = '';
     console.log(shippment);
-    if (shippment.statusId === 3 || shippment.statusId === 13 || shippment.statusId === 17) {
+    if (shippment.statusId === 3 || shippment.statusId === 4 || shippment.statusId === 13 || shippment.statusId === 17) {
       filepath = path.join(__dirname, '../../web/c_wechat/views/page_detail_pickup.client.view.html');
     }
     else if (shippment.statusId === 5 || shippment.statusId === 15) {
