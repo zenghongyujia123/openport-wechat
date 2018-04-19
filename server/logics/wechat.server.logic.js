@@ -88,6 +88,7 @@ exports.downloadImageFromWechat = function (serverId, accessToken, operation, id
   agent
     .get(url)
     .end(function (err, result) {
+      console.log(result);
       agent.post('https://cn-api.openport.com/delivery/shipments/' + id + '/upload/')
         .set({
           'x-openport-token': accessToken,
