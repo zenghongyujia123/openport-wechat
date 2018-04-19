@@ -94,10 +94,10 @@ exports.downloadImageFromWechat = function (serverId, accessToken, operation, id
           'x-openPort-operation': operation === 'pod' ? 'delivery' : 'pickup'
         })
         .attach('file', result.body, new Date().getTime() + '.jpg')
-        // .on('error', function (err) {
-        //   console.log(err);
-        //   return callback();
-        // })
+        .on('error', function (err) {
+          console.log(err);
+          return callback();
+        })
         .end(function (err, result) {
           console.log('err')
           console.log(err)
