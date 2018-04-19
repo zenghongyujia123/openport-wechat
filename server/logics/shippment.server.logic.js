@@ -127,8 +127,8 @@ exports.uploadEvent = function (accessToken, data, callback) {
       .send(data)
       .end(function (err, result) {
         console.log('result:-------');
-        console.log(result.text);
         result = JSON.parse(result.text);
+        console.log(result);
         return callback(null, result);
       });
 
