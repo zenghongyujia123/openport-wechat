@@ -115,13 +115,19 @@ exports.uploadEvent = function (accessToken, data, callback) {
       return eachCallback();
     })
   }, function () {
-    agent.put('https://cn-api.openport.com/delivery/shipments/' + data.id)
+    var url = 'https://cn-api.openport.com/delivery/shipments/' + data.id;
+    console.log(url);
+    console.log('send data:-------');
+    console.log(data);
+    agent.put(url)
       .set({
         'x-openport-token': accessToken,
         'Content-Type': 'application/vnd.openport.delivery.v2+json'
       })
       .send(data)
       .end(function (err, result) {
+        console.log('result:-------');
+        console.log(result.text);
         result = JSON.parse(result.text);
         return callback(null, result);
       });
