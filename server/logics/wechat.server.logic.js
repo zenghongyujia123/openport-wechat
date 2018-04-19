@@ -118,20 +118,6 @@ that.getAccessToken(function () {
   console.log(new Date(), 'get access token ,', access_token);
 });
 
-exports.getUserAccessToken = function (code, callback) {
-  agent.get('https://api.weixin.qq.com/sns/oauth2/access_token?appid=' + appid + '&secret=' + sk + '&code=' + code + '&grant_type=authorization_code ')
-    .end(function (err, result) {
-      console.log(' code err-----');
-      console.log(err);
-      console.log('code  result-----');
-      console.log(result.text);
-      result = JSON.parse(result.text);
-      access_token = result.access_token;
-      console.log('user_access_token : ', access_token);
-      callback(err, result);
-    });
-}
-
 
 
 
