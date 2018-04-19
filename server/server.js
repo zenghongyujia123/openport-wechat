@@ -24,9 +24,9 @@ process.on('uncaughtException', function (err) {
 });
 
 
-if (process.env.NODE_ENV === 'development') {
-  app.listen(config.port);
-}
+// if (process.env.NODE_ENV === 'development') {
+//   app.listen(config.port);
+// }
 
 app.listen(config.port);
 // Sta
