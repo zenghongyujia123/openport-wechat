@@ -239,6 +239,7 @@ exports.getDeliveriedShippments = function (user, callback) {
       }
 
       var results = [];
+      shipments = shipments || [];
       shipments.forEach(function (shippment) {
         results.push(getShippmentStatusString(shippment.content));
       });
